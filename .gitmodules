@@ -1,0 +1,3 @@
+[submodule "hpsdistfit"]
+	path = hpsdistfit
+	url = https://github.com/ubc-fresh/hpsdistfit
