@@ -1,0 +1,97 @@
+\section{Methods}
+
+\subsection{Notation}
+Let $X$ denote the diameter at breast height (DBH) of a stem measured in
+centimetres. Assume that $X$ follows a continuous distribution with PDF
+$f(x;\boldsymbol{\theta})$ and cumulative distribution function
+$F(x;\boldsymbol{\theta})$. Consider an HPS inventory compiled using a basal
+area factor (BAF) $C_{BA}$. Let $\mathcal{I}$ denote the set of DBH classes and
+$x_i$ the centre of class $i \in \mathcal{I}$. For an inventory comprising
+plots $\mathcal{J}$, the HPS tally for class $i$ in plot $j$ is $t_{ij}$ and
+the corresponding mean basal area is $\bar{g}_{ij}$. The expanded stand table
+estimate of stems per hectare in class $i$ is
+\begin{equation}
+  \hat{y}_i = C_{BA} \frac{1}{|\mathcal{J}|} \sum_{j \in \mathcal{J}} t_{ij} \bar{g}_{ij}^{-1}.
+  \label{eq:stand-table}
+\end{equation}
+Because the inclusion probability of a stem is proportional to its basal area,
+the HPS tally is size-biased of order two. The HPS expansion factor that maps a
+tally back to expected stems per hectare at DBH $x$ is
+\begin{equation}
+  f_E(x; C_{BA}) = \frac{40000 \, C_{BA}}{\pi x^2},
+  \label{eq:expansion}
+\end{equation}
+with multiplicative inverse (compression factor):
+\begin{equation}
+  f_C(x; C_{BA}) = \frac{\pi x^2}{40000 \, C_{BA}} = f_E(x; C_{BA})^{-1}.
+  \label{eq:compression}
+\end{equation}
+
+\subsection{Reference estimator}
+The reference approach \citep{van1986, ducey2015} fits a size-biased PDF
+$f_{\text{sb}}(x; \boldsymbol{\theta})$ to the raw HPS tallies. For any assumed
+standard-form PDF $f(x; \boldsymbol{\theta})$, the size-biased form of order
+two is
+\begin{equation}
+  f_{\text{sb}}(x; \boldsymbol{\theta}) =
+  \frac{x^2 f(x; \boldsymbol{\theta})}{\int_0^\infty x^2 f(x; \boldsymbol{\theta}) \, \mathrm{d}x}.
+  \label{eq:size-biased}
+\end{equation}
+The typical objective minimises the sum of squared deviations between expected
+and observed tallies:
+\begin{equation}
+  Z_{\text{C}}(\boldsymbol{\theta}) =
+  \sum_{i \in \mathcal{I}} \left[t_i - s \, f_{\text{sb}}(x_i; \boldsymbol{\theta})\right]^2,
+  \label{eq:control-obj}
+\end{equation}
+where $t_i = \sum_{j \in \mathcal{J}} t_{ij}$ and $s$ is a scaling parameter
+that reconciles the continuous PDF with discrete bin counts.
+
+\subsection{Weighted estimator}
+Our alternative estimator fits the standard-form PDF directly to the expanded
+stand table while embedding the size-bias correction through bin-wise weights.
+Let $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ denote the expanded tally in class $i$.
+The weighted objective is
+\begin{equation}
+  Z_{\text{T}}(\boldsymbol{\theta}) =
+  \sum_{i \in \mathcal{I}} w_i^2
+  \left[\hat{y}_i - s \, f(x_i; \boldsymbol{\theta})\right]^2,
+  \qquad
+  w_i = f_C(x_i; C_{BA}),
+  \label{eq:test-obj}
+\end{equation}
+which mirrors a non-linear least squares problem with heteroscedastic error
+variance proportional to the expansion factor.
+
+\subsection{Equivalence}
+Substituting $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ and $w_i = f_C(x_i; C_{BA})$
+into \eqref{eq:test-obj} yields
+\begin{align}
+  Z_{\text{T}}(\boldsymbol{\theta})
+    &= \sum_{i \in \mathcal{I}}
+       \left[f_C(x_i; C_{BA}) f_E(x_i; C_{BA}) t_i - f_C(x_i; C_{BA}) s f(x_i; \boldsymbol{\theta})\right]^2 \nonumber \\
+    &= \sum_{i \in \mathcal{I}}
+       \left[t_i - s \, \frac{f(x_i; \boldsymbol{\theta})}{f_E(x_i; C_{BA})^{-1}}\right]^2 \nonumber \\
+    &= \sum_{i \in \mathcal{I}}
+       \left[t_i - s \, \tilde{c} \, x_i^2 f(x_i; \boldsymbol{\theta})\right]^2,
+\end{align}
+where $\tilde{c} = \pi/(40000 C_{BA})$ is a constant that does not depend on
+$\boldsymbol{\theta}$. The normalising constant in \eqref{eq:size-biased} is
+also independent of $\boldsymbol{\theta}$; therefore the minimisers of
+$Z_{\text{C}}(\boldsymbol{\theta})$ and $Z_{\text{T}}(\boldsymbol{\theta})$ are
+identical. The full derivation is included in the supplementary materials and
+extends to unbinned likelihood formulations.
+
+\subsection{Computational experiment}
+We reproduced and updated the experiment introduced in
+\citet{paradis2019submitted}. Permanent sample plot (PSP) data collected across
+Quebec \citep{gouvernement2019} provide stem tallies for 30 meta-plots
+combining species groups and cover types. The PSP tallies originate from
+fixed-area plots with constant expansion factors. We emulate HPS tallies by
+scaling each bin by the reciprocal of the HPS expansion factor, preserving the
+size-bias structure. For each of three representative meta-plots---spruce-pine-
+fir-larch softwood (SPFL-S), birch mixedwood (Birch-M), and maple hardwood
+(Maple-H)---we fit two distributions (Weibull and Gamma) using both the
+reference and weighted estimators. The experiment is implemented in modern
+Python (SciPy, NumPy, lmfit) and all scripts are provided in the companion
+repository.

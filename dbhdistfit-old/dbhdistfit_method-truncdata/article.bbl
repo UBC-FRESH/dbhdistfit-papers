@@ -1,0 +1,70 @@
+\begin{thebibliography}{}
+
+\bibitem[Ahmad, 2001]{ahmad2001moments}
+Ahmad, A. e.-b.~A. (2001).
+\newblock Moments of order statistics from doubly truncated continuous
+  distributions and characterizations.
+\newblock {\em Statistics: A Journal of Theoretical and Applied Statistics},
+  35(4):479--494.
+
+\bibitem[Bailey and Dell, 1973]{bailey1973quantifying}
+Bailey, R.~L. and Dell, T. (1973).
+\newblock Quantifying diameter distributions with the weibull function.
+\newblock {\em Forest Science}, 19(2):97--104.
+
+\bibitem[Burnham and Anderson, 2002]{burnham2002model}
+Burnham, K. and Anderson, D. (2002).
+\newblock {\em {Model Selection and Multimodel Inference: A Practical
+  Information-Theoretic Approach}}.
+\newblock Springer-Verlag New York.
+
+\bibitem[Hannon and Dahiya, 1999]{hannon1999estimation}
+Hannon, P.~M. and Dahiya, R.~C. (1999).
+\newblock Estimation of parameters for the truncated exponential distribution.
+\newblock {\em Communications in Statistics-Theory and Methods},
+  28(11):2591--2612.
+
+\bibitem[Hegde and Dahiya, 1989]{hegde1989estimation}
+Hegde, L.~M. and Dahiya, R.~C. (1989).
+\newblock Estimation of the parameters of a truncated gamma distribution.
+\newblock {\em Communications in Statistics-Theory and Methods},
+  18(2):561--577.
+
+\bibitem[Hyink and Moser, 1983]{hyink1983generalized}
+Hyink, D.~M. and Moser, J.~W. (1983).
+\newblock A generalized framework for projecting forest yield and stand
+  structure using diameter distributions.
+\newblock {\em Forest Science}, 29(1):85--95.
+
+\bibitem[Mittal and Dahiya, 1989]{mittal1989estimating}
+Mittal, M.~M. and Dahiya, R.~C. (1989).
+\newblock Estimating the parameters of a truncated weibull distribution.
+\newblock {\em Communications in Statistics-Theory and Methods},
+  18(6):2027--2042.
+
+\bibitem[Schreuder et~al., 2004]{schreuder2004statistical}
+Schreuder, H.~T., Ernst, R., and Ramirez-Maldonado, H. (2004).
+\newblock Statistical techniques for sampling and monitoring natural resources.
+\newblock Technical Report RMRS-GTR-126, USDA Forest Service, Rocky Mountain
+  Research Station.
+
+\bibitem[Stall et~al., 2019]{stall2019make}
+Stall, S., Yarmey, L., Cutcher-Gershenfeld, J., Hanson, B., Lehnert, K., Nosek,
+  B., Parsons, M., Robinson, E., and Wyborn, L. (2019).
+\newblock Make scientific data fair.
+
+\bibitem[Wilkinson et~al., 2016]{wilkinson2016fair}
+Wilkinson, M.~D., Dumontier, M., Aalbersberg, I.~J., Appleton, G., Axton, M.,
+  Baak, A., Blomberg, N., Boiten, J.-W., da~Silva~Santos, L.~B., Bourne, P.~E.,
+  et~al. (2016).
+\newblock The fair guiding principles for scientific data management and
+  stewardship.
+\newblock {\em Scientific data}, 3.
+
+\bibitem[Zutter et~al., 1986]{zutter1986characterizing}
+Zutter, B., Oderwald, R., Murphy, P., and Farrar~Jr, R. (1986).
+\newblock Characterizing diameter distributions with modified data types and
+  forms of the weibull distribution.
+\newblock {\em Forest Science}, 32(1):37--48.
+
+\end{thebibliography}

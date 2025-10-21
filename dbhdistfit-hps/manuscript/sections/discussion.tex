@@ -1,0 +1,34 @@
+% !TEX root = ../main.tex
+\section{Discussion}
+
+The weighted estimator offers several advantages for practitioners and
+researchers. First, it removes the requirement to derive and implement
+size-biased PDFs for each candidate distribution. Instead, analysts can rely on
+standard forms that are broadly available in statistical libraries. Second, the
+weighted formulation relaxes parameter constraints. Many size-biased PDFs
+impose non-linear bounds on shape parameters to ensure integrability; such
+bounds complicate optimisation and inflate uncertainty estimates near the
+boundary. By working with standard PDFs, we avoid these issues while preserving
+statistical correctness.
+
+Our proof of equivalence is based on non-linear least squares, but similar
+results follow for likelihood-based estimators. In a Poisson framework, the
+Horvitz--Thompson weights embedded in the log-likelihood produce the same score
+equations as the size-biased formulation. Future work could extend the proof to
+Bayesian models where size-bias corrections appear in the likelihood and priors
+operate on standard parameterisations.
+
+The reproducible workflow addresses modern expectations for transparency. The
+project scaffold isolates data preparation, fitting, figure generation, and
+manuscript compilation. Researchers can integrate new datasets by producing the
+expected binned meta-plot file, while retaining the rest of the pipeline. The
+Makefile ensures that figures and tables remain in sync with the manuscript,
+reducing the risk of stale artefacts.
+
+Limitations arise mainly from data availability. Our PSP-derived pseudo-HPS
+dataset assumes that the variance structure of expanded tables mimics that of
+true HPS tallies. Empirical validation using genuine HPS inventories would
+strengthen the argument. Additionally, the current experiment focuses on
+two-parameter Weibull and Gamma distributions; extending the comparison to
+three-parameter families (e.g., generalised gamma) or mixture models is
+straightforward with the proposed tooling.

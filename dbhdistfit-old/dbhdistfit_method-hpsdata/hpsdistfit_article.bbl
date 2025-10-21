@@ -1,0 +1,63 @@
+\begin{thebibliography}
+
+\bibitem[Bailey and Dell(1973)]{bailey1973quantifying}
+Bailey, RobertL and Dell, TR 1973 Quantifying diameter distributions with the
+  weibull function.
+\textit{Forest Science} \textbf{19}, 97--104.
+
+\bibitem[Bitterlich(1947)]{bitterlich1947winkelzahlmessung}
+Bitterlich, Walter 1947 Die winkelzahlmessung.
+\textit{Allegemeine Forst-und Holzwirtschaftliche Zeitung} \textbf{58}, 94--96.
+
+\bibitem[Cao(2004)]{cao2004predicting}
+Cao, QuangV 2004 Predicting parameters of a weibull function for modeling
+  diameter distribution.
+\textit{Forest science} \textbf{50}, 682--685.
+
+\bibitem[Devroye(1986)]{devroye1986nonuniform}
+Devroye, Luc 1986 \textit{{Non-Uniform Random Variate Generation}}.
+New York: {Springer-Verlag}.
+
+\bibitem[Ducey and Gove(2015)]{ducey2015sizebiased}
+Ducey, MarkJ and Gove, JeffreyH 2015 Size-biased distributions in the
+  generalized beta distribution family, with applications to forestry.
+\textit{Forestry} \textbf{88}, 143--151.
+
+\bibitem[{Gouvernement du Québec}(2019)]{quebec2018pep}
+{Gouvernement du Québec} 2019 {Placettes-échantillons permanentes}.
+available at \url{https://www.donneesquebec.ca}.
+
+\bibitem[Gove(2000)]{gove2000some}
+Gove, JeffreyH 2000 Some observations on fitting assumed diameter distributions
+  to horizontal point sampling data.
+\textit{Canadian journal of forest research} \textbf{30}, 521--533.
+
+\bibitem[Hafley and Schreuder(1977)]{hafley1977statistical}
+Hafley, WL and Schreuder, HT 1977 Statistical distributions for fitting
+  diameter and height data in even-aged stands.
+\textit{Canadian Journal of Forest Research} \textbf{7}, 481--487.
+
+\bibitem[Stall et~al.(2019)]{stall2019make}
+Stall, Shelley, Yarmey, Lynn, Cutcher-Gershenfeld, Joel, Hanson, Brooks,
+  Lehnert, Kerstin, Nosek, Brian, Parsons, Mark, Robinson, Erin and Wyborn,
+  Lesley 2019 Make scientific data fair.
+
+\bibitem[Van~Deusen(1986)]{vandeusen1986fitting}
+Van~Deusen, PaulC 1986 Fitting assumed distributions to horizontal point sample
+  diameters.
+\textit{Forest Science} \textbf{32}, 146--148.
+
+\bibitem[Wilkinson et~al.(2016)]{wilkinson2016fair}
+Wilkinson, MarkD, Dumontier, Michel, Aalbersberg, IJsbrandJan, Appleton,
+  Gabrielle, Axton, Myles, Baak, Arie, Blomberg, Niklas, Boiten, JanWillem,
+  da~Silva~Santos, LuizBonino, Bourne, PhilipE et~al. 2016 The fair guiding
+  principles for scientific data management and stewardship.
+\textit{Scientific data} \textbf{3}.
+
+\bibitem[Zutter et~al.(1986)]{zutter1986characterizing}
+Zutter, BR, Oderwald, RG, Murphy, PA and Farrar~Jr, RM 1986 Characterizing
+  diameter distributions with modified data types and forms of the weibull
+  distribution.
+\textit{Forest Science} \textbf{32}, 37--48.
+
+\end{thebibliography}

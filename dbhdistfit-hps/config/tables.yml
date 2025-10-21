@@ -1,0 +1,12 @@
+# Configuration for table generation scripts.
+output_dir: tables
+meta_plots:
+  - species_group: sepm
+    cover_type: r
+    distributions: [weibull, gamma]
+  - species_group: bop
+    cover_type: m
+    distributions: [weibull, gamma]
+  - species_group: ers
+    cover_type: f
+    distributions: [weibull, gamma]

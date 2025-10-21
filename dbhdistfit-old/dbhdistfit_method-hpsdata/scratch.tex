@@ -1,0 +1,103 @@
+The generalized beta family of statistical distributions is useful for
+modelling stem density distributions. % add citation
+All members of the family can be derived from either the generalized beta distribution of the first kind (GB1) or the generalized beta distribution of the second kind (GB2).
+The probability density functions (PDF) of $f_{GB1}$ and $f_{GB2}$ have the following forms (adapted from \citealp{ducey2015sizebiased})
+
+\begin{equation}
+f_{\text{GB1}}(x; \, b, p, q) = \frac{|a|x^{ap-1}\left[1 - (x/b)^a\right]^{q-1}}{b^{ap}\text{B}(p, q)}, \qquad 0 < y^a < b^a, b > 0, p > 0, q > 0
+\end{equation}
+
+and 
+
+\begin{equation}
+f_{\text{GB2}} (x; a, b, p, q) = \frac{|a|x^{ap-1}x^{q-1}}{b^{ap}\text{B}(p, q)\left[1 - (x/b)^a\right]^{p+q}}, \qquad a > 0, b > 0, p > 0, q > 0
+\end{equation}
+
+defined for $x > 0$, where $\text{B}(p, q)$ represents the beta function (not to be confounded with the beta or generalized beta distributions), which is given by
+
+\begin{equation}
+\text{B}(p, q) = \int_0^1 t^{p-1} (1 - t)^{q-1} dt.
+\end{equation}
+
+The generalized gamma GG distribution is a special case of both GB1 and GB2 distributions. The GG PDF has the following form
+
+\begin{equation}
+f_{\text{GG}}(x; a, \beta, p) = \frac{ax^{ap-1}e^{-\left(\frac{x}{\beta}\right)^a}}{\beta^{ap}\Gamma(p)}, \qquad a > 0, \beta > 0, q > 0
+\end{equation}
+
+defined for $x > 0$, where $\Gamma(p)$ represents the gamma function (not to be confounded with the gamma, or generalized gamma, distributions), which is given by
+
+\begin{equation}
+\Gamma(p) = \int_0^\infty x^{p-1}e^{-x} dx.
+\end{equation}
+
+The size-biased forms of GB1, GB2 and GG PDFs are given by (adapted from \citealp{ducey2015sizebiased})
+
+\begin{align}
+f^{\text{SB}}_{\text{GB1}}(x; a, b, p, q, \alpha) &= f_{\text{GB1}}(x; a, b, p + \alpha/a, q)\\
+f^{\text{SB}}_{\text{GB2}}(x; a, b, p, q, \alpha) &= f_{\text{GB2}}(x; a, b, p + \alpha/a, q - \alpha/a)\\
+f^{\text{SB}}_{\text{GG}}(x; a, \beta, p, \alpha) &= f_{\text{GG}}(x; a, \beta, p + \alpha/a)
+\end{align}
+
+where $\alpha$ corresponds to the \emph{order} of the distribution.
+For the case of HPS, which is an area-based sampling technique, we need a size-biased distribution of order 2 (basal area being related to the square of diameter). 
+Thus, we set $\alpha=2$ for the control scenario (i.e., this parameter
+is fixed, and is not fit by the NLLS algorithm).
+
+We can define standard and size-biased forms of the PDFs of several other distributions in terms of GB1, GB2, and GG PDFs.
+
+The standard forms are given by
+{\small
+
+  \begin{align}
+  f_{\text{IB1}}(x; b, p, q) &= f_{\text{GB1}}(x; -1, b, p, q) \\
+  f_{\text{UG}}(x; b, d, q) &= \lim_{a \to \infty} f_{\text{GB1}}(x; a, b, d/a, q) \\
+f_{\text{B1}}(x; b, p, q) &= f_{\text{GB1}}(x; 1, b, p, q) \\
+f_{\text{B2}}(x; b, p, q) &= f_{\text{GB2}}(x; 1, b, p, q) \\
+f_{\text{SM}}(x; a, b, q) &= f_{\text{GB2}}(x; a, b, 1, q) \\
+f_{\text{Dagum}}(x; a, b, p) &= f_{\text{GB2}}(x; a, b, p, 1) \\
+f_{\text{Pareto}}(x; b, p) &= f_{\text{GB1}}(x; -1, b, p, 1) \\
+f_{\text{P}}(x; b, p) &= f_{\text{GB1}}(x; 1, b, p, 1) \\
+f_{\text{GA}}(x; \beta, p) &= f_{\text{GG}}(x; 1, \beta, p) \\
+f_{\text{W}}(x; a, \beta) &= f_{\text{GG}}(x; a, \beta, 1) \\
+f_{\text{F}}(x; u, v) &= f_{\text{GB2}}(x; 1, v/u, u/2, v/2) \\
+f_{\text{L}}(x; b, q) &= f_{\text{GB2}}(x; 1, b, 1, q) \\
+f_{\text{IL}}(x; b, p) &= f_{\text{GB2}}(x; 1, b, p, 1) \\
+f_{\text{Fisk}}(x; a, b) &= f_{\text{GB2}}(x; a, b, 1, 1) \\
+f_{\text{U}}(x; b) &= f_{\text{GB1}}(x; 1, b, 1, 1) \\
+f_{\tfrac{1}{2}\text{N}}(x; 0, \sigma) &= f_{\text{GG}}(x; 2, \sigma^2, 1/2) \\
+f_{\chi^2}(x; p) &= f_{GG}(x; 1, 2, p) \\
+f_{\text{EXP}}(x; \beta) &= f_{\text{GG}}(x; 1, \beta, 1) \\
+f_{\text{R}}(x; \beta) &= f_{\text{GG}}(x; 2, \beta, 1) \\
+f_{\text{LL}}(x; b) &= f_{\text{GB2}}(x; 1, b, 1, 1)
+\end{align}
+}%
+
+The size-biased forms are given by (adapted from \citealp{ducey2015sizebiased})
+
+{\small
+\begin{align}
+f^{\text{SB}}_{\text{IB1}}(x; b, p, q, \alpha) &= f_{\text{GB1}}(x; -1, b, p - \alpha, q),&  \alpha < p \\
+f^{\text{SB}}_{\text{UG}}(x; b, d, q, \alpha) &= \lim_{a \to \infty} f_{\text{GB1}}(x; a, b, (d + \alpha)/a, q),&  \alpha > -d \\
+f^{\text{SB}}_{\text{B1}}(x; b, p, q, \alpha) &= f_{\text{GB1}}(x; 1, b, p + \alpha, q),&  \alpha > -p \\
+f^{\text{SB}}_{\text{B2}}(x; b, p, q, \alpha) &= f_\text{{GB2}}(x; 1, b, p + \alpha, q- \alpha),&  -p < \alpha < q \\
+f^{\text{SB}}_{\text{SM}}(x; a, b, q, \alpha) &= f_{\text{GB2}}(x; a, b, 1 + \alpha/a, q - \alpha/a),&  -a < \alpha < aq \\
+f^{\text{SB}}_{\text{Dagum}}(x; a, b, p, \alpha) &= f_{\text{GB2}}(x; a, b, p + \alpha/a, 1),&  -ap < \alpha < a \\
+f^{\text{SB}}_{\text{Pareto}}(x; b, p, \alpha) &= f_{\text{GB1}}(x; -1, b, p - \alpha, 1),&  \alpha < p \\
+f^{\text{SB}}_{\text{P}}(x; b, p, \alpha) &= f_{\text{GB1}}(x; 1, b, p + \alpha, 1),&  \alpha > -p \\
+f^{\text{SB}}_{\text{GA}}(x; \beta, p, \alpha) &= f_{\text{GG}}(x; 1, \beta, p + \alpha),&  \alpha > -p \\
+f^{\text{SB}}_{\text{W}}(x; a, \beta, \alpha) &= f_{\text{GG}}(x; a, \beta, 1 + \alpha/a),&  \alpha > -a \\
+f^{\text{SB}}_{\text{F}}(x; u, v, \alpha) &= f_{\text{GB2}}(x; 1, v/u, u/2 + \alpha, v/2 - \alpha),&  -u/2 < \alpha < v/2 \\
+f^{\text{SB}}_{\text{L}}(x; b, q, \alpha) &= f_{\text{GB2}}(x; 1, b, 1 + \alpha, q - \alpha),&  -1 < \alpha < q \\
+f^{\text{SB}}_{\text{IL}}(x; b, p, \alpha) &= f_{\text{GB2}}(x; 1, b, p + \alpha, 1 - \alpha),&  -p < \alpha < 1 \\
+f^{\text{SB}}_{\text{Fisk}}(x; a, b, \alpha) &= f_{\text{GB2}}(x; a, b, 1 + \alpha/a, 1 - \alpha/a),&  -a < \alpha < a \\
+f^{\text{SB}}_{\text{U}}(x; b, \alpha) &= f_{\text{GB1}}(x; 1, b, 1 + \alpha, 1),&  \alpha > -1 \\
+f^{\text{SB}}_{\tfrac{1}{2}\text{N}}(x; 0, \sigma, \alpha) &= f_{\text{GG}}(x; 2, \sigma^2, 1/2 + \alpha),&  \alpha > -1/2 \\
+f^{\text{SB}}_{\chi^2}(x; p, \alpha) &= f_{\text{GG}}(x; 1, 2, p + \alpha),&  \alpha > -p \\
+f^{\text{SB}}_{\text{EXP}}(x; \beta, \alpha) &= f_{\text{GG}}(x; 1, \beta, 1 + \alpha),&  \alpha > -1 \\
+f^{\text{SB}}_{\text{R}}(x; \beta, \alpha) &= f_{\text{GG}}(x; 2, \beta, 1 + \alpha),&  \alpha > -1 \\
+f^{\text{SB}}_{\text{LL}}(x; b, \alpha) &= f_{\text{GB2}}(x; 1, b, 1 + \alpha, 1 - \alpha),&  -1 < \alpha < 1
+\end{align}
+}%
+
+We replicated our experiment on each of the 30 sub-datasets, with each of the N distributions defined above, for a total of $30N$ replicates.

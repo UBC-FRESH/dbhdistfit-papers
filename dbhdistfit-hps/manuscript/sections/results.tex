@@ -1,0 +1,37 @@
+% !TEX root = ../main.tex
+\section{Results}
+
+Figure~\ref{fig:comparison} compares fitted distributions across the six
+meta-plot--distribution combinations. In both HPS tally space and stand table
+space the curves produced by the reference and weighted estimators are visually
+indistinguishable. Residual sum of squares (RSS) values computed on the native
+scale of each estimator differ by less than $10^{-6}$ in every case (Table~\ref{tab:comparison}).
+Chi-square goodness-of-fit statistics agree to numerical precision, confirming
+that the weighting scheme reproduces the role of explicit size-biasing.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/sepm_r_comparison.png}
+  \caption{Example comparison of control (size-biased) and test (weighted)
+  estimators for the SPFL-S meta-plot. Solid lines denote weighted fits and
+  dashed lines denote size-biased fits. Points represent empirical data
+  (expanded stand tables on the right panels). Remaining combinations are
+  supplied as supplementary figures.}
+  \label{fig:comparison}
+\end{figure}
+
+Although the absolute RSS values depend on binning choices, the difference
+between methods is several orders of magnitude smaller than within-method RSS,
+which establishes practical equivalence. Parameter estimates (shape, scale,
+and amplitude) match to at least four decimal places across all meta-plots.
+The notebook `notebooks/hpsdistfit\_repro.ipynb` documents the full set of
+replicates and provides interactive diagnostics.
+
+\begin{table}[htbp]
+  \centering
+  \input{../tables/method_comparison.tex}
+  \caption{Residual diagnostics for control (size-biased) and test (weighted)
+  estimators across species groups, cover types, and assumed distributions.
+  Values shown are RSS in native scale and chi-square statistics.}
+  \label{tab:comparison}
+\end{table}

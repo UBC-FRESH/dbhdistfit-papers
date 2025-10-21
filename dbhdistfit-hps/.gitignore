@@ -1,0 +1,17 @@
+# Data artefacts
+data/raw/
+data/interim/
+data/processed/
+
+# Outputs
+figures/
+tables/
+manuscript/build/
+notebooks/*.executed.ipynb
+
+# TeX aux files
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.synctex.gz

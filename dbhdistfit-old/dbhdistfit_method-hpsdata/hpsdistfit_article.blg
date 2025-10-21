@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_2)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: hpsdistfit_article.aux
+The style file: foresj.bst
+Database file #1: refs.bib.bib
+Repeated entry---line 162 of file refs.bib.bib
+ : @article{ducey2015sizebiased
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 213 of file refs.bib.bib
+ : @article{zutter1986characterizing
+ :                                  ,
+I'm skipping whatever remains of this entry
+You've used 12 entries,
+            2801 wiz_defined-function locations,
+            699 strings with 6781 characters,
+and the built_in function-call counts, 5153 in all, are:
+= -- 496
+> -- 204
+< -- 9
++ -- 86
+- -- 72
+* -- 494
+:= -- 933
+add.period$ -- 23
+call.type$ -- 12
+change.case$ -- 95
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 246
+empty$ -- 378
+format.name$ -- 96
+if$ -- 986
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 11
+newline$ -- 50
+num.names$ -- 36
+pop$ -- 61
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 321
+swap$ -- 67
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 0
+while$ -- 40
+width$ -- 0
+write$ -- 130
+(There were 2 error messages)
