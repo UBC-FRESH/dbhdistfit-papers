@@ -1,0 +1,135 @@
+% !TEX root = ../main.tex
+\section{Proof of Equivalence Between Estimators}
+\label{sec:appendix-equivalence}
+
+This appendix presents a rigorous proof that the weighted estimator introduced
+in Section~\ref{sec:methods} is equivalent to the size-biased estimator of
+\citet{van1986, ducey2015}. Throughout, we assume a fixed binning scheme for
+DBH classes $\mathcal{I}$ with midpoints $x_i$ and employ the notation defined
+in the main text.
+
+\subsection{Preliminaries}
+
+Let $X$ denote diameter at breast height (DBH) with underlying PDF
+$f(x;\boldsymbol{\theta})$ and CDF $F(x;\boldsymbol{\theta})$ parameterised by
+$\boldsymbol{\theta}\in\Theta$. Under horizontal point sampling (HPS) with basal
+area factor $C_{BA}$, the inclusion probability of a stem of DBH $x$ is
+proportional to its basal area, i.e., $\pi(x)\propto x^2$. The size-biased PDF
+of order two is therefore
+\begin{equation}
+  f_{\mathrm{sb}}(x;\boldsymbol{\theta})
+  =
+  \frac{x^{2} f(x;\boldsymbol{\theta})}{\kappa(\boldsymbol{\theta})},
+  \qquad
+  \kappa(\boldsymbol{\theta})
+  =
+  \int_{0}^{\infty} x^{2} f(x;\boldsymbol{\theta})\,\mathrm{d}x,
+\end{equation}
+which is well-defined whenever $\kappa(\boldsymbol{\theta}) < \infty$.
+
+Let $t_i$ denote the observed HPS tally (aggregated across plots) for bin $i$,
+and let $\hat{y}_i$ denote the corresponding expanded stand table value defined
+in Equation~\eqref{eq:stand-table}. Define the HPS expansion factor
+\begin{equation}
+  f_E(x; C_{BA}) = \frac{40000 \, C_{BA}}{\pi x^2},
+\end{equation}
+and the compression factor $f_C(x; C_{BA}) = f_E(x; C_{BA})^{-1}$.
+
+\subsection{Reference estimator}
+
+The size-biased estimator minimises the sum of squares between observed tallies
+and the size-biased PDF evaluated at bin midpoints:
+\begin{equation}
+  Z_{\mathrm{C}}(\boldsymbol{\theta}, s)
+  =
+  \sum_{i \in \mathcal{I}}
+  \Big[t_i - s\, f_{\mathrm{sb}}(x_i; \boldsymbol{\theta})\Big]^2,
+  \label{eq:appendix-control}
+\end{equation}
+where $s$ is a scaling parameter converting continuous densities to discrete
+bin counts. The minimiser $(\hat{\boldsymbol{\theta}}_{\mathrm{C}},\hat{s}_{\mathrm{C}})$ is
+obtained by solving the normal equations associated with
+\eqref{eq:appendix-control} using standard non-linear least squares algorithms.
+
+\subsection{Weighted estimator}
+
+The weighted estimator operates on expanded stand table data with weights
+matching the inverse of the expansion factor:
+\begin{equation}
+  Z_{\mathrm{T}}(\boldsymbol{\theta}, s)
+  =
+  \sum_{i \in \mathcal{I}}
+  w_i^2 
+  \Big[\hat{y}_i - s\, f(x_i; \boldsymbol{\theta})\Big]^2,
+  \qquad
+  w_i = f_C(x_i; C_{BA}).
+  \label{eq:appendix-test}
+\end{equation}
+Recall $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ by construction.
+
+\subsection{Key lemma}
+
+\begin{lemma}
+For all $\boldsymbol{\theta}\in\Theta$ and $s>0$, the objectives
+$Z_{\mathrm{C}}(\boldsymbol{\theta}, s)$ and $Z_{\mathrm{T}}(\boldsymbol{\theta}, s')$ differ
+by a positive multiplicative constant after an appropriate reparameterisation of
+$s$.
+\end{lemma}
+
+\begin{proof}
+Insert $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ and $w_i = f_C(x_i; C_{BA})$ into
+\eqref{eq:appendix-test}:
+\begin{align}
+  Z_{\mathrm{T}}(\boldsymbol{\theta}, s)
+    &= \sum_{i \in \mathcal{I}} \left[f_C(x_i; C_{BA}) f_E(x_i; C_{BA}) t_i
+      - f_C(x_i; C_{BA}) s f(x_i; \boldsymbol{\theta})\right]^2 \\
+    &= \sum_{i \in \mathcal{I}} \left[t_i - s \, f_C(x_i; C_{BA}) f(x_i; \boldsymbol{\theta})\right]^2.
+\end{align}
+Using the explicit form of $f_C$, we have
+\begin{equation}
+  f_C(x; C_{BA}) f(x; \boldsymbol{\theta})
+  =
+  \frac{\pi}{40000 C_{BA}} x^{2} f(x;\boldsymbol{\theta})
+  =
+  \frac{\kappa(\boldsymbol{\theta})}{40000 C_{BA}} f_{\mathrm{sb}}(x; \boldsymbol{\theta}).
+\end{equation}
+Let $s' = s\, \kappa(\boldsymbol{\theta})/(40000 C_{BA})$. Then
+\begin{equation}
+  Z_{\mathrm{T}}(\boldsymbol{\theta}, s)
+  =
+  \sum_{i \in \mathcal{I}} \left[t_i - s' f_{\mathrm{sb}}(x_i; \boldsymbol{\theta})\right]^2
+  =
+  Z_{\mathrm{C}}(\boldsymbol{\theta}, s').
+\end{equation}
+Hence $Z_{\mathrm{T}}$ and $Z_{\mathrm{C}}$ share identical level sets up to a
+bijective scaling of $s$.
+\end{proof}
+
+\subsection{Equivalence of minimisers}
+
+Let $(\hat{\boldsymbol{\theta}}_{\mathrm{C}}, \hat{s}_{\mathrm{C}})$ minimise
+\eqref{eq:appendix-control}. By the lemma, there exists a corresponding scaling
+$\hat{s}_{\mathrm{T}} = \hat{s}_{\mathrm{C}}\, 40000 C_{BA}/\kappa(\hat{\boldsymbol{\theta}}_{\mathrm{C}})$
+such that $(\hat{\boldsymbol{\theta}}_{\mathrm{C}}, \hat{s}_{\mathrm{T}})$ minimises
+\eqref{eq:appendix-test}. Conversely, any minimiser of
+\eqref{eq:appendix-test} maps back to a minimiser of \eqref{eq:appendix-control}
+by the inverse scaling. Therefore the estimators produce identical parameter
+estimates $\hat{\boldsymbol{\theta}}_{\mathrm{C}} = \hat{\boldsymbol{\theta}}_{\mathrm{T}}$ and
+the fitted PDFs coincide after transforming between tally and stand table space.
+
+\subsection{Extensions}
+
+The argument extends directly to unbinned data by replacing discrete sums with
+integrals. Moreover, any objective function proportional to the squared error
+(e.g., weighted least squares with constant variance within space) inherits the
+same equivalence. Likelihood-based estimators such as Poisson regression also
+admit analogous proofs: incorporating Horvitz--Thompson weights in the log-
+likelihood yields the same score equations as using size-biased PDFs.
+
+\subsection{Implications}
+
+Because the minimisers coincide, diagnostic quantities (RSS, chi-square
+statistics, fitted curves) are identical up to deterministic re-scaling between
+tally and stand table space. In practice, the weighted formulation provides a
+computationally convenient alternative that makes use of standard PDF
+implementations and alleviates the need for bespoke size-biased forms.

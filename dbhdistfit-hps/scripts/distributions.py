@@ -9,7 +9,8 @@ from scipy.special import gamma as gamma_fn
 def generalized_gamma_pdf(x: np.ndarray | float, a: float, b: float, p: float, s: float = 1.0) -> np.ndarray:
     """Generalized gamma PDF with optional scale parameter `s`."""
     x = np.asarray(x, dtype=float)
-    y = s * (a * np.power(x, a * p - 1.0) * np.exp(-np.power(x / b, a))) / (np.power(b, a * p) * gamma_fn(p))
+    with np.errstate(divide="ignore", invalid="ignore", over="ignore"):
+        y = s * (a * np.power(x, a * p - 1.0) * np.exp(-np.power(x / b, a))) / (np.power(b, a * p) * gamma_fn(p))
     return np.nan_to_num(y)
 
 

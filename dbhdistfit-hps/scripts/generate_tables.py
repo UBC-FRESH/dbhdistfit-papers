@@ -3,20 +3,33 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from typing import Dict, List
 
 import numpy as np
 import pandas as pd
 
-from . import fitting
-from .common import (
-    compression_factor,
-    ensure_dir,
-    expansion_factor,
-    load_binned_dataset,
-    load_yaml,
-)
+if __package__ is None:
+    SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+    sys.path.append(str(SCRIPT_ROOT))
+    from scripts import fitting  # type: ignore
+    from scripts.common import (  # type: ignore
+        compression_factor,
+        ensure_dir,
+        expansion_factor,
+        load_binned_dataset,
+        load_yaml,
+    )
+else:
+    from . import fitting
+    from .common import (
+        compression_factor,
+        ensure_dir,
+        expansion_factor,
+        load_binned_dataset,
+        load_yaml,
+    )
 
 
 def chisquare(observed: np.ndarray, expected: np.ndarray) -> float:
@@ -87,7 +100,7 @@ def main(config_path: Path) -> None:
     print(f"[tables] wrote {csv_path}")
 
     latex_path = output_dir / "method_comparison.tex"
-    df.to_latex(latex_path, index=False, float_format="%.3e")
+    df.to_latex(latex_path, index=False, float_format="%.3e", escape=True)
     print(f"[tables] wrote {latex_path}")
 
 

@@ -1,11 +1,14 @@
 # Data artefacts
-data/raw/
-data/interim/
-data/processed/
+# data/raw/
+# data/interim/
+# data/processed/
+
+# Virtual environments
+.venv/
 
 # Outputs
-figures/
-tables/
+# figures/
+# tables/
 manuscript/build/
 notebooks/*.executed.ipynb
 
@@ -15,3 +18,8 @@ manuscript/*.log
 manuscript/*.out
 manuscript/*.toc
 manuscript/*.synctex.gz
+manuscript/*.fdb_latexmk
+manuscript/*.fls
+manuscript/*.bbl
+manuscript/*.blg
+*.pyc

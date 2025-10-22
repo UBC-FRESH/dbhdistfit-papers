@@ -25,4 +25,10 @@ Run `make help` for the list of supported workflows. Core targets include:
 
 The project expects a modern Python 3.11+ environment. Rebuild reproducible
 artefacts using `environment.yml` (conda/mamba) or `requirements.txt` (pip).
+To create a local virtual environment with the standard library tools, run:
 
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```

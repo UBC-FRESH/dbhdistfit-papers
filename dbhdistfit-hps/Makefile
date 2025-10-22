@@ -14,7 +14,8 @@ help:
 	@echo "  make clean       - remove derived outputs"
 
 env:
-	@echo "No default environment recipe; use environment.yml or requirements.txt"
+	@if [ ! -d .venv ]; then $(PYTHON) -m venv .venv; fi
+	. .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt
 
 figures:
 	$(PYTHON) scripts/generate_figures.py --config config/figures.yml
@@ -26,7 +27,7 @@ manuscript:
 	$(MAKE) -C manuscript all
 
 notebook:
-	$(PYTHON) -m jupyter nbconvert --to notebook --execute notebooks/hpsdistfit_repro.ipynb --output notebooks/hpsdistfit_repro.executed.ipynb
+	$(PYTHON) -m jupyter nbconvert --to notebook --execute notebooks/hpsdistfit_repro.ipynb --output hpsdistfit_repro.executed.ipynb --output-dir notebooks
 
 repro: figures tables notebook manuscript
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from typing import Dict, Tuple
 
@@ -10,14 +11,26 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-from . import fitting
-from .common import (
-    compression_factor,
-    ensure_dir,
-    expansion_factor,
-    load_binned_dataset,
-    load_yaml,
-)
+if __package__ is None:
+    SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+    sys.path.append(str(SCRIPT_ROOT))
+    from scripts import fitting  # type: ignore
+    from scripts.common import (  # type: ignore
+        compression_factor,
+        ensure_dir,
+        expansion_factor,
+        load_binned_dataset,
+        load_yaml,
+    )
+else:
+    from . import fitting
+    from .common import (
+        compression_factor,
+        ensure_dir,
+        expansion_factor,
+        load_binned_dataset,
+        load_yaml,
+    )
 
 
 def _prepare_series(df, baf: float = 2.0) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:

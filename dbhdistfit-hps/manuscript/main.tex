@@ -1,11 +1,13 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath, amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{hyperref}
 \usepackage{natbib}
+\newtheorem{lemma}{Lemma}
 
 \title{A Weighted Fitting Approach for Diameter Distributions from Horizontal Point Sampling}
 \author{Gregory E. Paradis}
@@ -21,6 +23,8 @@
 \input{sections/results}
 \input{sections/discussion}
 \input{sections/conclusion}
+\appendix
+\input{sections/appendix-equivalence}
 
 \bibliographystyle{apalike}
 \bibliography{references}

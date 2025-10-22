@@ -46,9 +46,14 @@ def load_binned_dataset(path: str | Path | None = None) -> pd.DataFrame:
         )
 
     for candidate in candidates:
-        if candidate.suffix == ".parquet" and candidate.exists():
-            return pd.read_parquet(candidate)
-        if candidate.suffix in {".csv", ".tsv"} and candidate.exists():
+        if not candidate.exists():
+            continue
+        if candidate.suffix == ".parquet":
+            try:
+                return pd.read_parquet(candidate)
+            except ImportError:
+                continue
+        if candidate.suffix in {".csv", ".tsv"}:
             return pd.read_csv(candidate)
 
     raise FileNotFoundError(

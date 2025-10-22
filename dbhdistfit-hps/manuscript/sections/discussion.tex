@@ -11,12 +11,13 @@ bounds complicate optimisation and inflate uncertainty estimates near the
 boundary. By working with standard PDFs, we avoid these issues while preserving
 statistical correctness.
 
-Our proof of equivalence is based on non-linear least squares, but similar
-results follow for likelihood-based estimators. In a Poisson framework, the
-Horvitz--Thompson weights embedded in the log-likelihood produce the same score
-equations as the size-biased formulation. Future work could extend the proof to
-Bayesian models where size-bias corrections appear in the likelihood and priors
-operate on standard parameterisations.
+Our formal proof of equivalence, provided in Appendix~\ref{sec:appendix-equivalence},
+is based on non-linear least squares, but similar results follow for
+likelihood-based estimators. In a Poisson framework, the Horvitz--Thompson
+weights embedded in the log-likelihood produce the same score equations as the
+size-biased formulation. Future work could extend the proof to Bayesian models
+where size-bias corrections appear in the likelihood and priors operate on
+standard parameterisations.
 
 The reproducible workflow addresses modern expectations for transparency. The
 project scaffold isolates data preparation, fitting, figure generation, and
