@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PYTHON ?= python
 
-.PHONY: help env figures tables manuscript notebook repro clean
+.PHONY: help env data figures tables manuscript notebook repro clean
 
 help:
 	@echo "Available targets:"
@@ -17,16 +17,22 @@ env:
 	@if [ ! -d .venv ]; then $(PYTHON) -m venv .venv; fi
 	. .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt
 
-figures:
+data:
+	@if command -v datalad >/dev/null 2>&1; then \
+		datalad get data/interim/tiges_final_full.p data/interim/essencegroupe1.csv data/interim/groupe1groupe2groupe3.csv >/dev/null 2>&1 || true; \
+	fi
+	$(PYTHON) scripts/preprocess_data.py
+
+figures: data
 	$(PYTHON) scripts/generate_figures.py --config config/figures.yml
 
-tables:
+tables: data
 	$(PYTHON) scripts/generate_tables.py --config config/tables.yml
 
 manuscript:
 	$(MAKE) -C manuscript all
 
-notebook:
+notebook: data
 	$(PYTHON) -m jupyter nbconvert --to notebook --execute notebooks/hpsdistfit_repro.ipynb --output hpsdistfit_repro.executed.ipynb --output-dir notebooks
 
 repro: figures tables notebook manuscript

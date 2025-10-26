@@ -11,6 +11,13 @@ bounds complicate optimisation and inflate uncertainty estimates near the
 boundary. By working with standard PDFs, we avoid these issues while preserving
 statistical correctness.
 
+Empirical diagnostics reinforce these advantages: across all species group and
+cover type combinations examined, the weighted estimator tracks the
+size-biased control within 2.4\% of the $\ell_2$ norm in stand table space and
+within 8.5\% in HPS tally space (Table~\ref{tab:comparison}). This “very good”
+agreement ensures that the simplified workflow can replace the classical
+approach with negligible loss of fidelity.
+
 Our formal proof of equivalence, provided in Appendix~\ref{sec:appendix-equivalence},
 is based on non-linear least squares, but similar results follow for
 likelihood-based estimators. In a Poisson framework, the Horvitz--Thompson

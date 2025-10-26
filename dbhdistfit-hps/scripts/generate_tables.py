@@ -75,8 +75,15 @@ def main(config_path: Path) -> None:
             test = dispatch["test"](x, tally)
             control_stand = control.fitted / compression
             test_stand = test.fitted
+            test_hps = test_stand * compression
 
             rss_diff = float(np.sum((control_stand - test_stand) ** 2))
+            rel_l2_stand = float(
+                np.linalg.norm(control_stand - test_stand) / np.linalg.norm(test_stand)
+            )
+            rel_l2_hps = float(
+                np.linalg.norm(control.fitted - test_hps) / np.linalg.norm(control.fitted)
+            )
 
             record = {
                 "species_group": species,
@@ -86,6 +93,8 @@ def main(config_path: Path) -> None:
                 "rss_control_hps": control.rss,
                 "rss_test_stand": test.rss,
                 "rss_diff_stand": rss_diff,
+                "rel_l2_stand": rel_l2_stand,
+                "rel_l2_hps": rel_l2_hps,
                 "chisq_control": chisquare(tally, control.fitted),
                 "chisq_test": chisquare(stand_table, test.fitted),
             }
@@ -100,7 +109,42 @@ def main(config_path: Path) -> None:
     print(f"[tables] wrote {csv_path}")
 
     latex_path = output_dir / "method_comparison.tex"
-    df.to_latex(latex_path, index=False, float_format="%.3e", escape=True)
+    table_df = df.copy()
+    table_df["rel_l2_stand_pct"] = table_df["rel_l2_stand"] * 100.0
+    table_df["rel_l2_hps_pct"] = table_df["rel_l2_hps"] * 100.0
+    columns = [
+        "species_group",
+        "cover_type",
+        "distribution",
+        "sample_size",
+        "rel_l2_stand_pct",
+        "rel_l2_hps_pct",
+        "rss_control_hps",
+        "rss_test_stand",
+        "rss_diff_stand",
+    ]
+    table_df = table_df[columns]
+    table_df.to_latex(
+        latex_path,
+        index=False,
+        float_format="%.3e",
+        escape=True,
+        header=[
+            "species\\_group",
+            "cover\\_type",
+            "distribution",
+            "sample\\_size",
+            "rel\\_l2\\_stand(\\%)",
+            "rel\\_l2\\_hps(\\%)",
+            "rss\\_control\\_hps",
+            "rss\\_test\\_stand",
+            "rss\\_diff\\_stand",
+        ],
+        formatters={
+            "rel_l2_stand_pct": lambda v: f"{v:.2f}",
+            "rel_l2_hps_pct": lambda v: f"{v:.2f}",
+        },
+    )
     print(f"[tables] wrote {latex_path}")
 
 

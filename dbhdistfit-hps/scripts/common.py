@@ -8,6 +8,11 @@ from typing import Any, Dict
 import pandas as pd
 import yaml
 
+try:  # pragma: no cover - optional dependency
+    from datalad import api as datalad_api
+except ImportError:  # pragma: no cover - datalad not installed
+    datalad_api = None
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,7 +52,13 @@ def load_binned_dataset(path: str | Path | None = None) -> pd.DataFrame:
 
     for candidate in candidates:
         if not candidate.exists():
-            continue
+            if datalad_api is not None:
+                try:
+                    datalad_api.get(str(candidate))
+                except Exception:  # pragma: no cover - best effort
+                    pass
+            if not candidate.exists():
+                continue
         if candidate.suffix == ".parquet":
             try:
                 return pd.read_parquet(candidate)
