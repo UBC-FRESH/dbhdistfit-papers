@@ -10,6 +10,7 @@ from typing import Dict, Tuple
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import shutil
 
 if __package__ is None:
     SCRIPT_ROOT = Path(__file__).resolve().parents[1]
@@ -59,12 +60,14 @@ def main(config_path: Path) -> None:
     output_dir = ensure_dir(cfg.get("output_dir", "figures"))
     palette = cfg.get("styling", {}).get("palette", "muted")
     sns.set(style="whitegrid", palette=palette)
+    plt.rcParams.update({"pdf.fonttype": 42, "ps.fonttype": 42})
 
     data = load_binned_dataset(cfg.get("dataset"))
     meta_plots = cfg.get("meta_plots", [])
     distributions = cfg.get("distributions", ["weibull", "gamma"])
     dpi = cfg.get("styling", {}).get("dpi", 300)
     baf = cfg.get("baf", 2.0)
+    figure_index = 1
 
     for meta in meta_plots:
         species = meta["species_group"]
@@ -123,8 +126,24 @@ def main(config_path: Path) -> None:
         filename = f"{species}_{cover}_comparison.png"
         fig_path = output_dir / filename
         fig.savefig(fig_path, dpi=dpi)
+        eps_path = fig_path.with_suffix(".eps")
+        fig.savefig(eps_path, format="eps")
+        pdf_path = fig_path.with_suffix(".pdf")
+        fig.savefig(pdf_path, format="pdf")
+        tif_path = fig_path.with_suffix(".tif")
+        fig.savefig(tif_path, format="tiff", dpi=dpi)
         plt.close(fig)
-        print(f"[figures] saved {fig_path}")
+        fig_id = f"Fig{figure_index}"
+        for src, suffix in (
+            (fig_path, ".png"),
+            (eps_path, ".eps"),
+            (pdf_path, ".pdf"),
+            (tif_path, ".tif"),
+        ):
+            dest = output_dir / f"{fig_id}{suffix}"
+            shutil.copyfile(src, dest)
+        figure_index += 1
+        print(f"[figures] saved {fig_path}, {eps_path}, {pdf_path}, {tif_path} and copies as {fig_id}.*")
 
 
 if __name__ == "__main__":

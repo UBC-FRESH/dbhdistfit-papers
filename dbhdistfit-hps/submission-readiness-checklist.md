@@ -4,7 +4,7 @@
 |---------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------|
 | Article type & scope                  | ✅ Ready     | Brief Communication (≤2,000 words, ≤2 figures/tables); current draft ≈1,950 words with 1 figure + 1 table.             |
 | Word-limit statement                  | ⚠️ To Do     | Forest Science requires explicit word-count declarations at the end of the manuscript (total incl./excl. references, abstract length, SI words). |
-| Figures & tables                      | ✅ Ready     | Figure 1 (comparison plots) and Table 1 (RSS + relative L₂ stats) comply with ≤2 requirement; graphics at ≥300 dpi PNG—export final TIFF prior to submission. |
+| Figures & tables                      | ✅ Ready     | Figure 1 (comparison plots) and Table 1 (RSS + relative L₂ stats) comply with ≤2 requirement; `make figures` now emits PNG/PDF/EPS/TIFF (`Fig1.*`) with embedded fonts (Type 42). |
 | Manuscript formatting                 | ✅ Ready     | LaTeX build passes; no line numbering; sections limited to three heading levels; keywords needed in final cover page.   |
 | References & self-citation            | ✅ Ready     | Bibliography trimmed to external sources; `references.bib` refreshed after removing Paradis (2019).                      |
 | Statements & Declarations section     | ⚠️ To Do     | Add combined “Statements and Declarations” block (Funding, Competing Interests, Data Availability, Author Contributions, Ethics/Consent as applicable). |
