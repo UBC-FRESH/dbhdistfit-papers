@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PYTHON ?= python
 
-.PHONY: help env data figures tables manuscript notebook repro clean
+.PHONY: help env data figures tables manuscript title-page cover-letter em-submission notebook repro clean
 
 help:
 	@echo "Available targets:"
@@ -9,6 +9,9 @@ help:
 	@echo "  make figures     - generate all manuscript figures into figures/"
 	@echo "  make tables      - generate all manuscript tables into tables/"
 	@echo "  make manuscript  - compile the LaTeX manuscript PDF"
+	@echo "  make title-page  - compile the Forest Science title page PDF"
+	@echo "  make cover-letter - compile the submission cover letter PDF"
+	@echo "  make em-submission- build flat Editorial Manager package (dir + zip)"
 	@echo "  make notebook    - execute the reproducible notebook"
 	@echo "  make repro       - run end-to-end reproducibility pipeline"
 	@echo "  make clean       - remove derived outputs"
@@ -31,6 +34,15 @@ tables: data
 
 manuscript:
 	$(MAKE) -C manuscript all
+
+title-page:
+	$(MAKE) -C manuscript title-page
+
+cover-letter:
+	$(MAKE) -C manuscript cover-letter
+
+em-submission: figures tables manuscript title-page cover-letter
+	$(PYTHON) scripts/prepare_em_submission.py
 
 notebook: data
 	$(PYTHON) -m jupyter nbconvert --to notebook --execute notebooks/hpsdistfit_repro.ipynb --output hpsdistfit_repro.executed.ipynb --output-dir notebooks
