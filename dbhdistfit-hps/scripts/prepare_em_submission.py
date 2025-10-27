@@ -61,6 +61,7 @@ def populate_destination() -> None:
         MANUSCRIPT_DIR / "title-page.tex",
         MANUSCRIPT_DIR / "cover-letter.pdf",
         MANUSCRIPT_DIR / "cover-letter.tex",
+        MANUSCRIPT_DIR / "cover-letter.txt",
     ]
     for path in artefacts:
         if path.exists():
