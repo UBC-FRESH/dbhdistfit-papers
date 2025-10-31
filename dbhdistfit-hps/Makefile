@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PYTHON ?= python
 
-.PHONY: help env data figures tables manuscript title-page cover-letter em-submission notebook repro clean
+.PHONY: help env data figures tables manuscript title-page cover-letter em-submission preprint notebook repro clean
 
 help:
 	@echo "Available targets:"
@@ -12,6 +12,7 @@ help:
 	@echo "  make title-page  - compile the Forest Science title page PDF"
 	@echo "  make cover-letter - compile the submission cover letter PDF"
 	@echo "  make em-submission- build flat Editorial Manager package (dir + zip)"
+	@echo "  make preprint    - compile EarthArXiv-ready preprint PDF"
 	@echo "  make notebook    - execute the reproducible notebook"
 	@echo "  make repro       - run end-to-end reproducibility pipeline"
 	@echo "  make clean       - remove derived outputs"
@@ -43,6 +44,9 @@ cover-letter:
 
 em-submission: figures tables manuscript title-page cover-letter
 	$(PYTHON) scripts/prepare_em_submission.py
+
+preprint: figures tables
+	$(PYTHON) scripts/build_preprint.py
 
 notebook: data
 	$(PYTHON) -m jupyter nbconvert --to notebook --execute notebooks/hpsdistfit_repro.ipynb --output hpsdistfit_repro.executed.ipynb --output-dir notebooks
