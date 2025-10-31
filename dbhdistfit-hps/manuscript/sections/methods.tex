@@ -1,4 +1,5 @@
 \section{Methods}
+\label{sec:methods}
 
 \subsection{Notation}
 Let $X$ denote the diameter at breast height (DBH) of a stem measured in
@@ -83,15 +84,10 @@ identical. The full derivation is included in the supplementary materials and
 extends to unbinned likelihood formulations.
 
 \subsection{Computational experiment}
-We reproduced and updated the experiment introduced in
-\citet{paradis2019submitted}. Permanent sample plot (PSP) data collected across
-Quebec \citep{gouvernement2019} provide stem tallies for 30 meta-plots
-combining species groups and cover types. The PSP tallies originate from
-fixed-area plots with constant expansion factors. We emulate HPS tallies by
-scaling each bin by the reciprocal of the HPS expansion factor, preserving the
-size-bias structure. For each of three representative meta-plots---spruce-pine-
-fir-larch softwood (SPFL-S), birch mixedwood (Birch-M), and maple hardwood
-(Maple-H)---we fit two distributions (Weibull and Gamma) using both the
-reference and weighted estimators. The experiment is implemented in modern
-Python (SciPy, NumPy, lmfit) and all scripts are provided in the companion
-repository.
+
+We updated the computational experiment using Quebec permanent sample plots
+\citep{gouvernement2019}, which provide stem tallies for 30 species--cover
+combinations. HPS tallies are emulated by scaling each bin by the reciprocal
+expansion factor, and for three representative meta-plots (SPFL-S, Birch-M,
+Maple-H) we fit Weibull and Gamma distributions with both estimators.
+Companion scripts handle preprocessing and fitting.

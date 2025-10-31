@@ -1,0 +1,26 @@
+Gregory E. Paradis
+Department of Forest Resources Management
+University of British Columbia
+2424 Main Mall
+Vancouver, BC V6T 1Z4
+Canada
+gregory.paradis@ubc.ca
+
+[Date]
+
+Editor-in-Chief
+Forest Science
+
+Dear Editor,
+
+Please consider the enclosed manuscript, “A Weighted Fitting Approach for Diameter Distributions from Horizontal Point Sampling,” for publication as a Brief Communication in Forest Science. The paper introduces a weighted nonlinear least squares estimator that reproduces the classical size-biased fitting procedure while operating directly on horizontal point sampling (HPS) tallies, removing the need to expand samples to stand-table form.
+
+Using provincial inventory data from Québec, I show that the weighted estimator matches the reference size-biased fits to near numerical precision: relative L2 errors fall below 8.5% in HPS space and 2.4% in stand-table space, and chi-square diagnostics remain within the same order of magnitude across species and cover-type combinations. The manuscript keeps the presentation concise—one figure and one table—while the accompanying reproducible workflow documents the complete analysis from raw data to manuscript.
+
+All scripts, configuration files, and processed datasets necessary to reproduce the results are openly available in the accompanying GitHub repository (https://github.com/UBC-FRESH/dbhdistfit-papers). Because the repository provides the full computational record, no separate supplementary material is submitted. For transparency, I will post this submitted version as a clearly labelled preprint on EarthArXiv noting that the manuscript is under review at Forest Science.
+
+The work has not been published elsewhere and is not under consideration by another journal. I have no competing interests to declare.
+
+Sincerely,
+
+Gregory E. Paradis
