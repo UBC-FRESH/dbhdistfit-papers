@@ -1,7 +1,7 @@
 LATEXMK ?= latexmk
 LATEX_FLAGS ?= -pdf -interaction=nonstopmode -file-line-error
 
-.PHONY: all clean title-page cover-letter
+.PHONY: all clean title-page cover-letter em-submission em-submission-zip
 
 all: main.pdf
 
@@ -17,6 +17,13 @@ cover-letter: cover-letter.pdf
 
 cover-letter.pdf: cover-letter.tex
 	$(LATEXMK) $(LATEX_FLAGS) cover-letter.tex
+
+em-submission: ../em-submission.zip
+
+em-submission-zip: ../em-submission.zip
+
+../em-submission.zip:
+	$(MAKE) -C .. em-submission
 
 clean:
 	$(LATEXMK) -C main.tex
