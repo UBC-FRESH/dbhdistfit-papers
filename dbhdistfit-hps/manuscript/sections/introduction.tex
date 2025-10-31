@@ -19,23 +19,11 @@ often impose complex parameter bounds that reduce numerical stability. As a
 result, practitioners occasionally bypass appropriate size-bias corrections,
 leading to over-fitted distributions and poor downstream predictions.
 
-This paper revisits the simplified method originally introduced in
-\citet{paradis2019submitted}, extends it with a formal equivalence argument,
-and packages the approach in a modern reproducible research workflow. The core
-idea is to fit standard-form PDFs to expanded HPS stand tables while embedding
-size-bias weights directly in the fitting algorithm. We show that the weighted
-objective function is proportional to the objective of the reference
-size-biased estimator, yielding identical parameter estimates and fitted
-curves. The new workflow includes:
-\begin{enumerate}
-  \item a clean mathematical exposition establishing the equivalence between
-  weighted and size-biased fitting;
-  \item an updated computational experiment using permanent sample plots from
-  Quebec to benchmark Weibull and Gamma distributions across multiple
-  meta-plots; and
-  \item a fully reproducible project scaffold containing LaTeX sources,
-  notebooks, and Python scripts that regenerate all figures and tables.
-\end{enumerate}
+We present a simplified method for fitting diameter distributions and prove
+it is equivalent to the size-biased estimator. The workflow fits standard
+PDFs to expanded HPS stand tables with embedded size-bias weights, validates
+the approach on Quebec PSP meta-plots, and ships a reproducible pipeline
+that regenerates figures and tables.
 
 The remainder of the manuscript introduces notation and the reference method,
 derives the weighted estimator, reports numerical comparisons, and discusses

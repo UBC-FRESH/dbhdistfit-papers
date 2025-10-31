@@ -1,13 +1,20 @@
 # Data artefacts
-data/raw/
-data/interim/
-data/processed/
+# data/
+# data/raw/
+# data/interim/
+# data/processed/
+
+# Virtual environments
+.venv/
 
 # Outputs
-figures/
-tables/
+# figures/
+# tables/
 manuscript/build/
 notebooks/*.executed.ipynb
+em-submission/
+em-submission.zip
+tmp/
 
 # TeX aux files
 manuscript/*.aux
@@ -15,3 +22,16 @@ manuscript/*.log
 manuscript/*.out
 manuscript/*.toc
 manuscript/*.synctex.gz
+manuscript/*.fdb_latexmk
+manuscript/*.fls
+manuscript/*.bbl
+manuscript/*.blg
+*.pyc
+
+# Preprint artefacts
+preprint/*.pdf
+preprint/*.aux
+preprint/*.log
+preprint/*.out
+preprint/*.fls
+preprint/*.fdb_latexmk
