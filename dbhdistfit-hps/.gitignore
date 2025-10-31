@@ -12,6 +12,9 @@
 # tables/
 manuscript/build/
 notebooks/*.executed.ipynb
+em-submission/
+em-submission.zip
+tmp/
 
 # TeX aux files
 manuscript/*.aux

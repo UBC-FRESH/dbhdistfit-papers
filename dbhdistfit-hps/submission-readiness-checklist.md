@@ -11,6 +11,7 @@
 | Data & reproducibility artefacts      | ✅ Ready     | DataLad subdataset (`data/`) with GitHub + S3 remotes; preprocessing script (`scripts/preprocess_data.py`) regenerates processed data; `make repro` rebuilds figures/tables/LaTeX. |
 | Supplementary information             | ✅ Ready     | No separate SI submission; manuscript and cover letter reference GitHub workflow for full reproducibility.              |
 | Title page metadata                   | ✅ Ready     | `manuscript/title-page.tex` prepared with author, affiliation, ORCID, keywords, and Forest Science word counts.          |
+| Double-blind compliance               | ✅ Ready     | `make em-submission` builds a blinded `main.tex/pdf` (author/statement details moved to title page; text anonymised).    |
 | Abstract & keywords                   | ✅ Ready     | Abstract is 134 words; five keywords listed post-title per journal guidance.                                            |
 | Cover letter                          | ✅ Ready     | Drafted in `manuscript/cover-letter.tex`, emphasising brief communication scope and reproducible workflow.              |
 | ORCID + submission portal data        | ✅ Ready     | ORCID (0000-0001-9618-8797) and disclosure statements present on title page and manuscript.                             |
