@@ -14,7 +14,6 @@ manuscript/build/
 notebooks/*.executed.ipynb
 em-submission/
 em-submission.zip
-preprint/
 tmp/
 
 # TeX aux files
@@ -28,3 +27,11 @@ manuscript/*.fls
 manuscript/*.bbl
 manuscript/*.blg
 *.pyc
+
+# Preprint artefacts
+preprint/*.pdf
+preprint/*.aux
+preprint/*.log
+preprint/*.out
+preprint/*.fls
+preprint/*.fdb_latexmk

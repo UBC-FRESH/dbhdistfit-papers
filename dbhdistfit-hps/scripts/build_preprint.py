@@ -15,32 +15,47 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT_DIR = PROJECT_ROOT / "manuscript"
-OUTPUT_DIR = PROJECT_ROOT / "preprint"
-PDF_NAME = "eartharxiv-preprint.pdf"
+PREPRINT_DIR = PROJECT_ROOT / "preprint"
+PREPRINT_TEX = PREPRINT_DIR / "preprint.tex"
+FINAL_PDF = PREPRINT_DIR / "eartharxiv-preprint.pdf"
 
 
-def run_latexmk() -> Path:
-    """Compile the manuscript with latexmk and return the PDF path."""
-    cmd = ["latexmk", "-pdf", "-interaction=nonstopmode", "-file-line-error", "main.tex"]
+def run_latexmk(tex_path: Path) -> None:
+    """Compile a LaTeX document with latexmk."""
+    cmd = ["latexmk", "-pdf", "-interaction=nonstopmode", "-file-line-error", tex_path.name]
     try:
-        subprocess.run(cmd, cwd=MANUSCRIPT_DIR, check=True)
+        subprocess.run(cmd, cwd=tex_path.parent, check=True)
     except FileNotFoundError as exc:
         raise RuntimeError("latexmk is required to build the preprint PDF.") from exc
-    return MANUSCRIPT_DIR / "main.pdf"
 
 
-def copy_preprint(pdf_path: Path) -> Path:
-    """Copy the compiled PDF into the preprint directory."""
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    destination = OUTPUT_DIR / PDF_NAME
-    shutil.copy2(pdf_path, destination)
-    return destination
+def clean_auxiliary_files(directory: Path, stem: str) -> None:
+    """Remove common LaTeX auxiliary files for the given stem."""
+    extensions = [".aux", ".log", ".out", ".fls", ".fdb_latexmk", ".synctex.gz"]
+    for ext in extensions:
+        candidate = directory / f"{stem}{ext}"
+        if candidate.exists():
+            candidate.unlink()
 
 
 def main() -> None:
-    pdf = run_latexmk()
-    destination = copy_preprint(pdf)
-    print(f"[preprint] Wrote {destination}")
+    PREPRINT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Ensure the manuscript PDF is up to date.
+    run_latexmk(MANUSCRIPT_DIR / "main.tex")
+    clean_auxiliary_files(MANUSCRIPT_DIR, "main")
+
+    if not PREPRINT_TEX.exists():
+        raise FileNotFoundError(f"Preprint template not found: {PREPRINT_TEX}")
+
+    run_latexmk(PREPRINT_TEX)
+    preprint_pdf = PREPRINT_DIR / "preprint.pdf"
+    if not preprint_pdf.exists():
+        raise FileNotFoundError("Failed to produce preprint.pdf")
+
+    shutil.copy2(preprint_pdf, FINAL_PDF)
+    clean_auxiliary_files(PREPRINT_DIR, "preprint")
+    print(f"[preprint] Wrote {FINAL_PDF}")
 
 
 if __name__ == "__main__":
