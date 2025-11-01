@@ -1,0 +1,20 @@
+# Placeholder configuration for figure generation
+# Will be populated once preprocessing outputs are defined.
+dataset: data/processed/truncation_binned.parquet
+output_dir: figures
+meta_plots:
+  - name: spruce_pine_fir_softwood
+    species_group: SPFL
+    cover_type: S
+    distributions: [weibull, gamma]
+  - name: birch_mixedwood
+    species_group: BIRCH
+    cover_type: M
+    distributions: [weibull, gamma]
+  - name: maple_hardwood
+    species_group: MAPLE
+    cover_type: H
+    distributions: [weibull, gamma]
+styling:
+  palette: deep
+  dpi: 300

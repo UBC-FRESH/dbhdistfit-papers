@@ -1,0 +1,10 @@
+# Placeholder configuration for table generation
+dataset: data/processed/truncation_binned.parquet
+output_dir: tables
+comparisons:
+  - meta_plot: spruce_pine_fir_softwood
+    metrics: [rss, chi_square, aicc]
+  - meta_plot: birch_mixedwood
+    metrics: [rss, chi_square, aicc]
+  - meta_plot: maple_hardwood
+    metrics: [rss, chi_square, aicc]
