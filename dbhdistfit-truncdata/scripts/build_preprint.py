@@ -6,6 +6,15 @@ import shutil
 import subprocess
 from pathlib import Path
 
+try:
+    from .common import project_path
+except ImportError:  # pragma: no cover
+    import sys
+
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from scripts.common import project_path
+
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT_DIR = PROJECT_ROOT / "manuscript"
 PREPRINT_DIR = PROJECT_ROOT / "preprint"

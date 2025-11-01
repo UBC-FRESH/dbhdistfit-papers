@@ -6,7 +6,13 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from .common import ensure_dir, project_path
+try:
+    from .common import ensure_dir, project_path
+except ImportError:  # pragma: no cover
+    import sys
+
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from scripts.common import ensure_dir, project_path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT_DIR = PROJECT_ROOT / "manuscript"

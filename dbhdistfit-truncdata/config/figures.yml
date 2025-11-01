@@ -4,16 +4,19 @@ dataset: data/processed/truncation_binned.parquet
 output_dir: figures
 meta_plots:
   - name: spruce_pine_fir_softwood
-    species_group: SPFL
-    cover_type: S
+    species_group: sepm
+    cover_type: r
+    title: SPFL - Softwood
     distributions: [weibull, gamma]
   - name: birch_mixedwood
-    species_group: BIRCH
-    cover_type: M
+    species_group: bop
+    cover_type: m
+    title: Birch - Mixedwood
     distributions: [weibull, gamma]
   - name: maple_hardwood
-    species_group: MAPLE
-    cover_type: H
+    species_group: ers
+    cover_type: f
+    title: Maple - Hardwood
     distributions: [weibull, gamma]
 styling:
   palette: deep
