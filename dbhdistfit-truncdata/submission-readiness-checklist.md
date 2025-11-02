@@ -2,7 +2,7 @@
 
 | Category | Status | Notes |
 | --- | --- | --- |
-| Article scope | ⚠️ In Progress | Narrative refresh nearly complete; target journal confirmation outstanding. |
+| Article scope | ✅ Ready | Forest Science Brief Communication scope confirmed; narrative aligned with word/figure limits. |
 | Data pipeline | ✅ Ready | Fixed-area preprocessing rebuilt around legacy PSP pickle (`scripts/preprocess_data.py`). |
 | Figures & tables | ✅ Ready | Regenerated after data refresh via `scripts/generate_figures.py` / `generate_tables.py`. |
 | Manuscript formatting | ✅ Ready | Word limit (<2,000 incl. refs) and 150-word abstract confirmed; build regenerates cleanly via `make dbhdistfit-truncdata-repro`. |
