@@ -8,14 +8,14 @@
 | Manuscript formatting | ⚠️ In Progress | LaTeX build clean; need journal style audit once venue is locked. |
 | Word count block | ✅ Ready | Automated via `manuscript/scripts/wordcount.sh` and populated in `main.tex`. |
 | Statements & Declarations | ✅ Ready | Funding, employment, and data statements updated in `main.tex`. |
-| Data availability | ⚠️ In Progress | In-text GitHub reference added; README/DataLad instructions still to update. |
+| Data availability | ✅ Ready | Manuscript cites GitHub repo; README/DataLad guidance and notebook references refreshed. |
 | Double-blind package | ✅ Ready | `make em-submission` verified; flat archive produced. |
 | Preprint | ✅ Ready | `make preprint` generates EarthArXiv cover + manuscript bundle. |
-| Cover letter | ⚠️ Pending | Tailor journal metadata once submission venue is locked. |
-| ORCID & metadata | ⚠️ Pending | Confirm portal requirements prior to submission. |
+| Cover letter | ⚠️ In Progress | Forest Science template drafted; final date/signature to insert prior to submission. |
+| ORCID & metadata | ✅ Ready | ORCID recorded on title page; submission metadata summarised in `submission-metadata.md`. |
 | Final proofing | ⚠️ Pending | Word count, linting, and QA to run at finalisation. |
 
 ### Immediate Next Steps
-1. Lock target journal and run a style audit (front matter, headings, reference format).
-2. Update repository README/DataLad instructions to match the manuscript’s GitHub reference and note weighting guidance.
-3. Draft cover-letter boilerplate and collect ORCID/metadata details ahead of portal entry.
+1. Complete Forest Science style audit adjustments (front matter wording, title-page checks, reference format).
+2. Finalise cover letter (insert submission date, add any co-author signatures if required).
+3. Schedule final proofing pass (spellcheck, linting, repository clean build) prior to portal upload.

@@ -9,15 +9,15 @@ gregory.paradis@ubc.ca
 [Date]
 
 Editor-in-Chief
-Journal TBD
+Forest Science
 
 Dear Editor,
 
 Please consider the enclosed manuscript, "A Two-Stage Fitting Method for Truncated Stem Diameter Distributions," for publication as a Brief Communication. The paper revisits the legacy truncated-diameter estimator and demonstrates how a two-stage workflow operating on complete-form distributions reproduces the best-practice truncated likelihood fits.
 
-Using fixed-area permanent sample plot tallies from Québec, Canada, I compare the two-stage method against classical truncated forms across multiple species/cover combinations. The manuscript keeps the presentation concise while the accompanying reproducible workflow documents every step from raw PSP tallies to tables, figures, and LaTeX builds.
+Using fixed-area permanent sample plot tallies from Québec, Canada, I compare the two-stage method against classical truncated forms across multiple species/cover combinations. The submission is within the Brief Communication format (1,984 words including references, one figure, one table) and focuses on the methodological swap-out that enables analysts to retain standard software while matching truncated-density results.
 
-All scripts, configuration files, and processed datasets necessary to reproduce the results will be archived in the accompanying GitHub repository (https://github.com/UBC-FRESH/dbhdistfit-papers) and mirrored with an EarthArXiv preprint clearly labelled as under review.
+The accompanying GitHub repository (https://github.com/UBC-FRESH/dbhdistfit-papers) provides the notebook, scripts, and legacy PSP tallies required to reproduce every figure, table, and LaTeX build. A preprint labelled “under review” will mirror the submission package on EarthArXiv upon request from the journal.
 
 The work has not been published elsewhere and is not under consideration by another journal. I have no competing interests to declare.
 
