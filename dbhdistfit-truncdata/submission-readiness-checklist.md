@@ -16,6 +16,6 @@
 | Final proofing | ⚠️ Pending | Word count, linting, and QA to run at finalisation. |
 
 ### Immediate Next Steps
-1. Finalise narrative polish while maintaining the brief word limit (currently 1\,877 words including references).
+1. Finalise narrative polish while maintaining the brief word limit (currently 1\,833 words including references).
 2. Expand data availability text to document DataLad workflow and external PSP data access procedures.
 3. Update legacy citations/appendix mathematics as needed, then begin polishing title-page/cover-letter content for Forest Science submission.
