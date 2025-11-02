@@ -22,6 +22,7 @@ except ImportError:  # pragma: no cover
 CONFIG_DEFAULT = project_path("config", "tables.yml")
 OUTPUT_CSV = project_path("tables", "method_comparison.csv")
 OUTPUT_JSON = project_path("tables", "method_comparison.json")
+OUTPUT_TEX = project_path("tables", "method_comparison.tex")
 
 
 def format_params(result, exclude_scaling: bool = True) -> str:
@@ -76,11 +77,23 @@ def main(config_path: Path | str = CONFIG_DEFAULT) -> None:
     df = pd.DataFrame(rows)
     df.sort_values(["species_group", "cover_type"], inplace=True)
     df.to_csv(OUTPUT_CSV, index=False)
+    latex_df = df.rename(
+        columns={
+            "species_group": "Species Group",
+            "cover_type": "Cover Type",
+            "distribution": "Distribution",
+            "stage1_params": "Stage 1 Parameters",
+            "stage2_params": "Stage 2 Parameters",
+            "aicc_stage2": "AICc (Stage 2)",
+        }
+    )
+    latex_table = latex_df.to_latex(index=False, escape=False, longtable=False)
+    OUTPUT_TEX.write_text(latex_table)
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_JSON.write_text(json.dumps(summary, indent=2))
 
-    print(f"[tables] wrote {OUTPUT_CSV} and {OUTPUT_JSON}")
+    print(f"[tables] wrote {OUTPUT_CSV}, {OUTPUT_TEX}, and {OUTPUT_JSON}")
 
 
 if __name__ == "__main__":

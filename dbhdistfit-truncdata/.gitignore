@@ -26,6 +26,7 @@ manuscript/*.fdb_latexmk
 manuscript/*.fls
 manuscript/*.bbl
 manuscript/*.blg
+manuscript/*.pdf
 
 # Python cache
 *.pyc

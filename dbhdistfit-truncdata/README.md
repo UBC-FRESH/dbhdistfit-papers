@@ -2,11 +2,11 @@
 
 Reimplementation of the truncated-diameter fitting manuscript using the modern reproducible project scaffold. The scope mirrors the legacy `dbhdistfit-old/dbhdistfit_method-truncdata` article while adopting the automated workflow used for the HPS paper.
 
-## Planned Components
-- Reusable data-processing pipeline that ingests fixed-area PSP tallies (shared raw source with the HPS project) and applies constant plot expansion factors instead of HPS-only logic.
-- Scripted generation of all tables and figures comparing the two-stage estimator with classical truncated-distribution fits.
-- Modular LaTeX manuscript (`manuscript/`) aligned with Forest Science formatting patterns used previously, including automated word-count, EM packaging, and EarthArXiv preprint builds.
-- Jupyter notebook(s) that demonstrate the analysis end-to-end for transparency and reviewer supplement needs.
+## Pipeline Overview
+- `make data` expands fixed-area PSP tallies (shared with the HPS project) and produces normalised stand tables in `data/processed/`.
+- `make tables` / `make figures` regenerate the comparison artefacts via `scripts/generate_tables.py` and `scripts/generate_figures.py`.
+- `make manuscript` builds the LaTeX sources under `manuscript/`; title page, cover letter, EM package, and preprint targets mirror the HPS project.
+- A reproducibility notebook will summarise the scripted analysis for reviewer supplements (pending).
 
 ## Directory Layout
 ```
@@ -19,8 +19,7 @@ data/                  # DataLad subdataset (to be initialised) for PSP fixed-ar
 preprint/, em-submission/, tmp/  # Build artefacts
 ```
 
-## Next Steps
-1. Port mathematical exposition and experimental design from the legacy LaTeX into sectioned files.
-2. Stand up preprocessing scripts that reuse the PSP dataset while respecting fixed-area expansions.
-3. Rebuild tables/figures as code-generated artefacts and wire them into the manuscript.
-4. Finalise submission tooling (double-blind package, checklists, EarthArXiv cover page).
+## Remaining Tasks
+1. Finish porting legacy prose (especially appendix mathematics) and refresh citations.
+2. Benchmark generated tables/figures against the original notebook results and note any deltas in the discussion.
+3. Add a reproducibility notebook and exercise the submission tooling (double-blind package, EarthArXiv build, word-count checks).

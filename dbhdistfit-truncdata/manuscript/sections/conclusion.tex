@@ -1,4 +1,8 @@
 % !TEX root = ../main.tex
 \section{Conclusion}
 
-Placeholder conclusion reiterating contributions and outlining future work.
+\label{sec:conclusion}
+
+Fitting complete-form distributions to truncated inventory data yields biased estimates and poor tail behaviour. The recommended truncated-likelihood baseline delivers accurate curves but requires bespoke implementation of truncated PDFs for every candidate family. Our two-stage approach captures the advantages of the truncated estimator while retaining the simplicity of complete-form implementations. In the replicated computational experiment the two-stage method consistently matched or outperformed the truncated baseline and dominated the naive complete-form approach.
+
+The reproducible workflow developed here automates data preparation, fitting, figure and table generation, and manuscript builds. All code and anonymised intermediate datasets will be published alongside the manuscript, enabling practitioners to apply the two-stage estimator to other truncated measurement problems.
