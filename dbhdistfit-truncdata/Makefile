@@ -38,7 +38,7 @@ title-page:
 	$(MAKE) -C manuscript title-page
 
 cover-letter:
-	$(MAKE) -C manuscript cover-letter
+	@test -f manuscript/cover-letter.txt || (echo "cover-letter.txt missing" && exit 1)
 
 preprint: figures tables manuscript
 	$(PYTHON) scripts/build_preprint.py
