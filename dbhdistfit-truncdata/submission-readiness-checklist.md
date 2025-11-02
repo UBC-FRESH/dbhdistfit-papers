@@ -5,7 +5,7 @@
 | Article scope | ⚠️ In Progress | Narrative refresh nearly complete; target journal confirmation outstanding. |
 | Data pipeline | ✅ Ready | Fixed-area preprocessing rebuilt around legacy PSP pickle (`scripts/preprocess_data.py`). |
 | Figures & tables | ✅ Ready | Regenerated after data refresh via `scripts/generate_figures.py` / `generate_tables.py`. |
-| Manuscript formatting | ⚠️ In Progress | LaTeX build clean; need journal style audit once venue is locked. |
+| Manuscript formatting | ✅ Ready | Word limit (<2,000 incl. refs) and 150-word abstract confirmed; build regenerates cleanly via `make dbhdistfit-truncdata-repro`. |
 | Word count block | ✅ Ready | Automated via `manuscript/scripts/wordcount.sh` and populated in `main.tex`. |
 | Statements & Declarations | ✅ Ready | Funding, employment, and data statements updated in `main.tex`. |
 | Data availability | ✅ Ready | Manuscript cites GitHub repo; README/DataLad guidance and notebook references refreshed. |

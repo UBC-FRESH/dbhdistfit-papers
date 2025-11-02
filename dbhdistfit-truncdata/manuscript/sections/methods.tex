@@ -18,7 +18,7 @@ with residuals
 \begin{equation}
   e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
 \end{equation}
-where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$ for all $i$) to streamline the narrative and align the direct comparison with the published truncated baseline, which is the focus of this note. In applied settings the per-bin residuals should be weighted by sampling uncertainty so sparse edge classes do not dominate the fit; the companion repository notebook documents the plot-level tallies and demonstrates how to construct those inverse-variance weights when needed.
+where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$) to streamline the narrative and align the comparison with the published truncated baseline. The companion repository notebook documents the plot-level tallies and demonstrates how to construct inverse-variance weights when analysts wish to down-weight sparse edge bins.
 
 Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
 \begin{equation}
@@ -44,7 +44,7 @@ We use the \texttt{lmfit} package to wrap each probability density function into
 \subsection{Candidate distributions and model selection}
 \label{sec:methods_candidates}
 
-The original analysis evaluated a broad family of generalised beta distributions. In this reimplementation we concentrate on the two distributions that dominated the published results: the two-parameter Weibull and gamma distributions (both specialisations of the generalised gamma). Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
+The original analysis evaluated a broad family of generalised beta distributions; here we concentrate on the two-parameter Weibull and gamma distributions that dominated the published results (both specialisations of the generalised gamma). Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
 \begin{equation}
   \text{AICc} = \text{AIC} + \frac{2K(K+1)}{n - K - 1},
 \end{equation}
