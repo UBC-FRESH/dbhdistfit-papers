@@ -5,9 +5,7 @@
 \subsection{Inventory binning}
 \label{sec:methods_binning}
 
-The legacy workflow operates on permanent sample plots drawn from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregated fixed-area plot tallies into 2~cm diameter classes spanning 10--60~cm DBH. The raw tallies $t_{ij}$ record the number of stems in plot $j$ falling in bin $i$. Because each plot covers $0.04$~ha, stems per hectare are obtained by multiplying by the constant expansion factor $s_{\text{plot}} = 1 / 0.04 = 25$. The empirically observed stand table for bin $i$ is therefore $\hat{y}_i = s_{\text{plot}} \, t_i$, where $t_i$ is the mean tally across plots.
-
-Following the original notebook, we normalise binned observations so that the histogram integrates to one, i.e.\ $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm. The vector $\bm{\hat{Y}} = \{\hat{y}_i^{(n)}\}$ represents a truncated empirical probability density function supported on $[a, b] = [10, 60]$~cm.
+The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH. Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
 
 \subsection{Weighted non-linear least squares}
 \label{sec:methods_nlls}
@@ -20,7 +18,7 @@ with residuals
 \begin{equation}
   e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
 \end{equation}
-where $x_i$ denotes the class midpoint for bin $i$, $f$ is the probability density function evaluated at $x_i$, and $\bm{P}$ is the vector of free parameters. In the original legacy analysis, $w_i$ reflects the relative sampling error for bin $i$; because the public meta-plot data available to us no longer retain individual plot counts we set $w_i = 1$ for all bins.
+where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. The legacy notebook weighted residuals by sampling error, but the public meta-plot summaries lack per-plot tallies, so we set $w_i = 1$ for all bins.
 
 Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
 \begin{equation}

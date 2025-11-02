@@ -9,13 +9,13 @@
 | Word count block | ✅ Ready | Automated via `manuscript/scripts/wordcount.sh` and populated in `main.tex`. |
 | Statements & Declarations | ✅ Ready | Funding, employment, and data statements updated in `main.tex`. |
 | Data availability | ⚠️ In Progress | Reference GitHub/DataLad workflow in manuscript and README. |
-| Double-blind package | ⚠️ Pending | Run and verify `scripts/prepare_em_submission.py` once manuscript stabilises. |
-| Preprint | ⚠️ Pending | Build EarthArXiv PDF after manuscript text is finalised. |
+| Double-blind package | ✅ Ready | `make em-submission` verified; flat archive produced. |
+| Preprint | ✅ Ready | `make preprint` generates EarthArXiv cover + manuscript bundle. |
 | Cover letter | ⚠️ Pending | Tailor journal metadata once submission venue is locked. |
 | ORCID & metadata | ⚠️ Pending | Confirm portal requirements prior to submission. |
 | Final proofing | ⚠️ Pending | Word count, linting, and QA to run at finalisation. |
 
 ### Immediate Next Steps
-1. Finish porting legacy material (narrative polish + appendix cross-check) and refresh citations/references.
-2. Validate tables/figures against the original notebook and document any deviations in the discussion.
-3. Add reproducibility notebook plus EM/preprint packaging tests before submission tooling.
+1. Finalise narrative polish while maintaining the brief word limit (currently 1\,877 words including references).
+2. Expand data availability text to document DataLad workflow and external PSP data access procedures.
+3. Update legacy citations/appendix mathematics as needed, then begin polishing title-page/cover-letter content for Forest Science submission.

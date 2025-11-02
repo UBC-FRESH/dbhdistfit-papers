@@ -6,7 +6,7 @@ Reimplementation of the truncated-diameter fitting manuscript using the modern r
 - `make data` expands fixed-area PSP tallies (shared with the HPS project) and produces normalised stand tables in `data/processed/`.
 - `make tables` / `make figures` regenerate the comparison artefacts via `scripts/generate_tables.py` and `scripts/generate_figures.py`.
 - `make manuscript` builds the LaTeX sources under `manuscript/`; title page, cover letter, EM package, and preprint targets mirror the HPS project.
-- A reproducibility notebook will summarise the scripted analysis for reviewer supplements (pending).
+- A reproducibility notebook (`notebooks/dbhdistfit_truncdata.ipynb`) executes the end-to-end pipeline for reviewer supplements.
 
 ## Directory Layout
 ```
@@ -20,6 +20,6 @@ preprint/, em-submission/, tmp/  # Build artefacts
 ```
 
 ## Remaining Tasks
-1. Finish porting legacy prose (especially appendix mathematics) and refresh citations.
-2. Benchmark generated tables/figures against the original notebook results and note any deltas in the discussion.
-3. Add a reproducibility notebook and exercise the submission tooling (double-blind package, EarthArXiv build, word-count checks).
+1. Finalise the manuscript narrative while keeping the brief word limit satisfied.
+2. Expand the data availability statement with DataLad usage notes and provenance for the PSP inputs.
+3. Finalise citation updates and polish the title page / cover letter ahead of submission.
