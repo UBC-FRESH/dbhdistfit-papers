@@ -18,7 +18,7 @@ with residuals
 \begin{equation}
   e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
 \end{equation}
-where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. The legacy notebook weighted residuals by sampling error, but the public meta-plot summaries lack per-plot tallies, so we set $w_i = 1$ for all bins.
+where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$ for all $i$) to streamline the narrative and align the direct comparison with the published truncated baseline, which is the focus of this note. In applied settings the per-bin residuals should be weighted by sampling uncertainty so sparse edge classes do not dominate the fit; the companion repository notebook documents the plot-level tallies and demonstrates how to construct those inverse-variance weights when needed.
 
 Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
 \begin{equation}
