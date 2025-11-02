@@ -1,0 +1,860 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_2) (preloaded format=pdflatex 2017.12.21)  23 SEP 2019 17:45
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\input sample.tex
+(./sample.tex (./foresj.cls
+
+LaTeX Warning: You have requested document class `foresj',
+               but the document class provides `Foresj'.
+
+Document Class: Foresj 2004/07/05 G-Series, Version 0.1
+(C) 2004 Techset Composition Pvt. Ltd.
+
+
+(/opt/local/share/texmf-texlive/tex/latex/crop/crop.sty
+Package: crop 2003/05/20 v1.9 crop marks (mf)
+\stockwidth=\dimen102
+\stockheight=\dimen103
+\CROP@index=\count79
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count80
+))
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/opt/local/share/texmf-texlive/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\CROP@offset=\count81
+)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen106
+\extrarowheight=\dimen107
+\NC@list=\toks15
+\extratabsurround=\skip41
+\backup@length=\skip42
+)
+(/opt/local/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks16
+\thm@bodyfont=\toks17
+\thm@headfont=\toks18
+\thm@notefont=\toks19
+\thm@headpunct=\toks20
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks21
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen108
+))
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen109
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count82
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count83
+\leftroot@=\count84
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count85
+\DOTSCASE@=\count86
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count87
+\c@MaxMatrixCols=\count88
+\dotsspace@=\muskip10
+\c@parentequation=\count89
+\dspbrk@lvl=\count90
+\tag@help=\toks23
+\row@=\count91
+\column@=\count92
+\maxfields@=\count93
+\andhelp@=\toks24
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks25
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/opt/local/share/texmf-texlive/tex/latex/amscls/upref.sty
+Package: upref 2007/03/14 v2.04
+)
+(/opt/local/share/texmf-texlive/tex/latex/endnotes/endnotes.sty
+\c@endnote=\count94
+\endnotesep=\dimen117
+\@enotes=\write3
+)
+(/opt/local/share/texmf-texlive/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/opt/local/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count95
+\rotFPtop=\skip49
+\rotFPbot=\skip50
+\rot@float@box=\box28
+\rot@mess@toks=\toks27
+)
+(/opt/local/share/texmf-texlive/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+(/opt/local/share/texmf-texlive/tex/latex/boxedminipage/boxedminipage.sty)
+(/opt/local/share/texmf-texlive/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count96
+\c@dblbotnumber=\count97
+)
+(/opt/local/share/texmf-texlive/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/opt/local/share/texmf-texlive/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count98
+\mult@box=\box29
+\multicol@leftmargin=\dimen118
+\c@unbalance=\count99
+\c@collectmore=\count100
+\doublecol@number=\count101
+\multicoltolerance=\count102
+\multicolpretolerance=\count103
+\full@width=\dimen119
+\page@free=\dimen120
+\premulticols=\dimen121
+\postmulticols=\dimen122
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
+\partial@page=\box30
+\last@line=\box31
+\maxbalancingoverflow=\dimen123
+\mult@rightbox=\box32
+\mult@grightbox=\box33
+\mult@gfirstbox=\box34
+\mult@firstbox=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\c@columnbadness=\count104
+\c@finalcolumnbadness=\count105
+\last@try=\dimen124
+\multicolovershoot=\dimen125
+\multicolundershoot=\dimen126
+\mult@nat@firstbox=\box53
+\colbreak@box=\box54
+\mc@col@check@num=\count106
+)
+(/opt/local/share/texmf-texlive/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+)
+\c@part=\count107
+\c@section=\count108
+\c@rsection=\count109
+\c@subsection=\count110
+\c@rsubsection=\count111
+\c@subsubsection=\count112
+\c@paragraph=\count113
+\c@subparagraph=\count114
+\c@refsection=\count115
+\c@acksection=\count116
+\c@figure=\count117
+\c@scheme=\count118
+\c@table=\count119
+\@abstractbox=\box55
+\rotdimen=\dimen127
+\abovecaptionskip=\skip53
+\belowcaptionskip=\skip54
+\figurecaptionbox=\box56
+\schemecaptionbox=\box57
+\tablecaptionbox=\box58
+\tempdime=\dimen128
+\temptbox=\box59
+\abovefigskip=\skip55
+\belowfigskip=\skip56
+\cmskipamount=\skip57
+\c@savesecnumdepth=\count120
+
+(/opt/local/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip58
+\bibsep=\skip59
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count121
+)
+\normskip=\skip60
+\p@renwd=\dimen129
+\bmskip=\dimen130
+\c@mythm=\count122
+
+(/opt/local/share/texmf-texlive/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/opt/local/share/texmf-texlive/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count123
+\output=\toks28
+\linenoprevgraf=\count124
+\linenumbersep=\dimen131
+\linenumberwidth=\dimen132
+\c@linenumber=\count125
+\c@pagewiselinenumber=\count126
+\c@LN@truepage=\count127
+\c@internallinenumber=\count128
+\c@internallinenumbers=\count129
+\quotelinenumbersep=\dimen133
+\bframerule=\dimen134
+\bframesep=\dimen135
+\bframebox=\box60
+LaTeX Info: Redefining \\ on input line 3056.
+)) (./sample.aux)
+\openout1 = `sample.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count130
+\scratchdimen=\dimen136
+\scratchbox=\box61
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen137
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks30
+) (/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package crop Info: requested driver: `' on input line 9.
+Package crop Info: detected driver: `pdftex' on input line 9.
+Package crop Info: using `pdftex' graphics driver on input line 9.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 45.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 45.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/it' in size <16> not available
+(Font)              size <17.28> substituted on input line 45.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <35> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
+(Font)              size <24.88> substituted on input line 80.
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (74.0pt too high) has occurred while \output is active []
+
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 80.
+
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}
+Non-PDF special ignored!
+
+
+]
+
+Package natbib Warning: Multiple citation on page 2: same authors and year
+(natbib)                without distinguishing extra letter,
+(natbib)                appears as question mark.
+
+
+Overfull \hbox (290.21811pt too wide) detected at line 166
+ [] 
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 172--194
+[] \OT1/cmr/m/n/9 + [])$. Whole plots were arranged in
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 172--194
+\OT1/cmr/m/n/9 four blocks, and a fac-to-rial com-bi-na-tion of weed control
+ []
+
+
+Underfull \hbox (badness 7344) in paragraph at lines 172--194
+\OT1/cmr/m/n/9 ($[]0 = []$ prepa-ra-tion treat-ment, $[]1 = []$ prepa-ra-tion
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 172--194
+[] \OT1/cmr/m/n/9 banded) and fer-til-iza-tion ($[]0 = []$
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 172--194
+\OT1/cmr/m/n/9 at estab-lish-ment, $[]1 = []$, phos-pho-rus and boron at
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 172--194
+[] \OT1/cmr/m/n/9 + []$, phos-pho-rus, potas-sium and boron
+ []
+
+
+Underfull \hbox (badness 3229) in paragraph at lines 195--242
+[]\OT1/cmr/m/n/9 Tillage treat-ments were applied February--March 2000.
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[2]
+Overfull \hbox (290.21811pt too wide) detected at line 312
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (13.1pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[] []
+ []
+
+[3]
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[4]
+Underfull \hbox (badness 1622) in paragraph at lines 440--447
+\OT1/cmr/m/n/9 We inves-ti-gated rela-tion-ships among LAI and incre-men-tal
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 527--528
+[]$\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 ^^L^^N\OT1/cmr/m/n/9 )[]$ is the jlth fer-ti
+l-iza-tion $\OMS/cmsy/m/n/9 ^^B$ \OT1/cmr/m/n/9 weed con-trol inter-ac-
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 540--547
+\OT1/cmr/m/n/9 sion 9.1 mod-ules PROC GLM, and PROC MIXED using
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 540--547
+\OT1/cmr/m/n/9 the Sat-terth-waite degrees of free-dom option.SAS Insti-tute
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 548.
+
+
+Overfull \hbox (406.99686pt too wide) detected at line 631
+ [] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 634.
+
+
+Overfull \hbox (21.33194pt too wide) in alignment at lines 668--668
+[] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (21.33194pt too wide) in alignment at lines 668--668
+[] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (290.21811pt too wide) detected at line 668
+ [] 
+ []
+
+
+Overfull \vbox (13.1pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[] []
+ []
+
+[5]
+Underfull \hbox (badness 10000) detected at line 732
+[]
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 788.
+
+
+Underfull \hbox (badness 10000) detected at line 789
+[]
+ []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (13.1pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[] []
+ []
+
+[7]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 863.
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 901--901
+\OT1/cmr/m/n/8 (a) Full model: $[](\OML/cmm/m/it/8 Y[]\OT1/cmr/m/n/8 ) = \OML/c
+mm/m/it/8 a \OT1/cmr/m/n/8 + \OML/cmm/m/it/8 b \OMS/cmsy/m/n/8 ^^B \OML/cmm/m/i
+t/8 Z[] \OT1/cmr/m/n/8 + \OML/cmm/m/it/8 c \OMS/cmsy/m/n/8 ^^B []\OT1/cmr/m/n/8
+ (\OML/cmm/m/it/8 X[]\OT1/cmr/m/n/8 ) + \OML/cmm/m/it/8 d \OMS/cmsy/m/n/8 ^^B \
+OML/cmm/m/it/8 Z[] \OMS/cmsy/m/n/8 ^^B
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 943--960
+[]\OT1/cmr/m/n/9 Taking into account dif-fer-ences in biomass com-po-nents
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 976--993
+\OT1/cmr/m/n/9 LAI, an index of pho-to-syn-thetic area inter-cept-ing radi-a-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (13.1pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[] []
+ []
+
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[10]
+Underfull \hbox (badness 1314) in paragraph at lines 1347--1351
+\OT1/cmr/m/n/8 water-uptake and growth of radi-ata pine\OT1/cmr/m/it/8 . Tree P
+hys-iol\OT1/cmr/m/n/8 . \OT1/cmr/bx/n/8 10\OT1/cmr/m/n/8 ,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (13.1pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[] []
+ []
+
+[11] Setting LastPage
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+
+Overfull \vbox (12.99998pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (270.61063pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][]
+ []
+
+[12] (./sample.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 10.12pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4420 strings out of 494907
+ 56553 string characters out of 6179500
+ 172028 words of memory out of 5000000
+ 7612 multiletter control sequences out of 15000+600000
+ 19110 words of font info for 70 fonts, out of 8000000 for 9000
+ 24 hyphenation exceptions out of 8191
+ 39i,15n,34p,520b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb10.pfb></op
+t/local/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></op
+t/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/loc
+al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/local/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx7.pfb></opt/local/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmbx8.pfb></opt/local/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/local/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmmi9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
+s/cmextra/cmmib7.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/
+local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/local/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/local/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/local/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/local/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts
+/symbols/msam10.pfb>
+Output written on sample.pdf (12 pages, 359604 bytes).
+PDF statistics:
+ 152 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

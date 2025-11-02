@@ -20,7 +20,7 @@ except ImportError:  # pragma: no cover - allow execution as a script
     from scripts.common import ensure_dir, project_path
 
 LEGACY_PICKLE_ENV = "DBHDISTFIT_TRUNCDATA_PICKLE"
-LEGACY_PICKLE_PATH = project_path("..", "pspdistfit", "dat", "misc", "tiges_final_full.p")
+LEGACY_PICKLE_PATH = project_path("..", "legacy", "pspdistfit", "dat", "misc", "tiges_final_full.p")
 OUTPUT_PARQUET = project_path("data", "processed", "truncation_binned.parquet")
 OUTPUT_DIR = OUTPUT_PARQUET.parent
 

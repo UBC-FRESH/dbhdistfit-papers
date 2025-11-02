@@ -1,0 +1,75 @@
+
+
+  
+  In practice, the technical challenges of fitting truncated data to a truncated target distribution may reduce productivity or negatively affect quality of the analysis.
+  For example, the statistical analysis software package used may not include truncated forms of all the target distributions the analyst wants to test, the analyst may not have access to the literature describing the mathematical formulation of the truncated form of the target distribution, or may lack the technical proficiency required to mathematically derive truncated forms of new target distributions and correctly extend the environment to include this new truncated distribution.
+
+
+  
+  In these 
+  ---in these cases, analysts may default to fitting truncated data to  
+
+  to have certain  poses certain technical challenges that may be problematic 
+
+  The technical challenges of
+  
+  Truncated forms of several common distributions have been published, but will not be
+
+  
+Our objective is to develop a methodology that can be used to derive a stem diameter distribution model for any combination of species and cover type in Quebec, Canada, using readily-available data from the government-run permanent sample plot inventory program. 
+We test 25 truncated distributions from the generalized beta family to a large dataset of stems inventoried from permanent fixed-area plots in the province of Quebec, Canada, using a non-linear least-squares parameter-fitting algorithm.
+We describe a two-stage parameter-fitting methodology that produces improved estimates of parameter estimation error and parameter correlation for input data with bounded domain.
+We report best-fit distribution, best-fit parameter estimates (with standard error on parameter estimates), and AICc for each of 30 subdatasets covering the entire province of Quebec (representing all combinations of 10 species groups and 3 cover types).
+Best-fit results are clearly dominated by the four distributions in the generalized gamma family. 
+
+
+Modelling truncated forms of arbitrary target distributions is relatively easy in some software environments (e.g., using the \texttt{truncdist} package in R, as described in \citet{nadarajah2006r}), but may prove more technically challenging in other environments. (particularly if the analyst is not comfortable deriving truncated mathematical formulation from . 
+However, 
+
+using common techniques 
+
+
+
+, and plot data will be fitt
+
+
+unmerchantable 
+If diameter is not measured for some tallied stems, the data is said to be \emph{censored}.
+If stems 
+
+
+
+have long played an important role in forestry.
+% The literature contains many examples of stem diameter distribution models.
+
+
+, using a stem
+diameter dataset extracted from permanent sample plots in Quebec (Canada)
+
+Published models tend to be specific to a given combination of species, stand structure, geographic area, and inventory sampling method. 
+No stem diameter distribution models have been published to date for the province of Quebec, Canada.
+Furthermore, no generalized methodology has been published to model stem diameter distributions from permanent sample plot (PSP) data, documenting how to correctly estimate best-fit parameter uncertainty and correlations for the common case where observed diameter data has \emph{a priori} bounded domain (e.g. only merchantable stems of a certain minimum diameter are inventoried and trees never grow beyond a certain maximum diameter).
+The present study fills these gaps in the literature.
+
+
+The most commonly-used statistical model used to describe stem diameter seems to be the Weibull distribution \citep{bailey1973quantifying, liu2002finite, cao2004predicting, coomes2007mortality}. 
+Other models include the gamma \citep{nelson1964diameter}, exponential \citep{meyer1943structure} and $S_B$ \citep{johnson1949systems} distributions.
+The Weibull, gamma and exponential distributions are all derivatives of the generalized gamma distribution, which is itself a member of the of generalized beta family of statistical distributions.
+
+We fit 25 truncated distributions from the generalized beta family to a large dataset of stems from government-compiled permanent fixed-area plots in the province of Quebec, Canada.
+We describe a two-stage distribution-fitting methodology that correctly handles parameter estimation error and correlations for input data with bounded domain.
+We present best-fit distributions for 30 combinations of species group and cover type.
+
+Our best-fit distribution results cover all combinations of species and cover types in Quebec, and could be used directly.
+Alternatively, our methodology can be easily replicated using readily-available PSP data, for example to derive models for different aggregations of species and cover type, or for a different geographic extent of plot data used as input.
+The two-stage parameter-fitting methodology is potentially applicable to any context where trunctated data is fitted to standard-form statistical distributions.
+
+The remainder of this paper is organized as follows.
+We describe our methodology in \S\ref{sec:methods}. 
+Results are presented in \S\ref{sec:results}, followed by discussion in \S\ref{sec:discussion}. % and concluding remarks in %%%%%%%%%%%%%%%%%%%%%%%\S\ref{sec:conclusion}.
+
+
+
+  
+  To follow this recommendation and apply the , one must have access to either a special truncated form $f^T$ of the PDF, or the CDF $F$ (to derive $f^T$ by scaling $f$ by the inverse of the area under the truncated tails). CDFs have been published for some distribution, but in other cases are unavailable and difficult to derive (due to difficulty of algebraically integrating $f$).
+  It is usually possible to compute a reasonable approximation of $F$ using numical integration (which is what we did here for both Weibull and gamma distributions), but this requires more advanaced software skills than straigh parameter-fitting and introduces additional risk of errors from software bugs in numerical integration routine.

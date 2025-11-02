@@ -1,0 +1,9 @@
+#!/bin/bash
+rm *.aux
+rm *.log
+rm *.bbl
+rm *.blg
+pdflatex -synctex=1 $1.tex
+bibtex $1
+pdflatex -synctex=1 $1.tex
+pdflatex -synctex=1 $1.tex

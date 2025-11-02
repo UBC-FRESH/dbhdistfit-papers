@@ -1,0 +1,14 @@
+channels:
+    - conda-forge
+dependencies:
+    - matplotlib
+    - numpy
+    - scipy
+    - pandas
+    - geopandas
+    - seaborn
+    - pysal
+    - lmfit
+    - pip
+    - pip:
+      - ipy_table

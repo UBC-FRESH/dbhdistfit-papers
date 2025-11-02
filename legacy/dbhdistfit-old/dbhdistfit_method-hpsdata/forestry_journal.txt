@@ -1,0 +1,23 @@
+Dear Dr. Kerr,
+
+I am pleased to submit an original research article entitled "A simplified method for estimating stem diameter distributions from horizontal point sample data", by Gregory Paradis, for consideration in Forestry. 
+
+Diameter frequency distributions are a key piece of information describing forest stands, for both practice forestry applications and scientific research on forest ecosystems. A substantial fraction of forest inventory data is collected using horizontal point sampling (HPS) methods. The procedure for deriving diameter distributions from HPS data is clearly described in the literature (e.g., see Ducey and Gove, 2015), but is somewhat complex.
+
+In this manuscript, we present a simplified method for estimating stem diameter distributions from horizontal point sample data, including a computational experiment showing that output from our method is essentially identical to the more complex reference method. We hope our method will make it easier for practitioners and researchers alike to correctly derive diameter distributions from HPS datasets.
+
+This manuscript has not been published and is not under consideration for publication elsewhere.  
+
+Thank you for your consideration!
+
+Sincerely,
+
+Gregory Paradis, PhD
+Postdoctoral Research Fellow
+Department of Forest Resources Management
+Faculty of Forestry
+University of British Columbia
+
+---
+
+Ducey, Mark J. and Gove, Jeffrey H. 2015. Size-biased distributions in the generalized beta distribution family, with applications to forestry. Forestry 88, 143–151.  

@@ -1,0 +1,11 @@
+#!/bin/bash
+FNAME=hpsdistfit_article
+rm *.aux
+rm *.log
+rm *.bbl
+rm *.blg
+echo "Compiling" $FNAME
+pdflatex -synctex=1 $FNAME.tex
+bibtex $FNAME
+pdflatex -synctex=1 $FNAME.tex
+pdflatex -synctex=1 $FNAME.tex
