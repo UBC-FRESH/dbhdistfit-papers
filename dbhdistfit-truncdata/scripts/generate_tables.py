@@ -87,7 +87,16 @@ def main(config_path: Path | str = CONFIG_DEFAULT) -> None:
             "aicc_stage2": "AICc (Stage 2)",
         }
     )
-    latex_table = latex_df.to_latex(index=False, escape=False, longtable=False)
+    float_fmt = {
+        "AICc (Stage 2)": "{:.1f}".format,
+    }
+
+    latex_table = latex_df.to_latex(
+        index=False,
+        escape=False,
+        longtable=False,
+        formatters=float_fmt,
+    )
     OUTPUT_TEX.write_text(latex_table)
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
