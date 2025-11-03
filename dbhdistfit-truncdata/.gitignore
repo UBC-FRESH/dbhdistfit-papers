@@ -15,6 +15,7 @@ em-submission.zip
 manuscript/build/
 notebooks/*.executed.ipynb
 tmp/
+reference-validation-report.txt
 
 # LaTeX aux files
 manuscript/*.aux
