@@ -30,22 +30,31 @@ Truncated datasets exhibit biased residual sums when complete-form densities are
 \end{equation}
 with scaling constant $c = [F(b; \bm{P}) - F(a; \bm{P})]^{-1}$ and $F$ the cumulative distribution function. When a closed form for $F$ is not available we evaluate the integral numerically.
 
-\subsection{Two-stage fitting procedure}
+\subsection{Two-stage estimator}
 \label{sec:methods_twostage}
 
-We reproduce the two-stage complete-form workflow proposed in the legacy manuscript. For each candidate distribution we solve three variants:
+The estimator adds a positive scaling parameter $s$ so the complete-form fit honours the truncated support. Stage one solves
+\begin{equation}
+  \min_{\bm{P},\, s>0} \sum_{i \in I} \left[s f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right]^2,
+\end{equation}
+returning provisional parameters $\bm{P}^{(1)}$ and $s^{(1)}$. Stage two holds $s^{(1)}$ fixed, refits $\bm{P}$ with the same objective, and yields the final estimates $\bm{P}^{(2)}$.
+
+\subsection{Comparative fitting workflow}
+\label{sec:methods_benchmark}
+
+We compare three fitting strategies for each meta-plot:
 \begin{enumerate}
   \item \textbf{1sc} -- a complete-form fit with the scaling fixed to $s = 1$;
   \item \textbf{1st} -- a truncated likelihood fit using $f^{T}(x; \bm{P})$ on $[a, b]$;
-  \item \textbf{2sc} -- a two-stage complete-form fit that first estimates $s$ jointly with $\bm{P}$ and subsequently re-optimises with $s$ fixed at the stage-one estimate.
+  \item \textbf{2sc} -- the two-stage complete-form procedure described above.
 \end{enumerate}
-We use the \texttt{lmfit} package to wrap each probability density function into a \texttt{Model} object, supply initial parameter guesses based on moments, and rely on the Levenberg--Marquardt optimiser to minimise $Z$.
+We use the \texttt{lmfit} package to wrap each probability density function into a \texttt{Model} object, initialise parameters from empirical moments, and employ the Levenberg--Marquardt optimiser to minimise $Z$ for all three configurations.
 
 \subsection{Candidate distributions and model selection}
 \label{sec:methods_candidates}
 
-The original analysis evaluated a broad family of generalised beta distributions; here we concentrate on the two-parameter Weibull and gamma distributions that dominated the published results (both specialisations of the generalised gamma). Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
+We concentrate on the two-parameter Weibull and gamma distributions, both specialisations of the generalised gamma family that cover common stand structures with few parameters. Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
 \begin{equation}
   \text{AICc} = \text{AIC} + \frac{2K(K+1)}{n - K - 1},
 \end{equation}
-where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. Consistent with the legacy manuscript we adjust $K$ to account for the additional scaling terms: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.
+where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. We adjust $K$ to account for the additional scaling terms introduced by each configuration: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.

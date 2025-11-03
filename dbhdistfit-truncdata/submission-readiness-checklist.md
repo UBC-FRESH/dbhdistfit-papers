@@ -11,11 +11,11 @@
 | Data availability | ✅ Ready | Manuscript cites GitHub repo; README/DataLad guidance and notebook references refreshed. |
 | Double-blind package | ✅ Ready | `make em-submission` verified; flat archive produced. |
 | Preprint | ✅ Ready | `make preprint` generates EarthArXiv cover + manuscript bundle. |
-| Cover letter | ⚠️ In Progress | Forest Science template drafted; final date/signature to insert prior to submission. |
+| Cover letter | ✅ Ready | Portal text version finalised (dated 2 November 2025; EarthArXiv preprint disclosed). |
 | ORCID & metadata | ✅ Ready | ORCID recorded on title page; submission metadata summarised in `submission-metadata.md`. |
-| Final proofing | ⚠️ Pending | Word count, linting, and QA to run at finalisation. |
+| Final proofing | ⚠️ Pending | Run spellcheck, linting, and clean repro builds immediately before submission. |
 
 ### Immediate Next Steps
-1. Complete Forest Science style audit adjustments (front matter wording, title-page checks, reference format).
-2. Finalise cover letter (insert submission date, add any co-author signatures if required).
-3. Schedule final proofing pass (spellcheck, linting, repository clean build) prior to portal upload.
+1. Perform final proofing pass: spellcheck, reference formatting check, repo lint/clean builds.
+2. Execute fresh `make dbhdistfit-truncdata-repro` and `make dbhdistfit-hps-repro`, archiving outputs for records.
+3. Assemble submission artefacts (em-submission.zip, cover-letter text, title page) and launch FS portal upload.
