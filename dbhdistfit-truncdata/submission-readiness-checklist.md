@@ -13,7 +13,7 @@
 | Preprint | ✅ Ready | `make preprint` generates EarthArXiv cover + manuscript bundle. |
 | Cover letter | ✅ Ready | Portal text version finalised (dated 2 November 2025; EarthArXiv preprint disclosed). |
 | ORCID & metadata | ✅ Ready | ORCID recorded on title page; submission metadata summarised in `submission-metadata.md`. |
-| Final proofing | ⚠️ Pending | Run spellcheck, linting, and clean repro builds immediately before submission. |
+| Final proofing | ✅ Ready | Spellcheck, linting, and clean `make repro` runs completed for both manuscripts. |
 
 ### Immediate Next Steps
 1. Perform final proofing pass: spellcheck, reference formatting check, repo lint/clean builds.
