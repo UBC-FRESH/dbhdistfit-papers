@@ -42,6 +42,10 @@ def flatten_main_tex() -> None:
     flattened = input_pattern.sub(expand, text)
     flattened = flattened.replace("../figures/", "")
     flattened = flattened.replace("../tables/", "")
+    flattened = flattened.replace(
+        "https://github.com/UBC-FRESH/dbhdistfit-papers",
+        "[repository URL omitted for review]",
+    )
 
     # Remove identifying information for double-blind review.
     def remove_braced_command(source: str, command: str, replacement: str = "") -> str:
