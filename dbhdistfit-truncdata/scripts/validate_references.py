@@ -15,6 +15,11 @@ import bibtexparser  # type: ignore
 import requests
 
 
+CROSSREF_WORKS_URL = "https://api.crossref.org/works"
+
+CROSSREF_WORKS_URL = "https://api.crossref.org/works"
+
+
 def _normalise_title(title: str) -> str:
     cleaned = re.sub(r"[^0-9a-zA-Z\\s]", " ", title)
     return " ".join(cleaned.lower().split())
@@ -55,16 +60,57 @@ def _iter_entries(bib_path: Path) -> Iterable[Entry]:
         yield Entry(key=key, fields=field_map)
 
 
+def _lookup_by_title(title: str, author: str | None = None) -> tuple[int | None, dict | None]:
+    params = {"query.bibliographic": title, "rows": 1}
+    if author:
+        params["query.author"] = author
+    try:
+        resp = requests.get(CROSSREF_WORKS_URL, params=params, timeout=20)
+    except requests.RequestException:
+        return None, None
+    if resp.status_code != 200:
+        return resp.status_code, None
+    try:
+        items = resp.json().get("message", {}).get("items", [])
+    except ValueError:
+        return resp.status_code, None
+    if not items:
+        return resp.status_code, None
+    return resp.status_code, items[0]
+
+
 def _validate_entry(entry: Entry) -> list[str]:
     lines = [f"Entry: {entry.key}"]
     doi = entry.fields.get("doi")
     if not doi:
         lines.append("  DOI: (missing)")
-        lines.append("  Crossref status: n/a")
+        title = entry.fields.get("title", "").strip("{}")
+        if not title:
+            lines.append("  Crossref status: n/a (no title)")
+            return lines
+        author = entry.fields.get("author")
+        lead_author = author.split(" and ")[0] if author else None
+        status, candidate = _lookup_by_title(title, lead_author)
+        if status is None:
+            lines.append("  Crossref status: error (network)")
+        elif candidate is None:
+            lines.append(f"  Crossref search status: {status if status is not None else 'n/a'} (no match)")
+        else:
+            lines.append(f"  Crossref search status: {status}")
+            candidate_title = " ".join(candidate.get("title", []))
+            candidate_doi = candidate.get("DOI")
+            if candidate_doi:
+                lines.append(f"  Suggested DOI: {candidate_doi}")
+            if candidate_title:
+                match = _normalise_title(candidate_title) == _normalise_title(title)
+                lines.append(f"  Title match: {'yes' if match else 'no'}")
+                if not match:
+                    lines.append(f"    Bib title: {title}")
+                    lines.append(f"    API title: {candidate_title}")
         return lines
 
     doi_clean = doi.replace("https://doi.org/", "").strip()
-    url = f"https://api.crossref.org/works/{doi_clean}"
+    url = f"{CROSSREF_WORKS_URL}/{doi_clean}"
     lines.append(f"  DOI: {doi}")
 
     try:
