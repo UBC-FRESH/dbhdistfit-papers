@@ -46,6 +46,10 @@ def flatten_main_tex() -> None:
         "https://github.com/UBC-FRESH/dbhdistfit-papers",
         "[repository URL omitted for review]",
     )
+    flattened = flattened.replace(
+        r"\url{[repository URL omitted for review]}",
+        "[repository URL omitted for review]",
+    )
 
     # Remove identifying information for double-blind review.
     def remove_braced_command(source: str, command: str, replacement: str = "") -> str:
