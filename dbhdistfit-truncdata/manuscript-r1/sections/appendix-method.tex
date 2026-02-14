@@ -26,6 +26,8 @@ where $\bm{P}' = \bm{P} \cup \{s\}$. Because $s$ relaxes the unity constraint on
 \end{equation}
 admits solutions with residual behaviour comparable to $f^{T}$ over $[a, b]$. The augmented model reproduces any truncated shape achievable by $f^{T}$ but introduces an additional degree of freedom that inflates parameter variance.
 
+If the truncated solution is matched exactly on $[a,b]$, then $f'(x)=f^{T}(x)$ implies $s=c=[F(b;\bm{P})-F(a;\bm{P})]^{-1}$. Hence $1/s$ is the implied retained mass on $[a,b]$, and departures from that value quantify any residual mass assigned outside the truncation interval.
+
 We therefore fit the model in two stages. Stage~1 solves
 \begin{equation}
   (\widehat{\bm{P}'}, \hat{s}) = \arg\min_{\bm{P}', s} Z(\bm{P}', s),

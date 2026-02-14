@@ -6,6 +6,7 @@
 \label{sec:methods_binning}
 
 The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH. Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
+The upper bound $b$ reflects the observed maximum in the PSP tallies (and management caps where applicable); if no defensible upper limit exists, the workflow can be applied with a larger $b$ or with left truncation only.
 
 \subsection{Weighted non-linear least squares}
 \label{sec:methods_nlls}
@@ -38,6 +39,7 @@ The estimator adds a positive scaling parameter $s$ so the complete-form fit hon
   \min_{\bm{P},\, s>0} \sum_{i \in I} \left[s f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right]^2,
 \end{equation}
 returning provisional parameters $\bm{P}^{(1)}$ and $s^{(1)}$. Stage two holds $s^{(1)}$ fixed, refits $\bm{P}$ with the same objective, and yields the final estimates $\bm{P}^{(2)}$.
+Because $f$ integrates to one, the fitted scaling parameter provides an implied retained mass on $[a,b]$ via $F(b;\bm{P})-F(a;\bm{P}) \approx 1/s$; in the limit of a perfect match to the truncated form, $s$ equals the normalising constant $c$.
 
 \subsection{Comparative fitting workflow}
 \label{sec:methods_benchmark}
