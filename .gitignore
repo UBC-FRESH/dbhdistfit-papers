@@ -1,6 +1,7 @@
 tmp/
 *.pyc
 .venv
+dbhdistfit-hps/data.local/
 # LaTeX temp/build artifacts
 *.aux
 *.bbl
