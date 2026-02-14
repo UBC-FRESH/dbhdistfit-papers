@@ -25,6 +25,8 @@
 - Local PSP pickle is stored at `dbhdistfit-truncdata/data/interim/tiges_final_full.p` and used by default in `make data`.
 - Reproducibility workflow uses `make repro` and the notebook `dbhdistfit-truncdata/notebooks/dbhdistfit_truncdata.ipynb`.
 - Declarations are embedded in `dbhdistfit-truncdata/manuscript-r1/main.tex` (Statements and Declarations section).
+ - Authorship confirmed unchanged (single author, Gregory E. Paradis).
+ - Manuscript type remains Brief Communication (no editor request to change type noted).
 
 ## Submission Requirements (Decision Letter, 12 Jan 2026)
 
