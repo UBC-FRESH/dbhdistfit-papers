@@ -1,0 +1,32 @@
+# Placeholder configuration for figure generation
+# Will be populated once preprocessing outputs are defined.
+dataset: data/processed/truncation_binned.parquet
+output_dir: figures
+combined_name: diameter_comparison
+meta_plots:
+  - name: spruce_pine_fir_softwood
+    species_group: sepm
+    cover_type: r
+    title: SPFL - Softwood
+    distributions: [weibull, gamma]
+  - name: birch_mixedwood
+    species_group: bop
+    cover_type: m
+    title: Birch - Mixedwood
+    distributions: [weibull, gamma]
+  - name: maple_hardwood
+    species_group: ers
+    cover_type: f
+    title: Maple - Hardwood
+    distributions: [weibull, gamma]
+styling:
+  palette: deep
+  dpi: 300
+  row_height: 2.6
+  col_width: 3.2
+  panel_labels: [a, b, c, d, e, f]
+  title_size: 9
+  axis_label_size: 8
+  tick_label_size: 7
+  legend_fontsize: 7
+  panel_offset: [-0.2, 1.02]
