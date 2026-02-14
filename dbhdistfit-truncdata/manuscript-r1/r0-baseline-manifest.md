@@ -1,7 +1,7 @@
 # R0 Baseline Manifest
 
-Captured: 2026-02-14T21:42:53+00:00
-Commit: 9eb0358e60b04353a8be06c487debeb6786f43f1
+Captured: 2026-02-14T21:43:39+00:00
+Commit: 2c103661e6e13ba2704a98ccb6f69ecf28189453
 
 ## Source files
 - `manuscript-r0/main.tex`: `9b318161a46904453edcba85d4eb60c8ff9b8da91a16aa31baae7981038cd938`
@@ -17,4 +17,4 @@ Commit: 9eb0358e60b04353a8be06c487debeb6786f43f1
 - `manuscript-r0/title-page.tex`: `1327a9c9bce1de59c41206ce550f26b87573cfd595d99062b60af663a1538fe9`
 
 ## Rendered output
-- `manuscript-r0/main.pdf`: `14767ee01d69fa8bbb3d51c4d19ec238ada5edb5689985566fc50e91392fcdb9`
+- `manuscript-r0/main.pdf`: `111cc7bc9ab1c12bc9d5e7f220a9c1b981fb1df04e8bef4411a5f38c3819f998`
