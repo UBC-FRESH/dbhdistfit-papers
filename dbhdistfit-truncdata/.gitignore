@@ -1,0 +1,34 @@
+# Virtual environment
+.venv/
+
+# Build artefacts
+figures/
+tables/
+preprint/*.pdf
+preprint/*.aux
+preprint/*.log
+preprint/*.out
+preprint/*.fls
+preprint/*.fdb_latexmk
+em-submission/
+em-submission.zip
+manuscript/build/
+notebooks/*.executed.ipynb
+tmp/
+reference-validation-report.txt
+
+# LaTeX aux files
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.synctex.gz
+manuscript/*.fdb_latexmk
+manuscript/*.fls
+manuscript/*.bbl
+manuscript/*.blg
+manuscript/*.pdf
+
+# Python cache
+*.pyc
+__pycache__/

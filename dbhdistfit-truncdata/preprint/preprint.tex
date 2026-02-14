@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75em}
+
+\begin{document}
+\thispagestyle{empty}
+
+{\LARGE\bfseries A Two-Stage Fitting Method for Truncated Stem Diameter Distributions\par}
+
+{\large Gregory E. Paradis\\Department of Forest Resources Management, University of British Columbia, Canada\\Corresponding author: \texttt{gregory.paradis@ubc.ca}\par}
+
+\section*{EarthArXiv Preprint Status}
+\begin{itemize}[leftmargin=*]
+  \item Non-peer-reviewed preprint posted to EarthArXiv.
+  \item Manuscript submitted to \emph{Forest Science} (Brief Communication).
+  \item Later revisions may differ; the peer-reviewed version will be linked when available.
+\end{itemize}
+
+\section*{Metadata}
+\begin{itemize}[leftmargin=*]
+  \item Submission date: \today.
+  \item Repository record: \url{https://github.com/UBC-FRESH/dbhdistfit-papers} (branch feature/dbhdistfit-truncdata).
+  \item License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{itemize}
+
+\vfill
+\textbf{Note.} The accompanying repository includes scripts that regenerate all tables, figures, and LaTeX artefacts from the underlying fixed-area PSP tallies.
+
+\clearpage
+\pagestyle{empty}
+\includepdf[pages=-,pagecommand={}]{../manuscript/main.pdf}
+
+\end{document}

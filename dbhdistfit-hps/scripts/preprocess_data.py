@@ -21,6 +21,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = PROJECT_ROOT / "data"
 INTERIM_PATH = DATA_ROOT / "interim" / "tiges_final_full.p"
 OUTPUT_DIR = DATA_ROOT / "processed"
+INTERIM_ENV = "DBHDISTFIT_HPS_PICKLE"
+LEGACY_INTERIM = PROJECT_ROOT.parent / "legacy" / "pspdistfit" / "dat" / "misc" / "tiges_final_full.p"
 
 
 def _allow_blockmanager_pickle() -> None:
@@ -44,9 +46,24 @@ def ensure_local(path: Path) -> None:
     if path.exists() or datalad_api is None:
         return
     try:
-        datalad_api.get(str(path))
+        if path.is_relative_to(DATA_ROOT):
+            datalad_api.get(str(path))
     except Exception:
         pass
+
+
+def resolve_input_path(candidate: Path) -> Path:
+    """Determine which interim pickle to use after the repository reorganisation."""
+    env_override = os.environ.get(INTERIM_ENV)
+    if env_override:
+        env_path = Path(env_override).expanduser()
+        if env_path.exists():
+            return env_path
+    if candidate.exists():
+        return candidate
+    if LEGACY_INTERIM.exists():
+        return LEGACY_INTERIM
+    return candidate
 
 
 def load_interim_dataframe(path: Path) -> pd.DataFrame:
@@ -109,7 +126,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    df = load_interim_dataframe(args.input)
+    source_path = resolve_input_path(args.input)
+    df = load_interim_dataframe(source_path)
     if not {"groupe3", "type_couv", "dhpmm", "id_pep"}.issubset(df.columns):
         raise ValueError("Unexpected dataframe schema in interim dataset.")
 

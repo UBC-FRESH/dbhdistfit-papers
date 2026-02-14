@@ -1,3 +1,6 @@
-[submodule "hpsdistfit"]
-	path = hpsdistfit
-	url = https://github.com/ubc-fresh/hpsdistfit
+[submodule "dbhdistfit-hps/data"]
+	path = dbhdistfit-hps/data
+	url = https://github.com/UBC-FRESH/dbhdistfit-data.git
+[submodule "dbhdistfit-hps/data.local"]
+	path = dbhdistfit-hps/data.local
+	url = https://github.com/UBC-FRESH/dbhdistfit-data.git
