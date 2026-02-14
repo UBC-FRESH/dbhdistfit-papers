@@ -25,3 +25,12 @@
 - Local PSP pickle is stored at `dbhdistfit-truncdata/data/interim/tiges_final_full.p` and used by default in `make data`.
 - Reproducibility workflow uses `make repro` and the notebook `dbhdistfit-truncdata/notebooks/dbhdistfit_truncdata.ipynb`.
 - Declarations are embedded in `dbhdistfit-truncdata/manuscript-r1/main.tex` (Statements and Declarations section).
+
+## Submission Requirements (Decision Letter, 12 Jan 2026)
+
+- Submit revised manuscript by 15 Feb 2026.
+- Provide point-by-point response in the "Response to Reviewers" box.
+- Highlight all changes in the revised manuscript (colored/underlined/highlighted text).
+- Describe any additional experiments; include rebuttals for disagreements.
+- Ensure manuscript follows Forest Science submission guidelines/style.
+- Upload editable source files only (TeX), not just PDFs.

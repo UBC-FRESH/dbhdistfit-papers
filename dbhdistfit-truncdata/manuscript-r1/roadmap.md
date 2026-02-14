@@ -2,7 +2,7 @@
 
 - [ ] Phase 1 — Scope, requirements, and setup
   - [ ] Task 1.1 — Confirm constraints and submission requirements
-    - [ ] Subtask 1.1.1 — Verify due date, required files, and highlight/change requirements
+    - [x] Subtask 1.1.1 — Verify due date, required files, and highlight/change requirements
     - [ ] Subtask 1.1.2 — Confirm authorship/order and required declarations
     - [ ] Subtask 1.1.3 — Decide target length/format (Brief Communication vs expansion)
   - [ ] Task 1.2 — Baseline and assets inventory
