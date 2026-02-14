@@ -1,0 +1,47 @@
+% !TEX root = ../main.tex
+\section{Derivations Supporting the Two-Stage Estimator}
+
+We briefly restate the derivations that motivate the two-stage fitting procedure. Let $f(x; \bm{P})$ denote a complete-form probability density defined on $(0, \infty)$ with parameter vector $\bm{P}$. Observations are only available for the truncated interval $[a, b]$, with $a = 10$~cm and $b = 60$~cm in the PSP experiment. The truncated form of $f$ is
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c \, f(x; \bm{P}), & a \leq x \leq b, \\
+      0, & \text{otherwise},
+    \end{cases}
+    \label{eq:truncated-density}
+\end{equation}
+where the normalising constant is
+\begin{equation}
+  c = \left[\int_a^b f(t; \bm{P}) \,\mathrm{d}t\right]^{-1} = \left[F(b; \bm{P}) - F(a; \bm{P})\right]^{-1}.
+\end{equation}
+Here $F$ is the cumulative distribution function associated with $f$. When a closed-form expression for $F$ is unavailable, $c$ must be evaluated numerically, complicating routine model comparison.
+
+To avoid deriving bespoke truncated forms for each target distribution, we augment the complete density with a free scaling parameter $s$ and define
+\begin{equation}
+  f'(x; \bm{P}', s) = s \, f(x; \bm{P}),
+\end{equation}
+where $\bm{P}' = \bm{P} \cup \{s\}$. Because $s$ relaxes the unity constraint on the integral of $f$, the least-squares objective
+\begin{equation}
+  Z(\bm{P}', s) = \sum_{i \in I} \left[f'(x_i; \bm{P}', s) - \hat{y}_i^{(n)}\right]^2
+\end{equation}
+admits solutions with residual behaviour comparable to $f^{T}$ over $[a, b]$. The augmented model reproduces any truncated shape achievable by $f^{T}$ but introduces an additional degree of freedom that inflates parameter variance.
+
+We therefore fit the model in two stages. Stage~1 solves
+\begin{equation}
+  (\widehat{\bm{P}'}, \hat{s}) = \arg\min_{\bm{P}', s} Z(\bm{P}', s),
+\end{equation}
+yielding a consistent estimate $\hat{s}$ that scales the complete-form density to the truncated support. Stage~2 fixes the scaling parameter and re-optimises the original parameter vector,
+\begin{equation}
+  \widehat{\bm{P}} = \arg\min_{\bm{P}} Z(\bm{P}, \hat{s}),
+\end{equation}
+where $Z(\bm{P}, \hat{s})$ denotes the objective with $s$ held constant. The fitted curves coincide,
+\begin{equation}
+  Z(\widehat{\bm{P}'}, \hat{s}) \simeq Z(\widehat{\bm{P}}, \hat{s}),
+\end{equation}
+but the second-stage covariance matrix excludes the nuisance scaling parameter, yielding tighter standard errors for the distributional parameters of interest.
+
+The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible. In the manuscript we implement $f$ as the Weibull and gamma specialisations of the generalised gamma distribution,
+\begin{equation}
+  f_{\mathrm{GG}}(x; a, \beta, p) = \frac{a x^{ap - 1} \exp\left[-(x / \beta)^a\right]}{\beta^{ap} \Gamma(p)}, \qquad x > 0,
+\end{equation}
+with the Weibull recovered by fixing $p = 1$ and the gamma by fixing $a = 1$. The truncated form in \eqref{eq:truncated-density} follows by replacing $f$ with $f_{\mathrm{GG}}$ and evaluating the normalising constant $c$ numerically.

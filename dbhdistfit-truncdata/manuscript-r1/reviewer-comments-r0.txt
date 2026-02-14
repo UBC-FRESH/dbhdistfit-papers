@@ -1,0 +1,107 @@
+From: Forest Science - Editorial Office <em@editorialmanager.com>
+
+Subject: Your submission to Forest Science - FRSC-D-25-00220
+
+Date: January 12, 2026 at 10:18:30 PST
+
+To: Gregory Eric Paradis <gregory.paradis@ubc.ca>
+
+Reply-To: Forest Science - Editorial Office <judith.gonzales.1@springernature.com>
+
+
+[CAUTION: Non-UBC Email]
+
+FRSC-D-25-00220
+A Two-Stage Fitting Method for Truncated Stem Diameter Distributions
+Gregory Eric Paradis
+Forest Science
+
+Dear Dr. Paradis,
+
+Your manuscript "A Two-Stage Fitting Method for Truncated Stem Diameter Distributions" (FRSC-D-25-00220) has been assessed by our reviewers. Although it is of interest, we are unable to consider it for publication in its current form. The reviewers have raised a number of points which we believe would improve the manuscript and may allow a revised version to be published in Forest Science. 
+
+Their reports, together with any other comments, are below. Please also take a moment to check our website at https://www.editorialmanager.com/frsc/ for any additional comments that were saved as attachments.
+
+If you are able to fully address these points, we would encourage you to submit a revised manuscript to Forest Science.  Once you have made the necessary corrections, please submit online at:
+
+https://www.editorialmanager.com/frsc/
+
+If you have forgotten your username or password please use the "Send Login Details" link to get your login information. For security reasons, your password will be reset.
+
+Please include a point-by-point response within the 'Response to Reviewers' box in the submission system and highlight (with coloured/underlines/highlighted text) all changes made when revising the manuscript. Please ensure you describe additional experiments that were carried out and include a detailed rebuttal of any criticisms or requested revisions that you disagreed with. Please also ensure that your revised manuscript conforms to the journal style, which can be found in the Submission Guidelines on the journal homepage.
+
+Please note: When uploading your revised manuscript files, please make sure only to submit your editable source files (i.e. Word, Tex). 
+
+The due date for submitting the revised version of your article is 15 Feb 2026.
+In order to add the due date to your electronic calendar, please open the attached file.
+
+Please note, if your manuscript is accepted you will not be able to make any changes to the authors, or order of authors, of your manuscript once the editor has accepted your manuscript for publication. If you wish to make any changes to authorship before you resubmit your revisions, please reply to this email and ask for a 'Request for change in authorship' form which should be completed by all authors (including those to be removed) and returned to this email address. Please ensure that any changes in authorship fulfil the criteria for authorship as outlined in SpringerOpen's editorial policies (http://www.springeropen.com/get-published/editorial-policies#authorship). 
+
+Once you have completed and returned the form, your request will be considered and you will be advised whether the requested changes will be allowed.
+By resubmitting your manuscript you confirm that all author details on the revised version are correct, that all authors have agreed to authorship and order of authorship for this manuscript and that all authors have the appropriate permissions and rights to the reported data.
+
+Please be aware that we may investigate, or ask your institute to investigate, any unauthorised attempts to change authorship or discrepancies in authorship between the submitted and revised versions of your manuscript.
+
+We look forward to receiving your revised manuscript soon.
+
+Best wishes,
+
+Mike R. Saunders, Ph.D.
+Editor-in-Chief
+Forest Science
+
+
+Reviewer reports:
+
+Associate Editor: The paper presents an approach to solve a truncation problem that would be useful in application, if robust to critique. The reviewers feel that the paper should be expanded to more fully explore the topic especially to address the implications of the proposed method as alternatives to other solutions. It's hard not to agree as reading the manuscript I feel a reader might feel justified in applying this methodology to solve the truncation problem, without a more robust exploration by the authors of the implications of this. At minimum, the paper needs to make clearer what the alternatives are and whether proceeding with this approach might withstand scrutiny. I do not find obvious flaws in the approach in general, but both reviewers make important points about subtleties that merit consideration as well. I suggest the authors consider whether reframing the tone somewhat so the method is presented as a possible solution that merits further consideration
+might mitigate these concerns.
+
+
+Reviewer #1: This review is carried out based on the journal's requirements on Brief Communications. The paper is generally well written and easy to read. I have a few comments for the authors to consider. I also understand that there are words limit. So, it is entirely up to the authors to see how best to address the following comments:
+
+(1) Eqns. (1) and (2). The usual practice for fitting distribution model is maximum likelihood. Using weighted non-linear least square approach is perhaps quite unknown to practitioners. I suggest adding a reference to the LS approach
+(2) The rationale behind truncated pdf (Eqn. 3) is to make sure that the area under the pdf sums to 1 given a <= x <= b. For the two-stage estimator, looking at Eqns. (4) and (8) and the Appendix A (P7L14: "Because x relaxes the unity constraint on the integral of f"), there is no proof that Eqn. (8) will have area under the pdf sums to 1 given a <= x <= b. Especially that s is a free scaling parameter. So, my suspect is that Eqn. (8) will have density curve with very minor area for x < a and x > b. I am then not convinced that the two-stage estimator is truly fitting a truncated pdf. Now, I could be wrong on this speculation.
+(3) From Table 1, I believe that the authors only provide AICc for the two-stage estimators. Hence, the table does not support the argument that in P2L8-9 that "the two-stage approach achieves the lowest (best) AICc,…". Please include AICc from the other two alternatives.
+(4) I argue that reporting Stage 1 AICc is more reasonable than Stage 2 AICc. Stage 1 AICc should include uncertainty in estimating the free scaling parameter s. I suspect that there is likely quite a bit of uncertainty in the estimated s. Stage 2 AICc "artificially" removes the uncertainty in estimated s to make the AICc "look good", but then it is just an artefact of not accounting for uncertainty in s. So, I would suggest the authors to include Stage 1 and Stage 2 AICc.
+(5) If the authors are pressed for space, I would suggest remove a large chunk of Appendix A (especially the section before Eqn. 8) or entirely. Also, I am not sure how the section of Appendix A from Eqn. (8) to the remainder establishes that the two-stage estimator is fitting a truly truncated pdf (see my comment #2). This section reads more like repeating the description of two-stage estimator process in Section 2.3. 
+(6) I would suggest the authors to include very brief points on what are their speculated limitations of the two-stage estimators and potential some pitfalls or cautions.
+
+In general, I believe that this is a nice brief contribution to expand our thoughts on alternative methods to estimate truncated diameter distributions. I would rather see this piece of communication as an exploratory work rather than purely giving the impression that the two-stage estimators beat everyone else. Thus, highlighting potential future work and limitations are crucial.
+
+
+
+Reviewer #2: The objective of this paper was to propose an alternative methodology for characterizing truncated diameter distributions. Permanent sample plots in Canada were used to compare the existing and proposed methods. I understand that this is a brief communication, so some details were omitted due to the word limit of this paper type. However, I still suggest providing more details so that forest modellers and practitioners can better understand and utilize the proposed method. To me, the authors could consider expanding this work into a full-length research paper since the strength and weakness of the existing and proposed methods are not clear under this limited length. The proposed method is not fully validated in my opinion. 
+
+My comments are given below 
+
+1. Better justification of the need for this work. It makes sense to use a left-truncated model because of a pre-specified measurement threshold. However, I am not sure if right truncation is a valid or common assumption in practice. How would you determine a "biological limit" of a species as mentioned in the introduction? Although the original assumption of the data range in Weibull distribution is not strictly precise and accurate, the probability in the right tail will rapidly approach zero if the training data do not support it. It's true that tree size will not go to infinity, but in forestry practice, upper diameter limits are not explicitly known or recorded, especially for diverse ecosystems. If an upper limit is arbitrarily assumed, would it introduce another source of bias? Besides, imposing right truncation may limit the model's ability to extrapolate beyond the observed range, which is often required in growth and yield applications. How would a doubly-truncated
+model be used in practice? A clearer description is needed.  
+
+2. The authors demonstrated the goodness of fit of models for a variety of species. The observed distributions are all inversed-J shaped, which could be because the data were collected from natural stands. However, this does not reveal the strength and robustness of the method under other shapes. Adding different shapes of distributions would strengthen the support for using the proposed method. If empirical inventory data are not available, simulated data can provide a good foundation for comparison.
+
+3. Based on Figure 1, the 1st and 2sc methods show very similar fits. I wonder if the difference in fit between the two methods warrants the use of the 2sc method. If I understand correctly, these two method should show almost identical curves in theory. Please quantify the difference and justify the practical meaning of these differences. 
+
+4. Based on Figure 1, the three methods perform very similarly on the right side of the data. As mentioned in point #1, I do not think the right side of the data is an issue when fitting a diameter distribution. However, the 1sc method fits the smaller diameters with bias because the model is forced to end at diameter = 0. Why not add a location parameter to your model to increase flexibility?
+
+5. In my opinion, the methodology section, especially 2.2-2.4, needs to be re-written to better explain the models as it is the core of this study.
+
+6. In my opinion, I do not agree with the statement of two-parameter Weibull in the discussion. If modeling truncated data is the focus, the three-parameter Weibull should be included since the location parameter is a way to handle truncated situations (specifically left-truncation).
+
+
+
+
+
+
+----------------------
+
+If improvements to the English language within your manuscript have been requested, you should have your manuscript reviewed by someone who is fluent in English. If you would like professional help in revising this manuscript, you can use any reputable English language editing service. We can recommend our affiliates Nature Research Editing Service (https://authorservices.springernature.com/?_gl=1*m8y4xe*_up*MQ..*_ga*MTUxNzQ4OTEzMi4xNzI2NTIxNzgz*_ga_90MNGKET9N*MTcyNjUyMTc4Mi4xLjAuMTcyNjUyMTc4Mi4wLjAuMTA1MDU1NjAwOA) and American Journal Experts (http://bit.ly/AJE_***) for help with English usage. Please note that use of an editing service is neither a requirement nor a guarantee of publication. Free assistance is available from our English language tutorial (https://www.springernature.com/gp/authors/campaigns/writing-in-english?utm_source=springer&utm_medium=referral&utm_content=RMarketing&utm_campaign=AEXS_2_SE01_GL_Tutorials_Redirect) and our Writing resources
+(http://www.biomedcentral.com/getpublished/writing-resources). These cover common mistakes that occur when writing in English.
+
+Authors may need to take specific actions to achieve compliance with funder and institutional open access mandates. If your research is supported by a funder that requires immediate open access (e.g. according to Plan S principles (https://www.springernature.com/gp/open-science/plan-s-compliance) or the NIH public access policy (https://www.springernature.com/gp/open-science/us-federal-agency-compliance)) then you should select the gold OA route, and we will direct you to the compliant route where possible. Because authors warrant under our subscription licensing terms that they haven't committed to licensing any version of their article under a licence inconsistent with the terms of our agreement - including the applicable embargo period - publication under the subscription model isn't suitable for authors whose funders require no embargo.
+
+This letter contains confidential information, is for your own use, and should not be forwarded to third parties.
+
+Recipients of this email are registered users within the Editorial Manager database for this journal. We will keep your information on file to use in the process of submitting, evaluating and publishing a manuscript. For more information on how we use your personal details please see our privacy policy at https://www.springernature.com/production-privacy-policy. If you no longer wish to receive messages from this journal or you have questions regarding database management, please contact the Publication Office at the link below.
+
+__________________________________________________
+In compliance with data protection regulations, you may request that we remove your personal registration details at any time.  (Use the following URL: https://www.editorialmanager.com/frsc/login.asp?a=r). Please contact the publication office if you have any questions.
