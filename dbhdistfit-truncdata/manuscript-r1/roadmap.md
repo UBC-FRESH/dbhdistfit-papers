@@ -20,9 +20,9 @@
     - [x] Subtask 2.2.2 — Quantify 1st vs 2sc differences (metrics)
     - [x] Subtask 2.2.3 — Recompute AICc for all methods and stages
   - [ ] Task 2.3 — Update tables/figures pipeline
-    - [ ] Subtask 2.3.1 — Update scripts/configs for new metrics/outputs
-    - [ ] Subtask 2.3.2 — Regenerate tables (AICc 1sc/1st/2sc; stage 1/2)
-    - [ ] Subtask 2.3.3 — Regenerate figures (and add any new panels)
+    - [x] Subtask 2.3.1 — Update scripts/configs for new metrics/outputs
+    - [x] Subtask 2.3.2 — Regenerate tables (AICc 1sc/1st/2sc; stage 1/2)
+    - [x] Subtask 2.3.3 — Regenerate figures (and add any new panels)
 
 - [ ] Phase 3 — Manuscript revisions (r1)
   - [ ] Task 3.1 — Methods rewrite and clarity
