@@ -1,0 +1,226 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{titling}
+
+\pretitle{\begin{flushleft}\LARGE\bfseries}
+\posttitle{\par\end{flushleft}\vskip 1em}
+\preauthor{\begin{flushleft}\large}
+\postauthor{\par\end{flushleft}\vskip 0.75em}
+\predate{\begin{flushleft}\large}
+\postdate{\par\end{flushleft}\vskip 1em}
+
+\title{A Two-Stage Fitting Method for Truncated Stem Diameter Distributions}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+
+% >>> BEGIN sections/abstract
+% !TEX root = ../main.tex
+\begin{abstract}
+Stem diameter distributions underpin growth projections, harvest scheduling, and carbon accounting, yet permanent sample plot inventories are routinely truncated by merchantability limits and maximum expected diameters. The accepted remedy is to fit truncated versions of the desired density, but those forms are seldom documented or supported in common software, so practitioners often default to biased complete-form fits. We revisit the truncated-diameter problem and introduce a two-stage weighted least-squares workflow that retains the familiar complete-form implementation while recovering the truncated solution. Stage one estimates a scaling factor alongside the density parameters; stage two freezes that normaliser to deliver unbiased shape and scale estimates. Applied to fixed-area plots from Qu\'ebec, Canada, the approach matches truncated Weibull and gamma fits across 11 species-group / cover-type combinations, limiting the absolute AICc gap to $6 \times 10^{-3}$. The companion repository provides the tallies, scripts, and notebooks required to regenerate every figure, table, and \LaTeX{} artefact, supporting operational replication.
+\end{abstract}
+
+% <<< END sections/abstract
+% >>> BEGIN sections/introduction
+% !TEX root = ../main.tex
+\section{Introduction}
+\label{sec:introduction}
+
+Stem diameters in forest stands are commonly characterised by fitting statistical distributions to plot measurements \citep{bailey1973quantifying, hyink1983generalized}. Because permanent sample plot programmes are expensive to maintain, analysts often rely on legacy inventories whose tally rules prioritised field efficiency over statistical convenience.
+
+Merchantability thresholds remove small stems, biological limits cap large diameters, and crews aggregate counts into fixed-width classes, leaving doubly truncated grouped stand tables.
+
+Complete-form distributions defined on $(0, \infty)$ perform poorly on such data because tail bias persists and residual sums fail to vanish. Analysts therefore evaluate truncated versions of the target distribution \citep{zutter1986characterizing}, yet closed forms are not always published, forcing teams to reproduce earlier derivations \citep{mittal1989estimating, hannon1999estimation, hegde1989estimation, ahmad2001moments, wingo1989left} or numerically integrate $F(x; \boldsymbol{P}) = \int_0^x f(t)\,\mathrm{d}t$.
+
+We propose a two-stage method that retains the \emph{complete} form while achieving truncated-quality fits. The method is benchmarked against one-stage complete (1sc) and one-stage truncated (1st) fits using permanent sample plot data from Qu\'ebec, Canada. Across Weibull and gamma families the two-stage complete (2sc) estimator matches specialised truncated fits while preserving implementation simplicity.
+
+% <<< END sections/introduction
+% >>> BEGIN sections/methods
+% !TEX root = ../main.tex
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Inventory binning}
+\label{sec:methods_binning}
+
+The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH. Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
+
+\subsection{Weighted non-linear least squares}
+\label{sec:methods_nlls}
+
+We fit parametric distributions by solving the weighted non-linear least squares problem
+\begin{equation}
+  Z = \min_{\bm{P}} \sum_{i \in I} e_i^2,
+\end{equation}
+with residuals
+\begin{equation}
+  e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
+\end{equation}
+where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$) to streamline the narrative and align the comparison with the published truncated baseline. The companion repository notebook documents the plot-level tallies and demonstrates how to construct inverse-variance weights when analysts wish to down-weight sparse edge bins.
+
+Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c\, f(x; \bm{P}) & a \leq x \leq b, \\
+      0 & \text{otherwise},
+    \end{cases}
+\end{equation}
+with scaling constant $c = [F(b; \bm{P}) - F(a; \bm{P})]^{-1}$ and $F$ the cumulative distribution function. When a closed form for $F$ is not available we evaluate the integral numerically.
+
+\subsection{Two-stage estimator}
+\label{sec:methods_twostage}
+
+The estimator adds a positive scaling parameter $s$ so the complete-form fit honours the truncated support. Stage one solves
+\begin{equation}
+  \min_{\bm{P},\, s>0} \sum_{i \in I} \left[s f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right]^2,
+\end{equation}
+returning provisional parameters $\bm{P}^{(1)}$ and $s^{(1)}$. Stage two holds $s^{(1)}$ fixed, refits $\bm{P}$ with the same objective, and yields the final estimates $\bm{P}^{(2)}$.
+
+\subsection{Comparative fitting workflow}
+\label{sec:methods_benchmark}
+
+We compare three fitting strategies for each meta-plot:
+\begin{enumerate}
+  \item \textbf{1sc} -- a complete-form fit with the scaling fixed to $s = 1$;
+  \item \textbf{1st} -- a truncated likelihood fit using $f^{T}(x; \bm{P})$ on $[a, b]$;
+  \item \textbf{2sc} -- the two-stage complete-form procedure described above.
+\end{enumerate}
+We use the \texttt{lmfit} package to wrap each probability density function into a \texttt{Model} object, initialise parameters from empirical moments, and employ the Levenberg--Marquardt optimiser to minimise $Z$ for all three configurations.
+
+\subsection{Candidate distributions and model selection}
+\label{sec:methods_candidates}
+
+We concentrate on the two-parameter Weibull and gamma distributions, both specialisations of the generalised gamma family that cover common stand structures with few parameters. Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
+\begin{equation}
+  \text{AICc} = \text{AIC} + \frac{2K(K+1)}{n - K - 1},
+\end{equation}
+where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. We adjust $K$ to account for the additional scaling terms introduced by each configuration: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.
+
+% <<< END sections/methods
+% >>> BEGIN sections/results
+% !TEX root = ../main.tex
+\section{Results}
+\label{sec:results}
+
+Figure~\ref{fig:comparison} compares empirical histograms with fitted Weibull and gamma curves for three representative meta-plots (rows: SPFL-S, Birch-M, Maple-H; columns: Weibull, Gamma). Each panel shows the one-stage complete (1sc), one-stage truncated (1st), and two-stage complete (2sc) solutions. The truncated and two-stage curves are virtually indistinguishable across the diameter range, while the single-stage complete fits deviate in the lower and central classes.
+
+Table~\ref{tab:comparison} summarises parameter estimates and AICc scores for all species-group / cover-type combinations. In every case the two-stage approach achieves the lowest (best) AICc, closely followed by the truncated baseline. The complete single-stage estimator consistently produces higher AICc values, especially in softwood-dominated stands where the left truncation is more severe.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameter estimates (stage~1 and stage~2) and AICc scores for the best-fitting distribution per species-group / cover-type combination.}
+  \label{tab:comparison}
+  \resizebox{\textwidth}{!}{\input{method_comparison.tex}}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{diameter_comparison.pdf}
+  \caption{Comparison of Weibull (left column) and Gamma (right column) fits across three representative meta-plots: (a--b) SPFL softwood, (c--d) Birch mixedwood, and (e--f) Maple hardwood. Points denote empirical relative frequencies; solid lines show the one-stage complete fits, dashed lines the truncated fits, and dotted lines the two-stage complete fits.}
+  \label{fig:comparison}
+\end{figure}
+
+% <<< END sections/results
+% >>> BEGIN sections/discussion
+% !TEX root = ../main.tex
+\section{Discussion}
+
+Across the meta-plots the two-stage estimator reproduced the truncated fits within $6 \times 10^{-3}$ relative-frequency units and consistently delivered the lowest AICc among the three alternatives. The complete single-stage estimator remained biased near the truncation limits, whereas the truncated single-stage (1st) and two-stage complete (2sc) solutions were visually indistinguishable in Figure~\ref{fig:comparison}. These findings confirm that the two-stage workflow matches the reference truncated procedure without bespoke truncated-density implementations.
+
+Two meta-plots (white pine--mixedwood and red pine--mixedwood) produce unusually large scale parameters in Table~\ref{tab:comparison}. Their truncated histograms are nearly flat, so the optimiser pushes the Weibull and Gamma shape parameters below one and inflates the scale (and stage-one normaliser) to hold the area to unity. Both 1st and 2sc converge on the same regime; the effect therefore reflects the data geometry rather than a weakness of the two-stage procedure.
+
+We limited the candidate set to the two-parameter Weibull and Gamma distributions because they cover common stand structures with few parameters, both arise as special cases of the generalised gamma family, and a compact family keeps attention on the methodological swap between the truncated and two-stage estimators. Showing that 2sc mirrors 1st for these widely used forms thus fulfils the study objective even when the absolute fit quality is constrained by the data.
+
+A companion Jupyter notebook in our GitHub repository ([repository URL omitted for review]) documents the plot-level tallies, weighting choices, and scripts that regenerate every figure and table, providing transparency without a separate supplement. With that reproducibility scaffold, 2sc matches or improves upon the truncated baseline for every species-group / cover-type combination, and both continue to outperform the naive 1sc approach.
+
+% <<< END sections/discussion
+% >>> BEGIN sections/conclusion
+% !TEX root = ../main.tex
+\section{Conclusion}
+
+\label{sec:conclusion}
+
+Fitting complete-form distributions to truncated inventory data yields biased estimates and poor tail behaviour. The recommended truncated-likelihood baseline delivers accurate curves but requires bespoke implementation of truncated PDFs for every candidate family. Our two-stage approach captures the advantages of the truncated estimator while retaining the simplicity of complete-form implementations. In the replicated computational experiment the two-stage method matched or exceeded the truncated baseline and dominated the naive complete-form approach.
+
+The reproducible workflow developed here automates data preparation, fitting, figure and table generation, and manuscript builds. All code and anonymised intermediate datasets accompany the manuscript, enabling practitioners to apply the two-stage estimator to other truncated measurement problems.
+
+% <<< END sections/conclusion
+
+\section*{Statements and Declarations}
+This section has been removed for double-blind review; full declarations are provided in the separate title page upload.
+
+\appendix
+% >>> BEGIN sections/appendix-method
+% !TEX root = ../main.tex
+\section{Derivations Supporting the Two-Stage Estimator}
+
+We briefly restate the derivations that motivate the two-stage fitting procedure. Let $f(x; \bm{P})$ denote a complete-form probability density defined on $(0, \infty)$ with parameter vector $\bm{P}$. Observations are only available for the truncated interval $[a, b]$, with $a = 10$~cm and $b = 60$~cm in the PSP experiment. The truncated form of $f$ is
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c \, f(x; \bm{P}), & a \leq x \leq b, \\
+      0, & \text{otherwise},
+    \end{cases}
+    \label{eq:truncated-density}
+\end{equation}
+where the normalising constant is
+\begin{equation}
+  c = \left[\int_a^b f(t; \bm{P}) \,\mathrm{d}t\right]^{-1} = \left[F(b; \bm{P}) - F(a; \bm{P})\right]^{-1}.
+\end{equation}
+Here $F$ is the cumulative distribution function associated with $f$. When a closed-form expression for $F$ is unavailable, $c$ must be evaluated numerically, complicating routine model comparison.
+
+To avoid deriving bespoke truncated forms for each target distribution, we augment the complete density with a free scaling parameter $s$ and define
+\begin{equation}
+  f'(x; \bm{P}', s) = s \, f(x; \bm{P}),
+\end{equation}
+where $\bm{P}' = \bm{P} \cup \{s\}$. Because $s$ relaxes the unity constraint on the integral of $f$, the least-squares objective
+\begin{equation}
+  Z(\bm{P}', s) = \sum_{i \in I} \left[f'(x_i; \bm{P}', s) - \hat{y}_i^{(n)}\right]^2
+\end{equation}
+admits solutions with residual behaviour comparable to $f^{T}$ over $[a, b]$. The augmented model reproduces any truncated shape achievable by $f^{T}$ but introduces an additional degree of freedom that inflates parameter variance.
+
+We therefore fit the model in two stages. Stage~1 solves
+\begin{equation}
+  (\widehat{\bm{P}'}, \hat{s}) = \arg\min_{\bm{P}', s} Z(\bm{P}', s),
+\end{equation}
+yielding a consistent estimate $\hat{s}$ that scales the complete-form density to the truncated support. Stage~2 fixes the scaling parameter and re-optimises the original parameter vector,
+\begin{equation}
+  \widehat{\bm{P}} = \arg\min_{\bm{P}} Z(\bm{P}, \hat{s}),
+\end{equation}
+where $Z(\bm{P}, \hat{s})$ denotes the objective with $s$ held constant. The fitted curves coincide,
+\begin{equation}
+  Z(\widehat{\bm{P}'}, \hat{s}) \simeq Z(\widehat{\bm{P}}, \hat{s}),
+\end{equation}
+but the second-stage covariance matrix excludes the nuisance scaling parameter, yielding tighter standard errors for the distributional parameters of interest.
+
+The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible. In the manuscript we implement $f$ as the Weibull and gamma specialisations of the generalised gamma distribution,
+\begin{equation}
+  f_{\mathrm{GG}}(x; a, \beta, p) = \frac{a x^{ap - 1} \exp\left[-(x / \beta)^a\right]}{\beta^{ap} \Gamma(p)}, \qquad x > 0,
+\end{equation}
+with the Weibull recovered by fixing $p = 1$ and the gamma by fixing $a = 1$. The truncated form in \eqref{eq:truncated-density} follows by replacing $f$ with $f_{\mathrm{GG}}$ and evaluating the normalising constant $c$ numerically.
+
+% <<< END sections/appendix-method
+
+\section*{Word Count Summary}
+Total number of words (including references): 1\,975\\
+Total number of words (excluding references): 1\,774\\
+Abstract number of words: 150\\
+Number of words in Supplementary Information: 0
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
