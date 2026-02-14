@@ -11,14 +11,14 @@
     - [x] Subtask 1.2.3 — Validate build scripts and Make targets for r0/r1
 
 - [ ] Phase 2 — Technical analysis updates
-  - [ ] Task 2.1 — Address truncation model concerns
+  - [x] Task 2.1 — Address truncation model concerns
     - [x] Subtask 2.1.1 — Clarify right-truncation rationale and practical use cases
     - [x] Subtask 2.1.2 — Provide explicit note on mass outside [a,b] under 2sc
     - [x] Subtask 2.1.3 — Decide whether to add/compare 3-parameter Weibull
   - [ ] Task 2.2 — Expand validation and robustness checks
     - [ ] Subtask 2.2.1 — Add simulated distribution shapes or document limitation
-    - [ ] Subtask 2.2.2 — Quantify 1st vs 2sc differences (metrics)
-    - [ ] Subtask 2.2.3 — Recompute AICc for all methods and stages
+    - [x] Subtask 2.2.2 — Quantify 1st vs 2sc differences (metrics)
+    - [x] Subtask 2.2.3 — Recompute AICc for all methods and stages
   - [ ] Task 2.3 — Update tables/figures pipeline
     - [ ] Subtask 2.3.1 — Update scripts/configs for new metrics/outputs
     - [ ] Subtask 2.3.2 — Regenerate tables (AICc 1sc/1st/2sc; stage 1/2)
