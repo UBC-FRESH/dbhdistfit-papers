@@ -11,7 +11,7 @@ The upper bound $b$ reflects the observed maximum in the PSP tallies (and manage
 \subsection{Weighted non-linear least squares}
 \label{sec:methods_nlls}
 
-We fit parametric distributions by solving the weighted non-linear least squares problem
+We fit parametric distributions by matching the empirical truncated density with candidate PDFs at the bin midpoints using weighted non-linear least squares. The objective is
 \begin{equation}
   Z = \min_{\bm{P}} \sum_{i \in I} e_i^2,
 \end{equation}
@@ -20,6 +20,7 @@ with residuals
   e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
 \end{equation}
 where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$) to streamline the narrative and align the comparison with the published truncated baseline. The companion repository notebook documents the plot-level tallies and demonstrates how to construct inverse-variance weights when analysts wish to down-weight sparse edge bins.
+Optimisation uses the Levenberg--Marquardt algorithm as implemented in \texttt{lmfit} \citep{levenberg1944method, marquardt1963algorithm}.
 
 Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
 \begin{equation}
@@ -34,7 +35,7 @@ with scaling constant $c = [F(b; \bm{P}) - F(a; \bm{P})]^{-1}$ and $F$ the cumul
 \subsection{Two-stage estimator}
 \label{sec:methods_twostage}
 
-The estimator adds a positive scaling parameter $s$ so the complete-form fit honours the truncated support. Stage one solves
+The two-stage estimator adds a positive scaling parameter $s$ so the complete-form fit honours the truncated support. Stage one solves
 \begin{equation}
   \min_{\bm{P},\, s>0} \sum_{i \in I} \left[s f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right]^2,
 \end{equation}
@@ -50,7 +51,7 @@ We compare three fitting strategies for each meta-plot:
   \item \textbf{1st} -- a truncated likelihood fit using $f^{T}(x; \bm{P})$ on $[a, b]$;
   \item \textbf{2sc} -- the two-stage complete-form procedure described above.
 \end{enumerate}
-We use the \texttt{lmfit} package to wrap each probability density function into a \texttt{Model} object, initialise parameters from empirical moments, and employ the Levenberg--Marquardt optimiser to minimise $Z$ for all three configurations.
+We wrap each probability density function into an \texttt{lmfit} \texttt{Model}, initialise parameters from empirical moments, and minimise $Z$ for all three configurations.
 
 \subsection{Candidate distributions and model selection}
 \label{sec:methods_candidates}

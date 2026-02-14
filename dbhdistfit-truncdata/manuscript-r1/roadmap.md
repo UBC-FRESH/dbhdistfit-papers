@@ -26,9 +26,9 @@
 
 - [ ] Phase 3 — Manuscript revisions (r1)
   - [ ] Task 3.1 — Methods rewrite and clarity
-    - [ ] Subtask 3.1.1 — Rewrite Sections 2.2–2.4 for clarity and intuition
-    - [ ] Subtask 3.1.2 — Add references for weighted NLLS
-    - [ ] Subtask 3.1.3 — Update Appendix A (trim or refocus derivation)
+    - [x] Subtask 3.1.1 — Rewrite Sections 2.2–2.4 for clarity and intuition
+    - [x] Subtask 3.1.2 — Add references for weighted NLLS
+    - [x] Subtask 3.1.3 — Update Appendix A (trim or refocus derivation)
   - [ ] Task 3.2 — Results and interpretation
     - [ ] Subtask 3.2.1 — Update Results text to match new tables/figures
     - [ ] Subtask 3.2.2 — Temper claims (exploratory framing)

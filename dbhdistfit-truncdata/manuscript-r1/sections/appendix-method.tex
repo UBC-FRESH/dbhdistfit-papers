@@ -42,8 +42,4 @@ where $Z(\bm{P}, \hat{s})$ denotes the objective with $s$ held constant. The fit
 \end{equation}
 but the second-stage covariance matrix excludes the nuisance scaling parameter, yielding tighter standard errors for the distributional parameters of interest.
 
-The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible. In the manuscript we implement $f$ as the Weibull and gamma specialisations of the generalised gamma distribution,
-\begin{equation}
-  f_{\mathrm{GG}}(x; a, \beta, p) = \frac{a x^{ap - 1} \exp\left[-(x / \beta)^a\right]}{\beta^{ap} \Gamma(p)}, \qquad x > 0,
-\end{equation}
-with the Weibull recovered by fixing $p = 1$ and the gamma by fixing $a = 1$. The truncated form in \eqref{eq:truncated-density} follows by replacing $f$ with $f_{\mathrm{GG}}$ and evaluating the normalising constant $c$ numerically.
+The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible.
