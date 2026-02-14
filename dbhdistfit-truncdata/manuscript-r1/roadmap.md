@@ -1,11 +1,11 @@
 # R1 Resubmission Roadmap
 
-- [ ] Phase 1 — Scope, requirements, and setup
+- [x] Phase 1 — Scope, requirements, and setup
   - [x] Task 1.1 — Confirm constraints and submission requirements
     - [x] Subtask 1.1.1 — Verify due date, required files, and highlight/change requirements
     - [x] Subtask 1.1.2 — Confirm authorship/order and required declarations
     - [x] Subtask 1.1.3 — Decide target length/format (Brief Communication vs expansion)
-  - [ ] Task 1.2 — Baseline and assets inventory
+  - [x] Task 1.2 — Baseline and assets inventory
     - [x] Subtask 1.2.1 — Freeze R0 baseline (PDF + sources) for comparison
     - [x] Subtask 1.2.2 — Confirm data provenance and local pickle fallback usage
     - [x] Subtask 1.2.3 — Validate build scripts and Make targets for r0/r1
