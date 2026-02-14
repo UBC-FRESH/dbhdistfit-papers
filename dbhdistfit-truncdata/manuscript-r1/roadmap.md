@@ -1,0 +1,67 @@
+# R1 Resubmission Roadmap
+
+- [ ] Phase 1 — Scope, requirements, and setup
+  - [ ] Task 1.1 — Confirm constraints and submission requirements
+    - [ ] Subtask 1.1.1 — Verify due date, required files, and highlight/change requirements
+    - [ ] Subtask 1.1.2 — Confirm authorship/order and required declarations
+    - [ ] Subtask 1.1.3 — Decide target length/format (Brief Communication vs expansion)
+  - [ ] Task 1.2 — Baseline and assets inventory
+    - [ ] Subtask 1.2.1 — Freeze R0 baseline (PDF + sources) for comparison
+    - [ ] Subtask 1.2.2 — Confirm data provenance and local pickle fallback usage
+    - [ ] Subtask 1.2.3 — Validate build scripts and Make targets for r0/r1
+
+- [ ] Phase 2 — Technical analysis updates
+  - [ ] Task 2.1 — Address truncation model concerns
+    - [ ] Subtask 2.1.1 — Clarify right-truncation rationale and practical use cases
+    - [ ] Subtask 2.1.2 — Provide explicit note on mass outside [a,b] under 2sc
+    - [ ] Subtask 2.1.3 — Decide whether to add/compare 3-parameter Weibull
+  - [ ] Task 2.2 — Expand validation and robustness checks
+    - [ ] Subtask 2.2.1 — Add simulated distribution shapes or document limitation
+    - [ ] Subtask 2.2.2 — Quantify 1st vs 2sc differences (metrics)
+    - [ ] Subtask 2.2.3 — Recompute AICc for all methods and stages
+  - [ ] Task 2.3 — Update tables/figures pipeline
+    - [ ] Subtask 2.3.1 — Update scripts/configs for new metrics/outputs
+    - [ ] Subtask 2.3.2 — Regenerate tables (AICc 1sc/1st/2sc; stage 1/2)
+    - [ ] Subtask 2.3.3 — Regenerate figures (and add any new panels)
+
+- [ ] Phase 3 — Manuscript revisions (r1)
+  - [ ] Task 3.1 — Methods rewrite and clarity
+    - [ ] Subtask 3.1.1 — Rewrite Sections 2.2–2.4 for clarity and intuition
+    - [ ] Subtask 3.1.2 — Add references for weighted NLLS
+    - [ ] Subtask 3.1.3 — Update Appendix A (trim or refocus derivation)
+  - [ ] Task 3.2 — Results and interpretation
+    - [ ] Subtask 3.2.1 — Update Results text to match new tables/figures
+    - [ ] Subtask 3.2.2 — Temper claims (exploratory framing)
+    - [ ] Subtask 3.2.3 — Add limitations and future work
+  - [ ] Task 3.3 — Front/back matter and consistency
+    - [ ] Subtask 3.3.1 — Update Abstract keywords and summary claims
+    - [ ] Subtask 3.3.2 — Update word counts and metadata
+    - [ ] Subtask 3.3.3 — Ensure title page/cover letter align with r1
+
+- [ ] Phase 4 — Response to reviewers
+  - [ ] Task 4.1 — Draft point-by-point response
+    - [ ] Subtask 4.1.1 — Respond to Associate Editor comments
+    - [ ] Subtask 4.1.2 — Respond to Reviewer #1 comments
+    - [ ] Subtask 4.1.3 — Respond to Reviewer #2 comments
+  - [ ] Task 4.2 — Map responses to manuscript changes
+    - [ ] Subtask 4.2.1 — Link each response to updated section/figure/table
+    - [ ] Subtask 4.2.2 — Track unresolved items or disputes
+    - [ ] Subtask 4.2.3 — Prepare change highlights (color/underline)
+  - [ ] Task 4.3 — Reviewer-friendly manuscript diff (latexdiff)
+    - [ ] Subtask 4.3.1 — Generate flattened, anonymized r0 and r1 manuscripts (em-submission outputs)
+    - [ ] Subtask 4.3.2 — Run latexdiff on em-submission `main.tex` files (r0 vs r1)
+    - [ ] Subtask 4.3.3 — Compile and sanity-check the diff PDF for anonymization and clarity
+
+- [ ] Phase 5 — Build, QA, and submission
+  - [ ] Task 5.1 — Rebuild outputs
+    - [ ] Subtask 5.1.1 — `make figures tables` with r1 inputs
+    - [ ] Subtask 5.1.2 — `make manuscript-r1` and check log warnings
+    - [ ] Subtask 5.1.3 — `make em-submission-r1` and validate package
+  - [ ] Task 5.2 — Final checks
+    - [ ] Subtask 5.2.1 — Verify references, AICc claims, and figure/table captions
+    - [ ] Subtask 5.2.2 — Verify compliance with journal style/format
+    - [ ] Subtask 5.2.3 — Confirm reproducibility notes and data availability
+  - [ ] Task 5.3 — Resubmission
+    - [ ] Subtask 5.3.1 — Upload source files + response letter
+    - [ ] Subtask 5.3.2 — Confirm metadata, keywords, and declarations
+    - [ ] Subtask 5.3.3 — Archive final r1 package and tag/branch
