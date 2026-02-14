@@ -16,7 +16,7 @@
     - [x] Subtask 2.1.2 — Provide explicit note on mass outside [a,b] under 2sc
     - [x] Subtask 2.1.3 — Decide whether to add/compare 3-parameter Weibull
   - [ ] Task 2.2 — Expand validation and robustness checks
-    - [ ] Subtask 2.2.1 — Add simulated distribution shapes or document limitation
+    - [x] Subtask 2.2.1 — Add simulated distribution shapes or document limitation
     - [x] Subtask 2.2.2 — Quantify 1st vs 2sc differences (metrics)
     - [x] Subtask 2.2.3 — Recompute AICc for all methods and stages
   - [ ] Task 2.3 — Update tables/figures pipeline
