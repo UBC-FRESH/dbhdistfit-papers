@@ -8,9 +8,9 @@
 | Corresponding author | Gregory E. Paradis (`gregory.paradis@ubc.ca`) |
 | ORCID | 0000-0001-9618-8797 |
 | Affiliation | Department of Forest Resources Management, University of British Columbia, Vancouver, Canada |
-| Word count (incl. references) | 2,384 |
-| Word count (excl. references) | 1,997 |
-| Abstract word count | 138 |
+| Word count (incl. references) | 2,357 |
+| Word count (excl. references) | 1,998 |
+| Abstract word count | 150 |
 | Supplementary information | None (materials hosted in companion repository) |
 | Figures | 1 (verify after edits) |
 | Tables | 1 (verify after edits) |

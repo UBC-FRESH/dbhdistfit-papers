@@ -5,7 +5,7 @@
 \subsection{Inventory binning}
 \label{sec:methods_binning}
 
-The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH. Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
+The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH (diameter at breast height). Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
 The upper bound $b$ reflects the observed maximum in the PSP tallies (and management caps where applicable); if no defensible upper limit exists, the workflow can be applied with a larger $b$ or with left truncation only.
 
 \subsection{Weighted non-linear least squares}
@@ -61,3 +61,5 @@ We concentrate on the two-parameter Weibull and gamma distributions, both specia
   \text{AICc} = \text{AIC} + \frac{2K(K+1)}{n - K - 1},
 \end{equation}
 where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. We adjust $K$ to account for the additional scaling terms introduced by each configuration: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.
+
+LLM-assisted editing improved readability; the author approved all content.

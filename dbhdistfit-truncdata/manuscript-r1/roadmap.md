@@ -57,10 +57,10 @@
     - [x] Subtask 5.1.1 — `make figures tables` with r1 inputs
     - [x] Subtask 5.1.2 — `make manuscript-r1` and check log warnings
     - [x] Subtask 5.1.3 — `make em-submission-r1` and validate package
-  - [ ] Task 5.2 — Final checks
+  - [x] Task 5.2 — Final checks
     - [x] Subtask 5.2.1 — Verify references, AICc claims, and figure/table captions
-    - [ ] Subtask 5.2.2 — Verify compliance with journal style/format
-    - [ ] Subtask 5.2.3 — Confirm reproducibility notes and data availability
+    - [x] Subtask 5.2.2 — Verify compliance with journal style/format
+    - [x] Subtask 5.2.3 — Confirm reproducibility notes and data availability
   - [ ] Task 5.3 — Resubmission
     - [ ] Subtask 5.3.1 — Upload source files + response letter
     - [ ] Subtask 5.3.2 — Confirm metadata, keywords, and declarations

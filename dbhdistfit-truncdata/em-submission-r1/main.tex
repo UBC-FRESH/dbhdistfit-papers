@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{caption}
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{titling}
@@ -15,6 +16,7 @@
 \postauthor{\par\end{flushleft}\vskip 0.75em}
 \predate{\begin{flushleft}\large}
 \postdate{\par\end{flushleft}\vskip 1em}
+\captionsetup[figure]{labelfont=bf,labelsep=space,name=Fig.}
 
 \title{A Two-Stage Fitting Method for Truncated Stem Diameter Distributions}
 
@@ -29,7 +31,7 @@
 % >>> BEGIN sections/abstract
 % !TEX root = ../main.tex
 \begin{abstract}
-Stem diameter distributions underpin forest planning, yet permanent sample plot inventories are routinely truncated by merchantability limits and diameter caps. Truncated densities are the standard remedy, but those forms are seldom documented or supported in common software, so practitioners default to biased complete-form fits. We introduce a two-stage weighted least-squares workflow that retains the familiar complete-form implementation while recovering truncated-fit accuracy. Stage one estimates a scaling factor alongside the density parameters; stage two freezes that normaliser to deliver unbiased shape and scale estimates. Applied to fixed-area plots from Qu\'ebec, Canada, the two-stage estimator tracks truncated Weibull and gamma fits across 32 species/cover combinations (RMSE between 1st and 2sc fits: $2\times10^{-5}$--$3.7\times10^{-2}$) and yields the lowest AICc in 25 of 32 cases. The companion repository provides the tallies, scripts, and notebooks required to regenerate every figure, table, and \LaTeX{} artefact.
+Stem diameter distributions underpin forest planning and inventory practice worldwide, yet permanent sample plot inventories are routinely truncated by merchantability limits and diameter caps. Truncated densities are the standard remedy, but those forms are seldom documented or supported in common software, so practitioners default to biased complete-form fits. We introduce a two-stage weighted least-squares workflow that retains the familiar complete-form implementation while recovering truncated-fit accuracy. Stage one estimates a scaling factor alongside the density parameters; stage two freezes that normaliser to deliver unbiased shape and scale estimates. Applied to fixed-area plots from Qu\'ebec, Canada, the two-stage estimator tracks truncated Weibull and gamma fits across 32 species-group/cover-type combinations (root-mean-square error between one-stage truncated and two-stage complete fits: $2\times10^{-5}$--$3.7\times10^{-2}$) and yields the lowest stage-2 AICc (small-sample Akaike information criterion) in 25 of 32 cases. The companion repository provides the tallies, scripts, and notebooks required to regenerate every figure, table, and \LaTeX{} artefact.
 \end{abstract}
 
 % <<< END sections/abstract
@@ -38,7 +40,7 @@ Stem diameter distributions underpin forest planning, yet permanent sample plot 
 \section{Introduction}
 \label{sec:introduction}
 
-Stem diameters in forest stands are commonly characterised by fitting statistical distributions to plot measurements \citep{bailey1973quantifying, hyink1983generalized, gunn2000modeling, orellana2017fitting, orellana2017parameter}. Because permanent sample plot programmes are expensive to maintain, analysts often rely on legacy inventories whose tally rules prioritised field efficiency over statistical convenience.
+Stem diameters in forest stands are commonly characterised by fitting statistical distributions to plot measurements \citep{bailey1973quantifying, hyink1983generalized, gunn2000modeling, orellana2017fitting, orellana2017parameter}. Because permanent sample plot (PSP) programmes are expensive to maintain, analysts often rely on legacy inventories whose tally rules prioritised field efficiency over statistical convenience.
 
 Merchantability thresholds remove small stems, biological limits cap large diameters, and crews aggregate counts into fixed-width classes, leaving doubly truncated grouped stand tables.
 
@@ -57,7 +59,7 @@ We propose a two-stage method that retains the \emph{complete} form while achiev
 \subsection{Inventory binning}
 \label{sec:methods_binning}
 
-The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH. Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
+The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH (diameter at breast height). Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
 The upper bound $b$ reflects the observed maximum in the PSP tallies (and management caps where applicable); if no defensible upper limit exists, the workflow can be applied with a larger $b$ or with left truncation only.
 
 \subsection{Weighted non-linear least squares}
@@ -114,6 +116,8 @@ We concentrate on the two-parameter Weibull and gamma distributions, both specia
 \end{equation}
 where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. We adjust $K$ to account for the additional scaling terms introduced by each configuration: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.
 
+LLM-assisted editing improved readability; the author approved all content.
+
 % <<< END sections/methods
 % >>> BEGIN sections/results
 % !TEX root = ../main.tex
@@ -126,7 +130,7 @@ Table~\ref{tab:comparison} summarises parameter estimates, AICc scores, and diag
 
 \begin{table}[htbp]
   \centering
-  \caption{Parameter estimates (stage~1 and stage~2) and AICc scores for the best-fitting distribution per species-group / cover-type combination.}
+  \caption{Parameter estimates (stage~1/2), AICc scores, and 1st--2sc diagnostics (RMSE, max abs diff) for each species-group / cover-type combination.}
   \label{tab:comparison}
   \resizebox{\textwidth}{!}{\input{method_comparison.tex}}
 \end{table}
@@ -134,7 +138,7 @@ Table~\ref{tab:comparison} summarises parameter estimates, AICc scores, and diag
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{diameter_comparison.pdf}
-  \caption{Comparison of Weibull (left column) and Gamma (right column) fits across three representative meta-plots: (a--b) SPFL softwood, (c--d) Birch mixedwood, and (e--f) Maple hardwood. Points denote empirical relative frequencies; solid lines show the one-stage complete fits, dashed lines the truncated fits, and dotted lines the two-stage complete fits.}
+  \caption{Comparison of Weibull (left column) and Gamma (right column) fits across three representative meta-plots: (a--b) SPFL softwood, (c--d) Birch mixedwood, and (e--f) Maple hardwood. Points denote empirical relative frequencies; solid lines show the one-stage complete fits, dashed lines the truncated fits, and dotted lines the two-stage complete fits}
   \label{fig:comparison}
 \end{figure}
 
@@ -149,7 +153,7 @@ Two meta-plots (white pine--mixedwood and red pine--mixedwood) produce unusually
 
 We limited the candidate set to the two-parameter Weibull and Gamma distributions because they cover common stand structures with few parameters, both arise as special cases of the generalised gamma family, and a compact family keeps attention on the methodological swap between the truncated and two-stage estimators. A three-parameter Weibull (with location) is an alternative way to handle left truncation; we treat it as future work because it changes the parameterisation and adds flexibility that would blur the direct 1st-vs-2sc comparison in a brief format.
 
-A companion Jupyter notebook in our GitHub repository (\url{https://github.com/UBC-FRESH/dbhdistfit-papers}) documents the plot-level tallies, weighting choices, and scripts that regenerate every figure and table, providing transparency without a separate supplement. With that reproducibility scaffold, 2sc matches or improves upon the truncated baseline for every species-group / cover-type combination, and both continue to outperform the naive 1sc approach. Because the interpretation of $b$ is application-specific, we view the two-stage workflow as a practical alternative that should be stress-tested under other truncation rules or distributional shapes before it is treated as a universal replacement. The current analysis focuses on inverse-J shaped PSP stand tables; synthetic or managed-stand shapes may reveal different strengths and should be explored in future work given the brief format.
+A companion Jupyter notebook in our GitHub repository (\url{https://github.com/UBC-FRESH/dbhdistfit-papers}) documents the tallies, weighting choices, and scripts that regenerate the figure and table, providing transparency without a separate supplement. With that scaffold, 2sc matches or improves on the truncated baseline and outperforms the naive 1sc approach. Because the interpretation of $b$ is application-specific, we view the two-stage workflow as an alternative that should be stress-tested under other truncation rules or distributional shapes before being treated as a universal replacement. The current analysis focuses on inverse-J PSP stand tables; other shapes warrant future study.
 
 % <<< END sections/discussion
 % >>> BEGIN sections/conclusion
@@ -218,9 +222,9 @@ The approach generalises to any probability density for which numerical quadratu
 % <<< END sections/appendix-method
 
 \section*{Word Count Summary}
-Total number of words (including references): 2\,384\\
-Total number of words (excluding references): 1\,997\\
-Abstract number of words: 138\\
+Total number of words (including references): 2\,357\\
+Total number of words (excluding references): 1\,998\\
+Abstract number of words: 150\\
 Number of words in Supplementary Information: 0
 
 \bibliographystyle{apalike-doi}

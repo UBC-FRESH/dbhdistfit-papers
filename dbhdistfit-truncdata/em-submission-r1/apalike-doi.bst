@@ -145,7 +145,7 @@ FUNCTION {output.bibitem}
 FUNCTION {output.doi}
 { doi empty$
     'skip$
-    { "doi: " doi * output }
+    { "\url{https://doi.org/" doi * "}" * output }
   if$
 }
 
