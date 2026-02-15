@@ -63,5 +63,5 @@
     - [x] Subtask 5.2.3 — Confirm reproducibility notes and data availability
   - [ ] Task 5.3 — Resubmission
     - [x] Subtask 5.3.1 — Upload source files + response letter
-    - [ ] Subtask 5.3.2 — Confirm metadata, keywords, and declarations
+    - [x] Subtask 5.3.2 — Confirm metadata, keywords, and declarations
     - [ ] Subtask 5.3.3 — Archive final r1 package and tag/branch
