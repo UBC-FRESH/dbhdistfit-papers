@@ -2,9 +2,9 @@
 \section{Results}
 \label{sec:results}
 
-Figure~\ref{fig:comparison} compares empirical histograms with fitted Weibull and gamma curves for three representative meta-plots (rows: SPFL-S, Birch-M, Maple-H; columns: Weibull, Gamma). Each panel shows the one-stage complete (1sc), one-stage truncated (1st), and two-stage complete (2sc) solutions. The truncated and two-stage curves are virtually indistinguishable across the diameter range, while the single-stage complete fits deviate in the lower and central classes.
+Figure~\ref{fig:comparison} compares empirical histograms with fitted Weibull and gamma curves for three representative meta-plots (rows: SPFL-S, Birch-M, Maple-H; columns: Weibull, Gamma). Each panel shows the one-stage complete (1sc), one-stage truncated (1st), and two-stage complete (2sc) solutions. The truncated and two-stage curves remain close across the diameter range, while the single-stage complete fits deviate in the lower and central classes.
 
-Table~\ref{tab:comparison} summarises parameter estimates and AICc scores for all species-group / cover-type combinations. In every case the two-stage approach achieves the lowest (best) AICc, closely followed by the truncated baseline. The complete single-stage estimator consistently produces higher AICc values, especially in softwood-dominated stands where the left truncation is more severe.
+Table~\ref{tab:comparison} summarises parameter estimates, AICc scores (1sc, 1st, and 2sc stages 1--2), and diagnostics comparing 1st to 2sc (RMSE and maximum absolute difference). The 2sc stage~2 AICc is lowest in 25 of 32 species-group / cover-type combinations, while the remaining seven cases slightly favour 1sc; 1st is never best. The RMSE between 1st and 2sc fits ranges from $2\times10^{-5}$ to $3.7\times10^{-2}$ relative-frequency units, with maximum absolute differences up to $6.0\times10^{-2}$. The truncated 1st fit fails in two cases (CHCE--R and ERS--R), producing infinite AICc, whereas the 2sc workflow still converges.
 
 \begin{table}[htbp]
   \centering
