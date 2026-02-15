@@ -29,10 +29,10 @@
     - [x] Subtask 3.1.1 — Rewrite Sections 2.2–2.4 for clarity and intuition
     - [x] Subtask 3.1.2 — Add references for weighted NLLS
     - [x] Subtask 3.1.3 — Update Appendix A (trim or refocus derivation)
-  - [ ] Task 3.2 — Results and interpretation
-    - [ ] Subtask 3.2.1 — Update Results text to match new tables/figures
-    - [ ] Subtask 3.2.2 — Temper claims (exploratory framing)
-    - [ ] Subtask 3.2.3 — Add limitations and future work
+  - [x] Task 3.2 — Results and interpretation
+    - [x] Subtask 3.2.1 — Update Results text to match new tables/figures
+    - [x] Subtask 3.2.2 — Temper claims (exploratory framing)
+    - [x] Subtask 3.2.3 — Add limitations and future work
   - [ ] Task 3.3 — Front/back matter and consistency
     - [ ] Subtask 3.3.1 — Update Abstract keywords and summary claims
     - [ ] Subtask 3.3.2 — Update word counts and metadata
