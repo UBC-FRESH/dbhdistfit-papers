@@ -33,10 +33,10 @@
     - [x] Subtask 3.2.1 — Update Results text to match new tables/figures
     - [x] Subtask 3.2.2 — Temper claims (exploratory framing)
     - [x] Subtask 3.2.3 — Add limitations and future work
-  - [ ] Task 3.3 — Front/back matter and consistency
-    - [ ] Subtask 3.3.1 — Update Abstract keywords and summary claims
-    - [ ] Subtask 3.3.2 — Update word counts and metadata
-    - [ ] Subtask 3.3.3 — Ensure title page/cover letter align with r1
+  - [x] Task 3.3 — Front/back matter and consistency
+    - [x] Subtask 3.3.1 — Update Abstract keywords and summary claims
+    - [x] Subtask 3.3.2 — Update word counts and metadata
+    - [x] Subtask 3.3.3 — Ensure title page/cover letter align with r1
 
 - [ ] Phase 4 — Response to reviewers
   - [ ] Task 4.1 — Draft point-by-point response
