@@ -52,7 +52,7 @@
     - [x] Subtask 4.3.2 — Run latexdiff on em-submission `main.tex` files (r0 vs r1)
     - [x] Subtask 4.3.3 — Compile and sanity-check the diff PDF for anonymization and clarity
 
-- [ ] Phase 5 — Build, QA, and submission
+- [x] Phase 5 — Build, QA, and submission
   - [x] Task 5.1 — Rebuild outputs
     - [x] Subtask 5.1.1 — `make figures tables` with r1 inputs
     - [x] Subtask 5.1.2 — `make manuscript-r1` and check log warnings
@@ -61,7 +61,7 @@
     - [x] Subtask 5.2.1 — Verify references, AICc claims, and figure/table captions
     - [x] Subtask 5.2.2 — Verify compliance with journal style/format
     - [x] Subtask 5.2.3 — Confirm reproducibility notes and data availability
-  - [ ] Task 5.3 — Resubmission
+  - [x] Task 5.3 — Resubmission
     - [x] Subtask 5.3.1 — Upload source files + response letter
     - [x] Subtask 5.3.2 — Confirm metadata, keywords, and declarations
-    - [ ] Subtask 5.3.3 — Archive final r1 package and tag/branch
+    - [x] Subtask 5.3.3 — Archive final r1 package and tag/branch
