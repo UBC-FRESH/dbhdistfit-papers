@@ -6,5 +6,5 @@ seaborn
 pyyaml
 pyarrow
 lmfit
-bibtexparser
 requests
+bibtexparser
