@@ -43,9 +43,9 @@
     - [x] Subtask 4.1.1 — Respond to Associate Editor comments
     - [x] Subtask 4.1.2 — Respond to Reviewer #1 comments
     - [x] Subtask 4.1.3 — Respond to Reviewer #2 comments
-  - [ ] Task 4.2 — Map responses to manuscript changes
-    - [ ] Subtask 4.2.1 — Link each response to updated section/figure/table
-    - [ ] Subtask 4.2.2 — Track unresolved items or disputes
+  - [x] Task 4.2 — Map responses to manuscript changes
+    - [x] Subtask 4.2.1 — Link each response to updated section/figure/table
+    - [x] Subtask 4.2.2 — Track unresolved items or disputes
     - [ ] Subtask 4.2.3 — Prepare change highlights (color/underline)
   - [ ] Task 4.3 — Reviewer-friendly manuscript diff (latexdiff)
     - [ ] Subtask 4.3.1 — Generate flattened, anonymized r0 and r1 manuscripts (em-submission outputs)
