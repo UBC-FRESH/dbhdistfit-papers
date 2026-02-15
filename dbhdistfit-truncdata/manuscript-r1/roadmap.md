@@ -62,6 +62,6 @@
     - [x] Subtask 5.2.2 — Verify compliance with journal style/format
     - [x] Subtask 5.2.3 — Confirm reproducibility notes and data availability
   - [ ] Task 5.3 — Resubmission
-    - [ ] Subtask 5.3.1 — Upload source files + response letter
+    - [x] Subtask 5.3.1 — Upload source files + response letter
     - [ ] Subtask 5.3.2 — Confirm metadata, keywords, and declarations
     - [ ] Subtask 5.3.3 — Archive final r1 package and tag/branch
