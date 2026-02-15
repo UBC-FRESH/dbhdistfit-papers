@@ -12,8 +12,19 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MANUSCRIPT_DIR = PROJECT_ROOT / "manuscript"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 TABLES_DIR = PROJECT_ROOT / "tables"
-DEST_DIR = PROJECT_ROOT / "em-submission"
-ARCHIVE_PATH = PROJECT_ROOT / "em-submission.zip"
+
+
+def _submission_label() -> str:
+    """Derive a stable submission label from the manuscript directory name."""
+    match = re.match(r"manuscript-(r\d+)$", MANUSCRIPT_DIR.name)
+    if match:
+        return f"em-submission-{match.group(1)}"
+    return "em-submission"
+
+
+SUBMISSION_LABEL = _submission_label()
+DEST_DIR = PROJECT_ROOT / SUBMISSION_LABEL
+ARCHIVE_PATH = PROJECT_ROOT / f"{SUBMISSION_LABEL}.zip"
 
 
 def _copy_file(src: Path, dest_name: str | None = None) -> None:
@@ -131,6 +142,8 @@ def populate_destination() -> None:
     for path in essentials:
         if path.exists():
             _copy_file(path)
+    for bst_path in MANUSCRIPT_DIR.glob("*.bst"):
+        _copy_file(bst_path)
 
     build_blinded_pdf()
 

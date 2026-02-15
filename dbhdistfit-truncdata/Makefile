@@ -125,4 +125,4 @@ notebook: data
 repro: figures tables notebook manuscript
 
 clean:
-	rm -rf figures/* tables/* $(MANUSCRIPT_R0_DIR)/build $(MANUSCRIPT_R1_DIR)/build notebooks/*.executed.ipynb preprint/*.pdf em-submission/*.pdf em-submission/*.zip tmp/*
+	rm -rf figures/* tables/* $(MANUSCRIPT_R0_DIR)/build $(MANUSCRIPT_R1_DIR)/build notebooks/*.executed.ipynb preprint/*.pdf em-submission*.zip em-submission-r*/ tmp/*

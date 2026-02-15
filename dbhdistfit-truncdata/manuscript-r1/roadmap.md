@@ -46,7 +46,7 @@
   - [x] Task 4.2 — Map responses to manuscript changes
     - [x] Subtask 4.2.1 — Link each response to updated section/figure/table
     - [x] Subtask 4.2.2 — Track unresolved items or disputes
-    - [ ] Subtask 4.2.3 — Prepare change highlights (color/underline)
+    - [x] Subtask 4.2.3 — Prepare change highlights (color/underline)
   - [ ] Task 4.3 — Reviewer-friendly manuscript diff (latexdiff)
     - [ ] Subtask 4.3.1 — Generate flattened, anonymized r0 and r1 manuscripts (em-submission outputs)
     - [ ] Subtask 4.3.2 — Run latexdiff on em-submission `main.tex` files (r0 vs r1)
