@@ -47,10 +47,10 @@
     - [x] Subtask 4.2.1 — Link each response to updated section/figure/table
     - [x] Subtask 4.2.2 — Track unresolved items or disputes
     - [x] Subtask 4.2.3 — Prepare change highlights (color/underline)
-  - [ ] Task 4.3 — Reviewer-friendly manuscript diff (latexdiff)
-    - [ ] Subtask 4.3.1 — Generate flattened, anonymized r0 and r1 manuscripts (em-submission outputs)
-    - [ ] Subtask 4.3.2 — Run latexdiff on em-submission `main.tex` files (r0 vs r1)
-    - [ ] Subtask 4.3.3 — Compile and sanity-check the diff PDF for anonymization and clarity
+  - [x] Task 4.3 — Reviewer-friendly manuscript diff (latexdiff)
+    - [x] Subtask 4.3.1 — Generate flattened, anonymized r0 and r1 manuscripts (em-submission outputs)
+    - [x] Subtask 4.3.2 — Run latexdiff on em-submission `main.tex` files (r0 vs r1)
+    - [x] Subtask 4.3.3 — Compile and sanity-check the diff PDF for anonymization and clarity
 
 - [ ] Phase 5 — Build, QA, and submission
   - [ ] Task 5.1 — Rebuild outputs
