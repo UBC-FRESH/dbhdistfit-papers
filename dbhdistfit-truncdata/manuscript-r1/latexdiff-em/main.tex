@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL em-submission-r0/main.tex   Sun Feb 15 20:41:25 2026
-%DIF ADD em-submission-r1/main.tex   Sun Feb 15 21:12:41 2026
+%DIF DEL em-submission-r0/main.tex   Sun Feb 15 22:07:59 2026
+%DIF ADD em-submission-r1/main.tex   Sun Feb 15 22:07:30 2026
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{bm}
@@ -254,7 +254,7 @@ Two meta-plots (white pine--mixedwood and red pine--mixedwood) produce unusually
 
 We limited the candidate set to the two-parameter Weibull and Gamma distributions because they cover common stand structures with few parameters, both arise as special cases of the generalised gamma family, and a compact family keeps attention on the methodological swap between the truncated and two-stage estimators. \DIFdelbegin \DIFdel{Showing that 2sc mirrors 1st for these widely used forms thus fulfils the study objective even when the absolute fit quality is constrained by the data}\DIFdelend \DIFaddbegin \DIFadd{A three-parameter Weibull (with location) is an alternative way to handle left truncation; we treat it as future work because it changes the parameterisation and adds flexibility that would blur the direct 1st-vs-2sc comparison in a brief format}\DIFaddend .
 
-A companion Jupyter notebook in our GitHub repository (\url{https://github.com/UBC-FRESH/dbhdistfit-papers}) documents the \DIFdelbegin \DIFdel{plot-level }\DIFdelend tallies, weighting choices, and scripts that regenerate \DIFdelbegin \DIFdel{every }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend figure and table, providing transparency without a separate supplement. With that \DIFdelbegin \DIFdel{reproducibility }\DIFdelend scaffold, 2sc matches or improves \DIFdelbegin \DIFdel{upon }\DIFdelend \DIFaddbegin \DIFadd{on }\DIFaddend the truncated baseline \DIFdelbegin \DIFdel{for every species-group / cover-type combination, and both continue to outperform }\DIFdelend \DIFaddbegin \DIFadd{and outperforms }\DIFaddend the naive 1sc approach. \DIFaddbegin \DIFadd{Because the interpretation of $b$ is application-specific, we view the two-stage workflow as an alternative that should be stress-tested under other truncation rules or distributional shapes before being treated as a universal replacement. The current analysis focuses on inverse-J PSP stand tables; other shapes warrant future study.
+A companion repository (URL withheld for double-blind review) documents the \DIFdelbegin \DIFdel{plot-level }\DIFdelend tallies, weighting choices, and scripts that regenerate \DIFdelbegin \DIFdel{every }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend figure and table, providing transparency without a separate supplement. With that \DIFdelbegin \DIFdel{reproducibility }\DIFdelend scaffold, 2sc matches or improves \DIFdelbegin \DIFdel{upon }\DIFdelend \DIFaddbegin \DIFadd{on }\DIFaddend the truncated baseline \DIFdelbegin \DIFdel{for every species-group / cover-type combination, and both continue to outperform }\DIFdelend \DIFaddbegin \DIFadd{and outperforms }\DIFaddend the naive 1sc approach. \DIFaddbegin \DIFadd{Because the interpretation of $b$ is application-specific, we view the two-stage workflow as an alternative that should be stress-tested under other truncation rules or distributional shapes before being treated as a universal replacement. The current analysis focuses on inverse-J PSP stand tables; other shapes warrant future study.
 }\DIFaddend 
 
 % <<< END sections/discussion
