@@ -24,7 +24,7 @@
     - [x] Subtask 2.3.2 — Regenerate tables (AICc 1sc/1st/2sc; stage 1/2)
     - [x] Subtask 2.3.3 — Regenerate figures (and add any new panels)
 
-- [ ] Phase 3 — Manuscript revisions (r1)
+- [x] Phase 3 — Manuscript revisions (r1)
   - [x] Task 3.1 — Methods rewrite and clarity
     - [x] Subtask 3.1.1 — Rewrite Sections 2.2–2.4 for clarity and intuition
     - [x] Subtask 3.1.2 — Add references for weighted NLLS
@@ -39,10 +39,10 @@
     - [x] Subtask 3.3.3 — Ensure title page/cover letter align with r1
 
 - [ ] Phase 4 — Response to reviewers
-  - [ ] Task 4.1 — Draft point-by-point response
-    - [ ] Subtask 4.1.1 — Respond to Associate Editor comments
-    - [ ] Subtask 4.1.2 — Respond to Reviewer #1 comments
-    - [ ] Subtask 4.1.3 — Respond to Reviewer #2 comments
+  - [x] Task 4.1 — Draft point-by-point response
+    - [x] Subtask 4.1.1 — Respond to Associate Editor comments
+    - [x] Subtask 4.1.2 — Respond to Reviewer #1 comments
+    - [x] Subtask 4.1.3 — Respond to Reviewer #2 comments
   - [ ] Task 4.2 — Map responses to manuscript changes
     - [ ] Subtask 4.2.1 — Link each response to updated section/figure/table
     - [ ] Subtask 4.2.2 — Track unresolved items or disputes
