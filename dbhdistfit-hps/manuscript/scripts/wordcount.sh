@@ -11,8 +11,8 @@ EXCL=$(texcount -inc -total -sum main.tex | awk '/Sum count:/ {print $3}')
 ABSTRACT=$(texcount sections/abstract.tex | awk '/Words in text:/ {print $4}')
 SUPP=0
 cat <<REPORT
-Forest Science Word Count Summary
----------------------------------
+Word Count Summary
+------------------
 Total number of words (including references): $TOTAL
 Total number of words (excluding references): $EXCL
 Abstract number of words: $ABSTRACT
