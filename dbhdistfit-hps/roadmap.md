@@ -37,16 +37,16 @@
     - [x] Subtask 2.4.3 — Ensure abbreviations defined at first use
     - [x] Subtask 2.4.4 — Confirm no line numbering
 
-- [ ] Phase 3 — Figures, tables, and permissions
+- [x] Phase 3 — Figures, tables, and permissions
   - [x] Task 3.1 — Caption formatting and numbering
     - [x] Subtask 3.1.1 — Use “Fig. 1” format, no trailing punctuation
-    - [ ] Subtask 3.1.2 — Verify figures/tables cited in consecutive order
-  - [ ] Task 3.2 — Figure file specs
-    - [ ] Subtask 3.2.1 — Verify figure filenames (Fig1.*) in submission package
-    - [ ] Subtask 3.2.2 — Confirm resolution and embedded fonts meet guidelines
-  - [ ] Task 3.3 — Third-party material permissions
-    - [ ] Subtask 3.3.1 — Confirm all figures/tables are original
-    - [ ] Subtask 3.3.2 — Obtain permissions for any reused material
+    - [x] Subtask 3.1.2 — Verify figures/tables cited in consecutive order
+  - [x] Task 3.2 — Figure file specs
+    - [x] Subtask 3.2.1 — Verify figure filenames (Fig1.*) in submission package
+    - [x] Subtask 3.2.2 — Confirm resolution and embedded fonts meet guidelines
+  - [x] Task 3.3 — Third-party material permissions
+    - [x] Subtask 3.3.1 — Confirm all figures/tables are original
+    - [x] Subtask 3.3.2 — No third-party material; permissions not required
 
 - [ ] Phase 4 — Build, packaging, and QA
   - [x] Task 4.1 — Regenerate outputs
