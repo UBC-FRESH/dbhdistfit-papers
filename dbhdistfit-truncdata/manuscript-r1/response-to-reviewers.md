@@ -1,0 +1,84 @@
+# Response to Reviewers (R1)
+
+Manuscript: **A Two-Stage Fitting Method for Truncated Stem Diameter Distributions**  
+Manuscript ID: **FRSC-D-25-00220**  
+Article type: **Brief Communication**
+
+We thank the Associate Editor and reviewers for thoughtful, constructive comments. Below we provide point‑by‑point responses and note where changes were made in the revised manuscript. Given the Brief Communication format and word cap, we kept additions compact and reframed the tone to emphasize scope, alternatives, and limitations.
+
+---
+
+## Associate Editor
+
+**Comment:** The approach is interesting but needs clearer alternatives/implications, and a more exploratory tone.  
+**Response:** We agree and reframed the manuscript as a practical alternative that merits further validation. We clarified the role of right truncation, added explicit limitations/future work language, and tempered claims in Results/Discussion.  
+**Changes:**  
+- Introduction clarifies truncation assumptions and alternatives (left‑truncated only, location parameter) and frames the right bound as an operational limit.  
+- Results/Discussion now emphasize exploratory framing and that 1sc is preferred in a subset of cases.  
+- Discussion adds limitations/future work language (distributional shapes, truncation rules).
+
+---
+
+## Reviewer #1
+
+**(1) Add reference for weighted NLLS.**  
+**Response:** Added references for the least‑squares approach.  
+**Changes:** Methods (Sections 2.2–2.4) now cite Levenberg (1944) and Marquardt (1963); references added to bibliography.
+
+**(2) Concern that 2sc does not integrate to unity on [a,b].**  
+**Response:** We clarified that the two‑stage estimator is not a re‑parameterized truncated PDF in the strict sense. Stage 2 is designed to match the truncated fit within [a,b] while allowing residual mass outside the interval; interpretation depends on the choice of b. We added explicit text on this point and on s as a normalizer.  
+**Changes:** Methods/Appendix (discussion of s and implied retained mass on [a,b]) and Discussion (interpretation/limits).
+
+**(3) AICc values for all alternatives.**  
+**Response:** Added AICc for 1sc, 1st, and 2sc (stage 1 and 2) in the comparison table.  
+**Changes:** Table 1 and Results text updated.
+
+**(4) Include Stage 1 and Stage 2 AICc.**  
+**Response:** Added both Stage 1 and Stage 2 AICc columns to the comparison table.  
+**Changes:** Table 1 and Results text updated.
+
+**(5) Appendix A too long / redundant.**  
+**Response:** Trimmed Appendix A by removing derivation material that repeated the methods narrative.  
+**Changes:** Appendix A shortened and refocused on interpretation of the scaling parameter and two‑stage steps.
+
+**(6) Add limitations / cautions.**  
+**Response:** Added concise limitations/future work language, including distributional shapes and truncation rules.  
+**Changes:** Discussion updated.
+
+---
+
+## Reviewer #2
+
+**(1) Right truncation justification; practice implications; potential bias.**  
+**Response:** We clarified that right truncation is used as an operational limit (maximum observed or management cap) rather than a fixed biological maximum. When an upper bound is not defensible, users can treat data as left‑truncated only or adopt a location parameter. We explicitly note that the two‑stage approach is agnostic to how b is chosen but interpretation depends on that choice.  
+**Changes:** Introduction (right‑truncation paragraph) and Methods (binning/truncation description) updated.
+
+**(2) Robustness across distributional shapes; suggest simulations.**  
+**Response:** We acknowledge this as a limitation in the brief format and now explicitly state that the current analysis focuses on inverse‑J shapes typical of PSP data. We note that other shapes (or simulations) are future work.  
+**Changes:** Discussion updated.
+
+**(3) Quantify 1st vs 2sc differences.**  
+**Response:** Added RMSE and maximum absolute differences between 1st and 2sc in the comparison table, and summarized the RMSE range in Results.  
+**Changes:** Table 1 and Results text updated.
+
+**(4) Why not add a location parameter (3‑parameter Weibull).**  
+**Response:** We now state that a three‑parameter Weibull is a viable alternative for left truncation, but including it would change parameterization and expand scope beyond the Brief Communication. We present it as future work.  
+**Changes:** Discussion updated.
+
+**(5) Methods sections need rewrite.**  
+**Response:** Rewrote Sections 2.2–2.4 for clarity and intuition, including how weighting and the two‑stage steps interact.  
+**Changes:** Methods section rewritten.
+
+**(6) Two‑parameter Weibull statement in Discussion.**  
+**Response:** Adjusted the wording to avoid implying that two‑parameter Weibull is preferred in all truncated contexts. We acknowledge the location‑parameter alternative as a limitation/future work item.  
+**Changes:** Discussion updated.
+
+---
+
+## Summary of key revisions
+
+- Clarified truncation assumptions and alternatives (Introduction/Methods).  
+- Added LS references and rewrote Methods for clarity.  
+- Expanded validation table with AICc (1sc/1st/2sc S1/S2) and 1st‑vs‑2sc diagnostics (RMSE, max abs).  
+- Tempered claims and added explicit limitations/future work statements.  
+- Trimmed Appendix A to avoid redundancy and refocus on interpretation.

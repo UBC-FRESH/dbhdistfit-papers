@@ -1,0 +1,13 @@
+% !TEX root = ../main.tex
+\section{Introduction}
+\label{sec:introduction}
+
+Stem diameters in forest stands are commonly characterised by fitting statistical distributions to plot measurements \citep{bailey1973quantifying, hyink1983generalized, gunn2000modeling, orellana2017fitting, orellana2017parameter}. Because permanent sample plot (PSP) programmes are expensive to maintain, analysts often rely on legacy inventories whose tally rules prioritised field efficiency over statistical convenience.
+
+Merchantability thresholds remove small stems, biological limits cap large diameters, and crews aggregate counts into fixed-width classes, leaving doubly truncated grouped stand tables.
+
+Right truncation is less explicit in many inventories, so the upper bound should be interpreted as an operational or practical limit rather than a biological constant. In the PSP workflow we set $b$ to the observed maximum (and matching management caps where available) to reflect how stand tables are used in practice; when no meaningful upper limit is defensible, analysts can treat the data as left-truncated only or introduce a location parameter in the candidate distribution. The two-stage estimator is agnostic to how $b$ is chosen, but its interpretation depends on that choice.
+
+Complete-form distributions defined on $(0, \infty)$ perform poorly on such data because tail bias persists and residual sums fail to vanish. Analysts therefore evaluate truncated versions of the target distribution \citep{zutter1986characterizing}, yet closed forms are not always published, forcing teams to reproduce earlier derivations \citep{mittal1989estimating, hannon1999estimation, hegde1989estimation, ahmad2001moments, wingo1989left} or numerically integrate $F(x; \boldsymbol{P}) = \int_0^x f(t)\,\mathrm{d}t$.
+
+We propose a two-stage method that retains the \emph{complete} form while achieving truncated-quality fits. The method is benchmarked against one-stage complete (1sc) and one-stage truncated (1st) fits using permanent sample plot data from Qu\'ebec, Canada. Across Weibull and gamma families the two-stage complete (2sc) estimator matches specialised truncated fits while preserving implementation simplicity.

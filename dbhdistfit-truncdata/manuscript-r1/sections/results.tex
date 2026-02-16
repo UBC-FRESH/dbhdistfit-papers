@@ -1,0 +1,21 @@
+% !TEX root = ../main.tex
+\section{Results}
+\label{sec:results}
+
+Figure~\ref{fig:comparison} compares empirical histograms with fitted Weibull and gamma curves for three representative meta-plots (rows: SPFL-S, Birch-M, Maple-H; columns: Weibull, Gamma). Each panel shows the one-stage complete (1sc), one-stage truncated (1st), and two-stage complete (2sc) solutions. The truncated and two-stage curves remain close across the diameter range, while the single-stage complete fits deviate in the lower and central classes.
+
+Table~\ref{tab:comparison} summarises parameter estimates, AICc scores, and diagnostics comparing 1st to 2sc. The 2sc stage~2 AICc is lowest in 25 of 32 combinations, while the remaining seven cases slightly favour 1sc; 1st is never best. The RMSE between 1st and 2sc fits ranges from $2\times10^{-5}$ to $3.7\times10^{-2}$, and the 1st fit fails in two cases (CHCE--R and ERS--R), producing infinite AICc, whereas the 2sc workflow still converges.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameter estimates (stage~1/2), AICc scores, and 1st--2sc diagnostics (RMSE, max abs diff) for each species-group / cover-type combination.}
+  \label{tab:comparison}
+  \resizebox{\textwidth}{!}{\input{../tables/method_comparison.tex}}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/diameter_comparison.pdf}
+  \caption{Comparison of Weibull (left column) and Gamma (right column) fits across three representative meta-plots: (a--b) SPFL softwood, (c--d) Birch mixedwood, and (e--f) Maple hardwood. Points denote empirical relative frequencies; solid lines show the one-stage complete fits, dashed lines the truncated fits, and dotted lines the two-stage complete fits}
+  \label{fig:comparison}
+\end{figure}

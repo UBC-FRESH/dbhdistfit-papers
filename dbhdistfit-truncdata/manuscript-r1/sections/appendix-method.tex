@@ -1,0 +1,45 @@
+% !TEX root = ../main.tex
+\section{Derivations Supporting the Two-Stage Estimator}
+
+We briefly restate the derivations that motivate the two-stage fitting procedure. Let $f(x; \bm{P})$ denote a complete-form probability density defined on $(0, \infty)$ with parameter vector $\bm{P}$. Observations are only available for the truncated interval $[a, b]$, with $a = 10$~cm and $b = 60$~cm in the PSP experiment. The truncated form of $f$ is
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c \, f(x; \bm{P}), & a \leq x \leq b, \\
+      0, & \text{otherwise},
+    \end{cases}
+    \label{eq:truncated-density}
+\end{equation}
+where the normalising constant is
+\begin{equation}
+  c = \left[\int_a^b f(t; \bm{P}) \,\mathrm{d}t\right]^{-1} = \left[F(b; \bm{P}) - F(a; \bm{P})\right]^{-1}.
+\end{equation}
+Here $F$ is the cumulative distribution function associated with $f$. When a closed-form expression for $F$ is unavailable, $c$ must be evaluated numerically, complicating routine model comparison.
+
+To avoid deriving bespoke truncated forms for each target distribution, we augment the complete density with a free scaling parameter $s$ and define
+\begin{equation}
+  f'(x; \bm{P}', s) = s \, f(x; \bm{P}),
+\end{equation}
+where $\bm{P}' = \bm{P} \cup \{s\}$. Because $s$ relaxes the unity constraint on the integral of $f$, the least-squares objective
+\begin{equation}
+  Z(\bm{P}', s) = \sum_{i \in I} \left[f'(x_i; \bm{P}', s) - \hat{y}_i^{(n)}\right]^2
+\end{equation}
+admits solutions with residual behaviour comparable to $f^{T}$ over $[a, b]$. The augmented model reproduces any truncated shape achievable by $f^{T}$ but introduces an additional degree of freedom that inflates parameter variance.
+
+If the truncated solution is matched exactly on $[a,b]$, then $f'(x)=f^{T}(x)$ implies $s=c=[F(b;\bm{P})-F(a;\bm{P})]^{-1}$. Hence $1/s$ is the implied retained mass on $[a,b]$, and departures from that value quantify any residual mass assigned outside the truncation interval.
+
+We therefore fit the model in two stages. Stage~1 solves
+\begin{equation}
+  (\widehat{\bm{P}'}, \hat{s}) = \arg\min_{\bm{P}', s} Z(\bm{P}', s),
+\end{equation}
+yielding a consistent estimate $\hat{s}$ that scales the complete-form density to the truncated support. Stage~2 fixes the scaling parameter and re-optimises the original parameter vector,
+\begin{equation}
+  \widehat{\bm{P}} = \arg\min_{\bm{P}} Z(\bm{P}, \hat{s}),
+\end{equation}
+where $Z(\bm{P}, \hat{s})$ denotes the objective with $s$ held constant. The fitted curves coincide,
+\begin{equation}
+  Z(\widehat{\bm{P}'}, \hat{s}) \simeq Z(\widehat{\bm{P}}, \hat{s}),
+\end{equation}
+but the second-stage covariance matrix excludes the nuisance scaling parameter, yielding tighter standard errors for the distributional parameters of interest.
+
+The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible.

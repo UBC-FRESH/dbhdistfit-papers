@@ -157,7 +157,7 @@ def select_best_model(fits: Dict[str, Dict[str, Model]]) -> Tuple[str, Model, Mo
         stage2 = result_dict.get("2sc")
         if stage2 is None:
             continue
-        score = aicc(stage2)
+        score = aicc(stage2, delta_k=1)
         if score < best_aicc:
             best_aicc = score
             best_dist = dist
