@@ -1,0 +1,75 @@
+# HPS Transfer Submission Roadmap (Discover Forests)
+
+- [x] Phase 1 — Transfer setup and requirements
+  - [x] Task 1.1 — Confirm transfer target and article type
+    - [x] Subtask 1.1.1 — Confirm Discover Forests as target journal
+    - [x] Subtask 1.1.2 — Confirm article type as Brief Report
+    - [x] Subtask 1.1.3 — Archive Forest Science rejection letter for context
+  - [x] Task 1.2 — Capture guidelines and baseline constraints
+    - [x] Subtask 1.2.1 — Archive Discover Forests submission guidelines PDF
+    - [x] Subtask 1.2.2 — Draft initial submission-readiness checklist
+    - [ ] Subtask 1.2.3 — Update checklist with any missing guideline items
+  - [x] Task 1.3 — Refresh transfer assets
+    - [x] Subtask 1.3.1 — Update cover letter for transfer context
+    - [x] Subtask 1.3.2 — Update title page for Brief Report
+    - [x] Subtask 1.3.3 — Update preprint note for Discover Forests
+    - [x] Subtask 1.3.4 — Create submission metadata file
+
+- [ ] Phase 2 — Manuscript compliance updates
+  - [ ] Task 2.0 — Claim calibration and tone
+    - [ ] Subtask 2.0.1 — Review all claims for scope, evidence, and hedging
+    - [ ] Subtask 2.0.2 — Flag any wording that could be read as theory-advancing
+    - [x] Subtask 2.0.3 — Localize PSP dataset provenance to Methods only
+  - [ ] Task 2.1 — Reference style alignment
+    - [x] Subtask 2.1.1 — Switch to numeric citation style (square brackets)
+    - [ ] Subtask 2.1.2 — Add DOI links (https://doi.org/...) where available
+    - [ ] Subtask 2.1.3 — Ensure only cited works appear in the reference list
+  - [ ] Task 2.2 — Supplementary materials decision
+    - [ ] Subtask 2.2.1 — Remove supplementary references or prepare SI files
+    - [ ] Subtask 2.2.2 — If SI is used, name/cite per guideline (ESM_1/Online Resource)
+  - [ ] Task 2.3 — Policy statements check (in manuscript)
+    - [x] Subtask 2.3.1 — Funding statement included and accurate
+    - [x] Subtask 2.3.2 — Data Availability statement included and accurate
+    - [x] Subtask 2.3.3 — Ethics statement included (or N/A)
+  - [ ] Task 2.4 — Formatting checks
+    - [ ] Subtask 2.4.1 — Verify <= 3 heading levels
+    - [ ] Subtask 2.4.2 — Confirm 12pt font; decide on Helvetica/Arial swap
+    - [ ] Subtask 2.4.3 — Ensure abbreviations defined at first use
+    - [ ] Subtask 2.4.4 — Confirm no line numbering
+
+- [ ] Phase 3 — Figures, tables, and permissions
+  - [x] Task 3.1 — Caption formatting and numbering
+    - [x] Subtask 3.1.1 — Use “Fig. 1” format, no trailing punctuation
+    - [ ] Subtask 3.1.2 — Verify figures/tables cited in consecutive order
+  - [ ] Task 3.2 — Figure file specs
+    - [ ] Subtask 3.2.1 — Verify figure filenames (Fig1.*) in submission package
+    - [ ] Subtask 3.2.2 — Confirm resolution and embedded fonts meet guidelines
+  - [ ] Task 3.3 — Third-party material permissions
+    - [ ] Subtask 3.3.1 — Confirm all figures/tables are original
+    - [ ] Subtask 3.3.2 — Obtain permissions for any reused material
+
+- [ ] Phase 4 — Build, packaging, and QA
+  - [x] Task 4.1 — Regenerate outputs
+    - [x] Subtask 4.1.1 — Rebuild manuscript PDF
+    - [x] Subtask 4.1.2 — Rebuild cover letter and title page PDFs
+  - [ ] Task 4.2 — Prepare LaTeX submission package
+    - [ ] Subtask 4.2.1 — Regenerate em-submission ZIP with updated sources
+    - [ ] Subtask 4.2.2 — Validate ZIP builds cleanly
+  - [ ] Task 4.3 — Final QA pass
+    - [ ] Subtask 4.3.1 — Verify abstract word count < 250
+    - [ ] Subtask 4.3.2 — Update word count block after final edits
+    - [ ] Subtask 4.3.3 — Confirm DOI links appear in references
+    - [ ] Subtask 4.3.4 — Final proofreading pass
+
+- [ ] Phase 5 — Submission and archiving
+  - [ ] Task 5.1 — Snapp portal entry
+    - [ ] Subtask 5.1.1 — Enter author contributions in portal
+    - [ ] Subtask 5.1.2 — Enter competing interests statement in portal
+    - [ ] Subtask 5.1.3 — Confirm APC/waiver selection and funding info
+  - [ ] Task 5.2 — Submit
+    - [ ] Subtask 5.2.1 — Upload manuscript, title page, cover letter, and figures/tables
+    - [ ] Subtask 5.2.2 — Confirm metadata/keywords
+    - [ ] Subtask 5.2.3 — Record submission ID and date
+  - [ ] Task 5.3 — Archive and tag
+    - [ ] Subtask 5.3.1 — Tag release/branch for transfer submission
+    - [ ] Subtask 5.3.2 — Save submission package snapshot
