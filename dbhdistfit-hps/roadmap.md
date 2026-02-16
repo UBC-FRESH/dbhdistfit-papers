@@ -22,7 +22,7 @@
     - [x] Subtask 2.0.3 — Localize PSP dataset provenance to Methods only
   - [ ] Task 2.1 — Reference style alignment
     - [x] Subtask 2.1.1 — Switch to numeric citation style (square brackets)
-    - [ ] Subtask 2.1.2 — Add DOI links (https://doi.org/...) where available
+    - [x] Subtask 2.1.2 — Add DOI links (https://doi.org/...) where available
     - [ ] Subtask 2.1.3 — Ensure only cited works appear in the reference list
   - [ ] Task 2.2 — Supplementary materials decision
     - [ ] Subtask 2.2.1 — Remove supplementary references or prepare SI files
