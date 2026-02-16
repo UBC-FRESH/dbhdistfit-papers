@@ -20,14 +20,14 @@
     - [ ] Subtask 2.0.1 — Review all claims for scope, evidence, and hedging
     - [ ] Subtask 2.0.2 — Flag any wording that could be read as theory-advancing
     - [x] Subtask 2.0.3 — Localize PSP dataset provenance to Methods only
-  - [ ] Task 2.1 — Reference style alignment
+  - [x] Task 2.1 — Reference style alignment
     - [x] Subtask 2.1.1 — Switch to numeric citation style (square brackets)
     - [x] Subtask 2.1.2 — Add DOI links (https://doi.org/...) where available
-    - [ ] Subtask 2.1.3 — Ensure only cited works appear in the reference list
-  - [ ] Task 2.2 — Supplementary materials decision
-    - [ ] Subtask 2.2.1 — Remove supplementary references or prepare SI files
-    - [ ] Subtask 2.2.2 — If SI is used, name/cite per guideline (ESM_1/Online Resource)
-  - [ ] Task 2.3 — Policy statements check (in manuscript)
+    - [x] Subtask 2.1.3 — Ensure only cited works appear in the reference list
+  - [x] Task 2.2 — Supplementary materials decision
+    - [x] Subtask 2.2.1 — Remove supplementary references (redirect to repository)
+    - [x] Subtask 2.2.2 — No SI files; repository serves as extended materials
+  - [x] Task 2.3 — Policy statements check (in manuscript)
     - [x] Subtask 2.3.1 — Funding statement included and accurate
     - [x] Subtask 2.3.2 — Data Availability statement included and accurate
     - [x] Subtask 2.3.3 — Ethics statement included (or N/A)

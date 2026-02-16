@@ -1,0 +1,33 @@
+Reference validation report (Crossref)
+
+Entry: bitterlich1947
+  Type: article
+  DOI: (missing)
+  Crossref status: n/a
+  DOI suggestions: none found (confirmed no DOIs for this old journal issue)
+
+Entry: van1986
+  Type: article
+  DOI: 10.1093/forestscience/32.1.146
+  Crossref status: 200
+  Title match: yes
+
+Entry: gove2000
+  Type: article
+  DOI: (missing)
+  Crossref status: n/a
+  DOI suggestions (Crossref search): good
+    - 10.1139/x99-169 (confidence=high, title_score=1.00, author_match=yes, year_match=no)
+      Title: Some observations on fitting assumed diameter distributions to horizontal point sampling data
+
+Entry: ducey2015
+  Type: article
+  DOI: 10.1093/forestry/cpu038
+  Crossref status: 200
+  Title match: yes
+
+Entry: gouvernement2019
+  Type: misc
+  DOI: (missing)
+  Crossref status: n/a
+  DOI suggestions: none found (govenment data portal download: this will not have a DOI)
