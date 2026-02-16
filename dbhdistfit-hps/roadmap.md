@@ -15,10 +15,10 @@
     - [x] Subtask 1.3.3 — Update preprint note for Discover Forests
     - [x] Subtask 1.3.4 — Create submission metadata file
 
-- [ ] Phase 2 — Manuscript compliance updates
-  - [ ] Task 2.0 — Claim calibration and tone
-    - [ ] Subtask 2.0.1 — Review all claims for scope, evidence, and hedging
-    - [ ] Subtask 2.0.2 — Flag any wording that could be read as theory-advancing
+- [x] Phase 2 — Manuscript compliance updates
+  - [x] Task 2.0 — Claim calibration and tone
+    - [x] Subtask 2.0.1 — Review all claims for scope, evidence, and hedging
+    - [x] Subtask 2.0.2 — Flag any wording that could be read as theory-advancing
     - [x] Subtask 2.0.3 — Localize PSP dataset provenance to Methods only
   - [x] Task 2.1 — Reference style alignment
     - [x] Subtask 2.1.1 — Switch to numeric citation style (square brackets)
@@ -31,11 +31,11 @@
     - [x] Subtask 2.3.1 — Funding statement included and accurate
     - [x] Subtask 2.3.2 — Data Availability statement included and accurate
     - [x] Subtask 2.3.3 — Ethics statement included (or N/A)
-  - [ ] Task 2.4 — Formatting checks
-    - [ ] Subtask 2.4.1 — Verify <= 3 heading levels
-    - [ ] Subtask 2.4.2 — Confirm 12pt font; decide on Helvetica/Arial swap
-    - [ ] Subtask 2.4.3 — Ensure abbreviations defined at first use
-    - [ ] Subtask 2.4.4 — Confirm no line numbering
+  - [d] Task 2.4 — Formatting checks
+    - [x] Subtask 2.4.1 — Verify <= 3 heading levels
+    - [x] Subtask 2.4.2 — Confirm 12pt font; decide on Helvetica/Arial swap (decision: stick with Computer Modern)
+    - [x] Subtask 2.4.3 — Ensure abbreviations defined at first use
+    - [x] Subtask 2.4.4 — Confirm no line numbering
 
 - [ ] Phase 3 — Figures, tables, and permissions
   - [x] Task 3.1 — Caption formatting and numbering
