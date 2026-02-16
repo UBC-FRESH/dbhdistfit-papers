@@ -1,8 +1,8 @@
 % !TEX root = ../main.tex
-\section{Proof of Equivalence Between Estimators}
+\section{Derivation of Equivalence Between Estimators}
 \label{sec:appendix-equivalence}
 
-This appendix presents a rigorous proof that the weighted estimator introduced
+This appendix presents a rigorous derivation showing that the weighted estimator introduced
 in Section~\ref{sec:methods} is equivalent to the size-biased estimator of
 \citet{van1986, ducey2015}. Throughout, we assume a fixed binning scheme for
 DBH classes $\mathcal{I}$ with midpoints $x_i$ and employ the notation defined
@@ -76,7 +76,7 @@ by a positive multiplicative constant after an appropriate reparameterisation of
 $s$.
 \end{lemma}
 
-\begin{proof}
+\paragraph{Derivation.}
 Insert $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ and $w_i = f_C(x_i; C_{BA})$ into
 \eqref{eq:appendix-test}:
 \begin{align}
@@ -103,7 +103,6 @@ Let $s' = s\, \kappa(\boldsymbol{\theta})/(40000 C_{BA})$. Then
 \end{equation}
 Hence $Z_{\mathrm{T}}$ and $Z_{\mathrm{C}}$ share identical level sets up to a
 bijective scaling of $s$.
-\end{proof}
 
 \subsection{Equivalence of minimisers}
 
@@ -123,7 +122,7 @@ The argument extends directly to unbinned data by replacing discrete sums with
 integrals. Moreover, any objective function proportional to the squared error
 (e.g., weighted least squares with constant variance within space) inherits the
 same equivalence. Likelihood-based estimators such as Poisson regression also
-admit analogous proofs: incorporating Horvitz--Thompson weights in the log-
+admit analogous derivations: incorporating Horvitz--Thompson weights in the log-
 likelihood yields the same score equations as using size-biased PDFs.
 
 \subsection{Implications}
