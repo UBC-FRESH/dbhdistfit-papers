@@ -48,7 +48,7 @@
     - [x] Subtask 3.3.1 — Confirm all figures/tables are original
     - [x] Subtask 3.3.2 — No third-party material; permissions not required
 
-- [ ] Phase 4 — Build, packaging, and QA
+- [x] Phase 4 — Build, packaging, and QA
   - [x] Task 4.1 — Regenerate outputs
     - [x] Subtask 4.1.1 — Rebuild manuscript PDF
     - [x] Subtask 4.1.2 — Rebuild cover letter and title page PDFs
@@ -58,11 +58,11 @@
   - [x] Task 4.2 — Prepare LaTeX submission package
     - [x] Subtask 4.2.1 — Regenerate em-submission ZIP with updated sources
     - [x] Subtask 4.2.2 — Validate ZIP builds cleanly
-  - [ ] Task 4.3 — Final QA pass
-    - [ ] Subtask 4.3.1 — Verify abstract word count < 250
-    - [ ] Subtask 4.3.2 — Update word count block after final edits
-    - [ ] Subtask 4.3.3 — Confirm DOI links appear in references
-    - [ ] Subtask 4.3.4 — Final proofreading pass
+  - [x] Task 4.3 — Final QA pass
+    - [x] Subtask 4.3.1 — Verify abstract word count < 250
+    - [x] Subtask 4.3.2 — Update word count block after final edits
+    - [x] Subtask 4.3.3 — Confirm DOI links appear in references
+    - [x] Subtask 4.3.4 — Final proofreading pass
 
 - [ ] Phase 5 — Submission and archiving
   - [ ] Task 5.1 — Snapp portal entry
