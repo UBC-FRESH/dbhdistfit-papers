@@ -69,6 +69,7 @@
     - [ ] Subtask 5.1.1 — Enter author contributions in portal
     - [ ] Subtask 5.1.2 — Enter competing interests statement in portal
     - [ ] Subtask 5.1.3 — Confirm APC/waiver selection and funding info
+    - [ ] Subtask 5.1.4 — Paste author contributions statement from submission metadata
   - [ ] Task 5.2 — Submit
     - [ ] Subtask 5.2.1 — Upload manuscript, title page, cover letter, and figures/tables
     - [ ] Subtask 5.2.2 — Confirm metadata/keywords
