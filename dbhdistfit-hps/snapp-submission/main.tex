@@ -7,10 +7,8 @@
 \usepackage{amsthm}%
 \usepackage{booktabs}%
 \usepackage{siunitx}%
-\usepackage{caption}%
 \usepackage{hyperref}%
 
-\captionsetup[figure]{labelfont=bf,labelsep=space,name=Fig.}
 \graphicspath{{../figures/}{./}}
 
 \theoremstyle{thmstyleone}%
@@ -106,7 +104,7 @@ with multiplicative inverse (compression factor):
   \label{eq:compression}
 \end{equation}
 
-\subsection{Reference estimator}
+\subsection*{Reference estimator}
 The reference approach \citep{van1986, ducey2015} fits a size-biased PDF
 $f_{\text{sb}}(x; \boldsymbol{\theta})$ to the raw HPS tallies. For any assumed
 standard-form PDF $f(x; \boldsymbol{\theta})$, the size-biased form of order
@@ -126,7 +124,7 @@ and observed tallies:
 where $t_i = \sum_{j \in \mathcal{J}} t_{ij}$ and $s$ is a scaling parameter
 that reconciles the continuous PDF with discrete bin counts.
 
-\subsection{Weighted estimator}
+\subsection*{Weighted estimator}
 Our alternative estimator fits the standard-form PDF directly to the expanded
 stand table while embedding the size-bias correction through bin-wise weights.
 Let $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ denote the expanded tally in class $i$.
@@ -163,19 +161,19 @@ to unbinned likelihood formulations.
 
 \subsection{Computational experiment}
 
-We updated the computational experiment using permanent sample plot data from
+We evaluate the method using permanent sample plot data from
 Quebec \citep{gouvernement2019}, which provide stem tallies for 30
 species--cover combinations. HPS tallies are emulated by scaling each bin by the reciprocal
 expansion factor, and for three representative meta-plots (SPFL-S, Birch-M,
 Maple-H) we fit Weibull and Gamma distributions with both estimators.
-Companion scripts handle preprocessing and fitting.
+The reproducible pipeline in the project repository handles preprocessing and fitting.
 
 \section{Results}
 
 Figure~\ref{fig:comparison} compares fitted distributions across the six
-meta-plot--distribution combinations. In both HPS tally space and stand table
+meta-plot--distribution combinations. In both HPS tally space and stand-table
 space the curves produced by the reference and weighted estimators are visually
-indistinguishable. Table~\ref{tab:comparison} reports relative $\ell_2$ norms
+similar. Table~\ref{tab:comparison} reports relative $\ell_2$ norms
 for the fitted curves: in stand-table space the weighted estimator deviates by
 no more than 2.4\%, and in HPS space by at most 8.5\%. Absolute residual sums of
 squares (RSS) are large because they are reported on the original scale of the data,
@@ -197,7 +195,7 @@ all species and cover type combinations.
 
 Although absolute RSS values are large on the native scale, relative
 $\ell_2$ errors stay below 8.5\% and parameter estimates match to four
-decimal places. The notebook `notebooks/hpsdistfit\_repro.ipynb` documents
+decimal places. A Jupyter notebook in the project repository documents
 the full set of replicates and provides interactive diagnostics.
 
 \begin{table}[htbp]
@@ -232,17 +230,17 @@ reference estimator.
 
 Across all species and cover combinations, the weighted estimator stays
 within 2.4\% of the size-biased control in stand-table space and within
-8.5\% in HPS tally space (Table~\ref{tab:comparison}), so the simpler
-workflow can displace the classical approach without perceptible loss.
+8.5\% in HPS tally space (Table~\ref{tab:comparison}), so the weighted
+estimator can replace the reference estimator without perceptible loss.
 
-Appendix~\ref{sec:appendix-equivalence} derives equivalence for non-linear
+\hyperref[sec:appendix-equivalence]{Appendix} derives equivalence for non-linear
 least squares, and the same argument extends to likelihood-based models,
 including Poisson Horvitz--Thompson weighting and potential Bayesian
 variants.
 
-The companion scripts handle data preparation, fitting, and figure/table
-generation, so new datasets can be analysed by refreshing the binned meta-
-plot file.
+The reproducible pipeline in the project repository handles data preparation,
+fitting, and figure/table generation, so new datasets can be analysed by
+refreshing the binned meta-plot file.
 
 Our PSP-derived pseudo-HPS dataset assumes that expanded tables share the
 variance structure of true HPS tallies; validating the method on genuine HPS
@@ -254,9 +252,9 @@ We presented a weighted fitting procedure that reproduces the behaviour of the
 traditional size-biased estimator for deriving stem diameter distributions from
 HPS data. The method is easier to implement, numerically stable, and accompanied
 by a fully reproducible research package. The experiments show that the
-weighted and size-biased estimators yield indistinguishable fits across a range
+weighted and size-biased estimators yield closely aligned fits across a range
 of species groups, cover types, and target distributions. The formal derivation in
-Appendix~\ref{sec:appendix-equivalence} codifies this equivalence and supports
+the \hyperref[sec:appendix-equivalence]{Appendix} codifies this equivalence and supports
 adoption of the weighted formulation in operational workflows. We recommend
 using the provided templates as a foundation for future methodological
 extensions.
@@ -269,8 +267,7 @@ extensions.
 \noindent\textbf{Data Availability.} Processed datasets and reproduction scripts are available from the project repository (\href{https://github.com/UBC-FRESH/dbhdistfit-papers}{UBC-FRESH/dbhdistfit-papers}), along with extensive metadata and notes that expand on this brief report. Raw PSP data are distributed by Donn\'ees Qu\'ebec and may be downloaded from the agency's public portal.\\
 \noindent\textbf{Consent/Ethics.} Not applicable; the study uses publicly available data.\\
 
-\begin{appendices}
-\section{Derivation of Equivalence Between Estimators}
+\section*{Appendix: Derivation of Equivalence Between Estimators}
 \label{sec:appendix-equivalence}
 
 This appendix presents a rigorous derivation showing that the weighted estimator introduced
@@ -338,7 +335,7 @@ matching the inverse of the expansion factor:
 \end{equation}
 Recall $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ by construction.
 
-\subsection{Key lemma}
+\subsection*{Key lemma}
 
 \begin{lemma}
 For all $\boldsymbol{\theta}\in\Theta$ and $s>0$, the objectives
@@ -375,7 +372,7 @@ Let $s' = s\, \kappa(\boldsymbol{\theta})/(40000 C_{BA})$. Then
 Hence $Z_{\mathrm{T}}$ and $Z_{\mathrm{C}}$ share the same level sets up to a
 bijective scaling of $s$.
 
-\subsection{Equivalence of minimisers}
+\subsection*{Equivalence of minimisers}
 
 Let $(\hat{\boldsymbol{\theta}}_{\mathrm{C}}, \hat{s}_{\mathrm{C}})$ minimise
 \eqref{eq:appendix-control}. By the lemma, there exists a corresponding scaling
@@ -403,7 +400,6 @@ statistics, fitted curves) are the same up to deterministic re-scaling between
 tally and stand table space. In practice, the weighted formulation provides a
 computationally convenient alternative that makes use of standard PDF
 implementations and alleviates the need for bespoke size-biased forms.
-\end{appendices}
 
 \bibliography{references}
 
