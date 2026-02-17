@@ -8,15 +8,18 @@
 | Corresponding author | Gregory E. Paradis (`gregory.paradis@ubc.ca`) |
 | ORCID | 0000-0001-9618-8797 |
 | Affiliation | Department of Forest Resources Management, University of British Columbia, Vancouver, Canada |
-| Word count (incl. references) | 1,862 |
-| Word count (excl. references) | 1,765 |
-| Abstract word count | 134 |
+| Word count (incl. references) | 1,967 |
+| Word count (excl. references) | 1,830 |
+| Abstract word count | 132 |
 | Supplementary information | None (materials hosted in companion repository) |
 | Figures | 1 |
 | Tables | 1 |
 | Data & code | https://github.com/UBC-FRESH/dbhdistfit-papers |
 | Transfer context | Forest Science decision letter (FRSC-D-25-00215, 08 Dec 2025) |
 | Submission system | Snapp |
+| Author contributions | **G.E.P.** conceived the study, developed the methodology, performed the analysis, prepared the figures and tables, and wrote the manuscript. |
+| Data availability statement (Snapp) | Processed datasets and reproduction scripts are available from the project repository (https://github.com/UBC-FRESH/dbhdistfit-papers), along with extensive metadata and notes that expand on this brief report. Raw PSP data are distributed by Données Québec and may be downloaded from the agency’s public portal. |
+| Acknowledgements (Snapp) | None. |
 
 ## Notes
 
