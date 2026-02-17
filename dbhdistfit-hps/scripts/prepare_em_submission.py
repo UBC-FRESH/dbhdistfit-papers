@@ -118,6 +118,8 @@ def populate_destination() -> None:
 
     # Essential files for LaTeX compilation
     essentials = [
+        MANUSCRIPT_DIR / "sn-jnl.cls",
+        MANUSCRIPT_DIR / "sn-mathphys-num.bst",
         MANUSCRIPT_DIR / "references.bib",
         TABLES_DIR / "method_comparison.tex",
         FIGURES_DIR / "Fig1.pdf",

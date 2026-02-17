@@ -52,9 +52,12 @@
   - [x] Task 4.1 — Regenerate outputs
     - [x] Subtask 4.1.1 — Rebuild manuscript PDF
     - [x] Subtask 4.1.2 — Rebuild cover letter and title page PDFs
-  - [ ] Task 4.2 — Prepare LaTeX submission package
-    - [ ] Subtask 4.2.1 — Regenerate em-submission ZIP with updated sources
-    - [ ] Subtask 4.2.2 — Validate ZIP builds cleanly
+  - [x] Task 4.1.3 — Migrate manuscript to Springer Nature template
+    - [x] Subtask 4.1.3.1 — Adopt sn-jnl class and front-matter structure
+    - [x] Subtask 4.1.3.2 — Ensure no \\input usage (single-file manuscript)
+  - [x] Task 4.2 — Prepare LaTeX submission package
+    - [x] Subtask 4.2.1 — Regenerate em-submission ZIP with updated sources
+    - [x] Subtask 4.2.2 — Validate ZIP builds cleanly
   - [ ] Task 4.3 — Final QA pass
     - [ ] Subtask 4.3.1 — Verify abstract word count < 250
     - [ ] Subtask 4.3.2 — Update word count block after final edits
