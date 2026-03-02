@@ -7,9 +7,9 @@ space the curves produced by the reference and weighted estimators are visually
 indistinguishable. Table~\ref{tab:comparison} reports relative $\ell_2$ norms
 for the fitted curves: in stand-table space the weighted estimator deviates by
 no more than 2.4\%, and in HPS space by at most 8.5\%. Absolute residual sums of
-squares are large because they are reported on the original scale of the data,
-but the percentage differences confirm that the weighting scheme reproduces the
-size-biased estimator to near numerical precision. Chi-square goodness-of-fit
+squares (RSS) are large because they are reported on the original scale of the data,
+but the percentage differences indicate that the weighting scheme reproduces the
+size-biased estimator within numerical tolerance. Chi-square goodness-of-fit
 statistics for both estimators remain within the same order of magnitude across
 all species and cover type combinations.
 
@@ -20,7 +20,7 @@ all species and cover type combinations.
   estimators for the SPFL-S meta-plot. Solid lines denote weighted fits and
   dashed lines denote size-biased fits. Points represent empirical data
   (expanded stand tables on the right panels). Remaining combinations are
-  supplied as supplementary figures.}
+  available in the project repository}
   \label{fig:comparison}
 \end{figure}
 
@@ -36,6 +36,6 @@ the full set of replicates and provides interactive diagnostics.
   }
   \caption{Residual diagnostics for control (size-biased) and test (weighted)
   estimators across species groups, cover types, and assumed distributions.
-  Values shown are RSS in native scale and chi-square statistics.}
+  Values shown are RSS in native scale and chi-square statistics}
   \label{tab:comparison}
 \end{table}

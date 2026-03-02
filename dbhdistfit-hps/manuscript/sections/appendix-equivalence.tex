@@ -1,8 +1,8 @@
 % !TEX root = ../main.tex
-\section{Proof of Equivalence Between Estimators}
+\section{Derivation of Equivalence Between Estimators}
 \label{sec:appendix-equivalence}
 
-This appendix presents a rigorous proof that the weighted estimator introduced
+This appendix presents a rigorous derivation showing that the weighted estimator introduced
 in Section~\ref{sec:methods} is equivalent to the size-biased estimator of
 \citet{van1986, ducey2015}. Throughout, we assume a fixed binning scheme for
 DBH classes $\mathcal{I}$ with midpoints $x_i$ and employ the notation defined
@@ -76,7 +76,7 @@ by a positive multiplicative constant after an appropriate reparameterisation of
 $s$.
 \end{lemma}
 
-\begin{proof}
+\noindent\textbf{Derivation.}
 Insert $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ and $w_i = f_C(x_i; C_{BA})$ into
 \eqref{eq:appendix-test}:
 \begin{align}
@@ -101,9 +101,8 @@ Let $s' = s\, \kappa(\boldsymbol{\theta})/(40000 C_{BA})$. Then
   =
   Z_{\mathrm{C}}(\boldsymbol{\theta}, s').
 \end{equation}
-Hence $Z_{\mathrm{T}}$ and $Z_{\mathrm{C}}$ share identical level sets up to a
+Hence $Z_{\mathrm{T}}$ and $Z_{\mathrm{C}}$ share the same level sets up to a
 bijective scaling of $s$.
-\end{proof}
 
 \subsection{Equivalence of minimisers}
 
@@ -113,9 +112,9 @@ $\hat{s}_{\mathrm{T}} = \hat{s}_{\mathrm{C}}\, 40000 C_{BA}/\kappa(\hat{\boldsym
 such that $(\hat{\boldsymbol{\theta}}_{\mathrm{C}}, \hat{s}_{\mathrm{T}})$ minimises
 \eqref{eq:appendix-test}. Conversely, any minimiser of
 \eqref{eq:appendix-test} maps back to a minimiser of \eqref{eq:appendix-control}
-by the inverse scaling. Therefore the estimators produce identical parameter
+by the inverse scaling. Therefore the estimators produce the same parameter
 estimates $\hat{\boldsymbol{\theta}}_{\mathrm{C}} = \hat{\boldsymbol{\theta}}_{\mathrm{T}}$ and
-the fitted PDFs coincide after transforming between tally and stand table space.
+the fitted PDFs align after transforming between tally and stand table space.
 
 \subsection{Extensions}
 
@@ -123,13 +122,13 @@ The argument extends directly to unbinned data by replacing discrete sums with
 integrals. Moreover, any objective function proportional to the squared error
 (e.g., weighted least squares with constant variance within space) inherits the
 same equivalence. Likelihood-based estimators such as Poisson regression also
-admit analogous proofs: incorporating Horvitz--Thompson weights in the log-
+admit analogous derivations: incorporating Horvitz--Thompson weights in the log-
 likelihood yields the same score equations as using size-biased PDFs.
 
 \subsection{Implications}
 
 Because the minimisers coincide, diagnostic quantities (RSS, chi-square
-statistics, fitted curves) are identical up to deterministic re-scaling between
+statistics, fitted curves) are the same up to deterministic re-scaling between
 tally and stand table space. In practice, the weighted formulation provides a
 computationally convenient alternative that makes use of standard PDF
 implementations and alleviates the need for bespoke size-biased forms.
