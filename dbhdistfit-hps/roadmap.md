@@ -23,14 +23,14 @@
     - [x] Subtask 1.3.3 — Body order: Introduction → Methods → Results → Discussion
     - [x] Subtask 1.3.4 — Add Acknowledgements before References
 
-- [ ] Phase 2 — References and citation style
-  - [ ] Task 2.1 — Switch to Harvard author-year citations
-    - [ ] Subtask 2.1.1 — Update LaTeX class and bibliography style
-    - [ ] Subtask 2.1.2 — Verify alphabetical ordering in references
-    - [ ] Subtask 2.1.3 — Ensure DOIs/hyperlinks are present where available
-  - [ ] Task 2.2 — Citation consistency QA
-    - [ ] Subtask 2.2.1 — Check all in-text citations use author-year format
-    - [ ] Subtask 2.2.2 — Remove numeric citation remnants
+- [x] Phase 2 — References and citation style
+  - [x] Task 2.1 — Switch to Harvard author-year citations
+    - [x] Subtask 2.1.1 — Update LaTeX class and bibliography style
+    - [x] Subtask 2.1.2 — Verify alphabetical ordering in references
+    - [x] Subtask 2.1.3 — Ensure DOIs/hyperlinks are present where available
+  - [x] Task 2.2 — Citation consistency QA
+    - [x] Subtask 2.2.1 — Check all in-text citations use author-year format
+    - [x] Subtask 2.2.2 — Remove numeric citation remnants
 
 - [ ] Phase 3 — Content alignment with CJFR requirements
   - [ ] Task 3.1 — Abbreviations and terminology
@@ -84,3 +84,4 @@
 
 - Locked CJFR article type: Note (word count ~1008; abstract 132 words; references 5).
 - CJFR manuscript variant created (`dbhdistfit-hps/manuscript-cjfr`) with line numbers and double spacing; build via `make manuscript-cjfr`.
+- Harvard author–year references verified (alphabetical; DOIs/URLs present where available).

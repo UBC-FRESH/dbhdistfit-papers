@@ -6,7 +6,7 @@
 | Abstract length | ✅ Ready | 132 words (≤ 200). |
 | Formatting | ✅ Ready | CJFR LaTeX variant uses double spacing, single column, page numbers, and continuous line numbers. |
 | Manuscript order | ⬜ TODO | Title page → Abstract → Keywords → Body → Acknowledgements → References. |
-| References style | ⬜ TODO | Harvard author–year; alphabetical ordering; no numbering; include DOIs where available. |
+| References style | ✅ Ready | Harvard author–year with alphabetical ordering; DOIs/URLs included where available. |
 | Abbreviations | ⬜ TODO | Defined at first use in Abstract, text, and captions. |
 | Statistical reporting | ⬜ TODO | No significance stars without p-values; model assumptions stated. |
 | Figures & tables | ⬜ TODO | Captions formatted; symbols defined; cited in order; originals or permissions noted. |
