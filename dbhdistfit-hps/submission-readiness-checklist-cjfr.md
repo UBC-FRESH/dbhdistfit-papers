@@ -8,6 +8,7 @@
 | Manuscript order | ⬜ TODO | Title page → Abstract → Keywords → Body → Acknowledgements → References. |
 | References style | ✅ Ready | Harvard author–year with alphabetical ordering; DOIs/URLs included where available. |
 | Abbreviations | ✅ Ready | Defined at first use in Abstract, text, and captions (SPFL/Birch/Maple and code mappings included). |
+| Spelling consistency | ✅ Ready | British/Canadian spelling consistent across manuscript. |
 | Statistical reporting | ✅ Ready | No significance stars; modeling assumptions stated in Methods. |
 | Figures & tables | ⬜ TODO | Captions formatted; symbols defined; cited in order; originals or permissions noted. |
 | Appendix handling | ⬜ TODO | Separate appendix document or move to supplementary material; A-numbering if kept. |

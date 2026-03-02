@@ -32,10 +32,10 @@
     - [x] Subtask 2.2.1 — Check all in-text citations use author-year format
     - [x] Subtask 2.2.2 — Remove numeric citation remnants
 
-- [ ] Phase 3 — Content alignment with CJFR requirements
-  - [ ] Task 3.1 — Abbreviations and terminology
+- [x] Phase 3 — Content alignment with CJFR requirements
+  - [x] Task 3.1 — Abbreviations and terminology
     - [x] Subtask 3.1.1 — Define abbreviations at first use (Abstract + text + captions)
-    - [ ] Subtask 3.1.2 — Verify consistent spelling (Oxford/Merriam-Webster)
+    - [x] Subtask 3.1.2 — Verify consistent spelling (Oxford/Merriam-Webster)
   - [x] Task 3.2 — Statistical reporting
     - [x] Subtask 3.2.1 — Avoid * / ** significance without p-values
     - [x] Subtask 3.2.2 — State model assumptions clearly
@@ -86,4 +86,5 @@
 - CJFR manuscript variant created (`dbhdistfit-hps/manuscript-cjfr`) with line numbers and double spacing; build via `make manuscript-cjfr`.
 - Harvard author–year references verified (alphabetical; DOIs/URLs present where available).
 - Defined dataset abbreviations in text and captions (SPFL-S/Birch-M/Maple-H; sepm/bop/ers; r/m/f) and stated modeling assumptions.
-- Remaining: spelling consistency check and appendix vs supplement decision.
+- Completed spelling consistency pass (British/Canadian variants kept consistent).
+- Remaining: appendix vs supplement decision.
