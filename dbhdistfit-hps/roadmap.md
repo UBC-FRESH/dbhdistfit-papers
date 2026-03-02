@@ -1,79 +1,85 @@
-# HPS Transfer Submission Roadmap (Discover Forests)
+# HPS CJFR Submission Roadmap
 
-- [x] Phase 1 — Transfer setup and requirements
-  - [x] Task 1.1 — Confirm transfer target and article type
-    - [x] Subtask 1.1.1 — Confirm Discover Forests as target journal
-    - [x] Subtask 1.1.2 — Confirm article type as Brief Report
-    - [x] Subtask 1.1.3 — Archive Forest Science rejection letter for context
-  - [x] Task 1.2 — Capture guidelines and baseline constraints
-    - [x] Subtask 1.2.1 — Archive Discover Forests submission guidelines PDF
-    - [x] Subtask 1.2.2 — Draft initial submission-readiness checklist
-    - [ ] Subtask 1.2.3 — Update checklist with any missing guideline items
-  - [x] Task 1.3 — Refresh transfer assets
-    - [x] Subtask 1.3.1 — Update cover letter for transfer context
-    - [x] Subtask 1.3.2 — Update title page for Brief Report
-    - [x] Subtask 1.3.3 — Update preprint note for Discover Forests
-    - [x] Subtask 1.3.4 — Create submission metadata file
+- [x] Phase 0 — Scope and article type
+  - [x] Task 0.1 — Confirm article type
+    - [x] Subtask 0.1.1 — Choose Research Article vs Note based on word/reference limits
+    - [x] Subtask 0.1.2 — Confirm abstract word count ≤ 200
+  - [x] Task 0.2 — Baseline counts
+    - [x] Subtask 0.2.1 — Compute word count (Introduction through Discussion)
+    - [x] Subtask 0.2.2 — Count total references and compare to limits
 
-- [x] Phase 2 — Manuscript compliance updates
-  - [x] Task 2.0 — Claim calibration and tone
-    - [x] Subtask 2.0.1 — Review all claims for scope, evidence, and hedging
-    - [x] Subtask 2.0.2 — Flag any wording that could be read as theory-advancing
-    - [x] Subtask 2.0.3 — Localize PSP dataset provenance to Methods only
-  - [x] Task 2.1 — Reference style alignment
-    - [x] Subtask 2.1.1 — Switch to numeric citation style (square brackets)
-    - [x] Subtask 2.1.2 — Add DOI links (https://doi.org/...) where available
-    - [x] Subtask 2.1.3 — Ensure only cited works appear in the reference list
-  - [x] Task 2.2 — Supplementary materials decision
-    - [x] Subtask 2.2.1 — Remove supplementary references (redirect to repository)
-    - [x] Subtask 2.2.2 — No SI files; repository serves as extended materials
-  - [x] Task 2.3 — Policy statements check (in manuscript)
-    - [x] Subtask 2.3.1 — Funding statement included and accurate
-    - [x] Subtask 2.3.2 — Data Availability statement included and accurate
-    - [x] Subtask 2.3.3 — Ethics statement included (or N/A)
-  - [d] Task 2.4 — Formatting checks
-    - [x] Subtask 2.4.1 — Verify <= 3 heading levels
-    - [x] Subtask 2.4.2 — Confirm 12pt font; decide on Helvetica/Arial swap (decision: stick with Computer Modern)
-    - [x] Subtask 2.4.3 — Ensure abbreviations defined at first use
-    - [x] Subtask 2.4.4 — Confirm no line numbering
+- [ ] Phase 1 — CJFR formatting conversion
+  - [ ] Task 1.1 — Create CJFR manuscript variant
+    - [ ] Subtask 1.1.1 — Add CJFR-specific manuscript directory or build target
+    - [ ] Subtask 1.1.2 — Preserve Discover Forests files unchanged
+  - [ ] Task 1.2 — Page layout and spacing
+    - [ ] Subtask 1.2.1 — Set 8.5x11 (or A4) single-column layout
+    - [ ] Subtask 1.2.2 — Enable double-spacing
+    - [ ] Subtask 1.2.3 — Enable continuous line numbers
+    - [ ] Subtask 1.2.4 — Ensure page numbering is visible
+  - [ ] Task 1.3 — Manuscript order
+    - [ ] Subtask 1.3.1 — Title page with authors and affiliations
+    - [ ] Subtask 1.3.2 — Abstract and keywords placement
+    - [ ] Subtask 1.3.3 — Body order: Introduction → Methods → Results → Discussion
+    - [ ] Subtask 1.3.4 — Add Acknowledgements before References
 
-- [x] Phase 3 — Figures, tables, and permissions
-  - [x] Task 3.1 — Caption formatting and numbering
-    - [x] Subtask 3.1.1 — Use “Fig. 1” format, no trailing punctuation
-    - [x] Subtask 3.1.2 — Verify figures/tables cited in consecutive order
-  - [x] Task 3.2 — Figure file specs
-    - [x] Subtask 3.2.1 — Verify figure filenames (Fig1.*) in submission package
-    - [x] Subtask 3.2.2 — Confirm resolution and embedded fonts meet guidelines
-  - [x] Task 3.3 — Third-party material permissions
-    - [x] Subtask 3.3.1 — Confirm all figures/tables are original
-    - [x] Subtask 3.3.2 — No third-party material; permissions not required
+- [ ] Phase 2 — References and citation style
+  - [ ] Task 2.1 — Switch to Harvard author-year citations
+    - [ ] Subtask 2.1.1 — Update LaTeX class and bibliography style
+    - [ ] Subtask 2.1.2 — Verify alphabetical ordering in references
+    - [ ] Subtask 2.1.3 — Ensure DOIs/hyperlinks are present where available
+  - [ ] Task 2.2 — Citation consistency QA
+    - [ ] Subtask 2.2.1 — Check all in-text citations use author-year format
+    - [ ] Subtask 2.2.2 — Remove numeric citation remnants
 
-- [x] Phase 4 — Build, packaging, and QA
-  - [x] Task 4.1 — Regenerate outputs
-    - [x] Subtask 4.1.1 — Rebuild manuscript PDF
-    - [x] Subtask 4.1.2 — Rebuild cover letter and title page PDFs
-  - [x] Task 4.1.3 — Migrate manuscript to Springer Nature template
-    - [x] Subtask 4.1.3.1 — Adopt sn-jnl class and front-matter structure
-    - [x] Subtask 4.1.3.2 — Ensure no \\input usage (single-file manuscript)
-  - [x] Task 4.2 — Prepare LaTeX submission package
-    - [x] Subtask 4.2.1 — Regenerate em-submission ZIP with updated sources
-    - [x] Subtask 4.2.2 — Validate ZIP builds cleanly
-  - [x] Task 4.3 — Final QA pass
-    - [x] Subtask 4.3.1 — Verify abstract word count < 250
-    - [x] Subtask 4.3.2 — Update word count block after final edits
-    - [x] Subtask 4.3.3 — Confirm DOI links appear in references
-    - [x] Subtask 4.3.4 — Final proofreading pass
+- [ ] Phase 3 — Content alignment with CJFR requirements
+  - [ ] Task 3.1 — Abbreviations and terminology
+    - [ ] Subtask 3.1.1 — Define abbreviations at first use (Abstract + text + captions)
+    - [ ] Subtask 3.1.2 — Verify consistent spelling (Oxford/Merriam-Webster)
+  - [ ] Task 3.2 — Statistical reporting
+    - [ ] Subtask 3.2.1 — Avoid * / ** significance without p-values
+    - [ ] Subtask 3.2.2 — State model assumptions clearly
+  - [ ] Task 3.3 — Statements and declarations
+    - [ ] Subtask 3.3.1 — Convert Statements/Declarations to CJFR Acknowledgements/Notes
+    - [ ] Subtask 3.3.2 — Ensure data availability statement remains
 
-- [ ] Phase 5 — Submission and archiving
-  - [ ] Task 5.1 — Snapp portal entry
-    - [ ] Subtask 5.1.1 — Enter author contributions in portal
-    - [ ] Subtask 5.1.2 — Enter competing interests statement in portal
-    - [ ] Subtask 5.1.3 — Confirm APC/waiver selection and funding info
-    - [ ] Subtask 5.1.4 — Paste author contributions statement from submission metadata
-  - [ ] Task 5.2 — Submit
-    - [ ] Subtask 5.2.1 — Upload manuscript, title page, cover letter, and figures/tables
-    - [ ] Subtask 5.2.2 — Confirm metadata/keywords
-    - [ ] Subtask 5.2.3 — Record submission ID and date
-  - [ ] Task 5.3 — Archive and tag
-    - [ ] Subtask 5.3.1 — Tag release/branch for transfer submission
-    - [ ] Subtask 5.3.2 — Save submission package snapshot
+- [ ] Phase 4 — Appendices and supplementary material
+  - [ ] Task 4.1 — Appendix handling
+    - [ ] Subtask 4.1.1 — Decide appendix vs supplementary placement
+    - [ ] Subtask 4.1.2 — If appendix, ensure A-numbering for figures/tables/equations
+  - [ ] Task 4.2 — Supplementary files (if any)
+    - [ ] Subtask 4.2.1 — Name files per CJFR convention (suppla/supplb)
+    - [ ] Subtask 4.2.2 — Cite supplementary material via manuscript footnote
+
+- [ ] Phase 5 — Figures, tables, and permissions
+  - [ ] Task 5.1 — Figure/table compliance
+    - [ ] Subtask 5.1.1 — Verify captions use required format and define symbols
+    - [ ] Subtask 5.1.2 — Confirm figures/tables cited in order
+  - [ ] Task 5.2 — Permissions
+    - [ ] Subtask 5.2.1 — Confirm all figures/tables are original
+    - [ ] Subtask 5.2.2 — Add permission statements if any adapted material exists
+
+- [ ] Phase 6 — Build, packaging, and QA
+  - [ ] Task 6.1 — CJFR build pass
+    - [ ] Subtask 6.1.1 — Build CJFR manuscript PDF with line numbers
+    - [ ] Subtask 6.1.2 — Verify spacing, pagination, and column layout
+  - [ ] Task 6.2 — Limits and checklist verification
+    - [ ] Subtask 6.2.1 — Verify word count within article-type limits
+    - [ ] Subtask 6.2.2 — Verify reference count within limits
+    - [ ] Subtask 6.2.3 — Final proofread for CJFR compliance
+
+- [ ] Phase 7 — Submission and archiving
+  - [ ] Task 7.1 — Submission assets
+    - [ ] Subtask 7.1.1 — Draft CJFR cover letter
+    - [ ] Subtask 7.1.2 — Prepare submission metadata (authors, ORCID, statements)
+  - [ ] Task 7.2 — Submit
+    - [ ] Subtask 7.2.1 — Upload manuscript, figures/tables, appendix/supplement
+    - [ ] Subtask 7.2.2 — Enter portal metadata and declarations
+    - [ ] Subtask 7.2.3 — Record submission ID and date
+  - [ ] Task 7.3 — Archive
+    - [ ] Subtask 7.3.1 — Tag CJFR submission branch
+    - [ ] Subtask 7.3.2 — Save submission package snapshot
+
+## Detailed Next Steps Notes
+
+- Locked CJFR article type: Note (word count ~1008; abstract 132 words; references 5).

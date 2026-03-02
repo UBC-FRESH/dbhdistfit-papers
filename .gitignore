@@ -30,3 +30,10 @@ dbhdistfit-hps/data.local/
 *.xdv
 _minted*/
 .latexmk
+
+# CJFR manuscript working files (keep only source + Makefile)
+dbhdistfit-hps/manuscript-cjfr/*
+!dbhdistfit-hps/manuscript-cjfr/Makefile
+!dbhdistfit-hps/manuscript-cjfr/main.tex
+!dbhdistfit-hps/manuscript-cjfr/references.bib
+!dbhdistfit-hps/manuscript-cjfr/main.pdf
