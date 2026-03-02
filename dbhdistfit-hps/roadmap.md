@@ -8,20 +8,20 @@
     - [x] Subtask 0.2.1 — Compute word count (Introduction through Discussion)
     - [x] Subtask 0.2.2 — Count total references and compare to limits
 
-- [ ] Phase 1 — CJFR formatting conversion
-  - [ ] Task 1.1 — Create CJFR manuscript variant
-    - [ ] Subtask 1.1.1 — Add CJFR-specific manuscript directory or build target
-    - [ ] Subtask 1.1.2 — Preserve Discover Forests files unchanged
-  - [ ] Task 1.2 — Page layout and spacing
-    - [ ] Subtask 1.2.1 — Set 8.5x11 (or A4) single-column layout
-    - [ ] Subtask 1.2.2 — Enable double-spacing
-    - [ ] Subtask 1.2.3 — Enable continuous line numbers
-    - [ ] Subtask 1.2.4 — Ensure page numbering is visible
-  - [ ] Task 1.3 — Manuscript order
-    - [ ] Subtask 1.3.1 — Title page with authors and affiliations
-    - [ ] Subtask 1.3.2 — Abstract and keywords placement
-    - [ ] Subtask 1.3.3 — Body order: Introduction → Methods → Results → Discussion
-    - [ ] Subtask 1.3.4 — Add Acknowledgements before References
+- [x] Phase 1 — CJFR formatting conversion
+  - [x] Task 1.1 — Create CJFR manuscript variant
+    - [x] Subtask 1.1.1 — Add CJFR-specific manuscript directory or build target
+    - [x] Subtask 1.1.2 — Preserve Discover Forests files unchanged
+  - [x] Task 1.2 — Page layout and spacing
+    - [x] Subtask 1.2.1 — Set 8.5x11 (or A4) single-column layout
+    - [x] Subtask 1.2.2 — Enable double-spacing
+    - [x] Subtask 1.2.3 — Enable continuous line numbers
+    - [x] Subtask 1.2.4 — Ensure page numbering is visible
+  - [x] Task 1.3 — Manuscript order
+    - [x] Subtask 1.3.1 — Title page with authors and affiliations
+    - [x] Subtask 1.3.2 — Abstract and keywords placement
+    - [x] Subtask 1.3.3 — Body order: Introduction → Methods → Results → Discussion
+    - [x] Subtask 1.3.4 — Add Acknowledgements before References
 
 - [ ] Phase 2 — References and citation style
   - [ ] Task 2.1 — Switch to Harvard author-year citations
@@ -83,3 +83,4 @@
 ## Detailed Next Steps Notes
 
 - Locked CJFR article type: Note (word count ~1008; abstract 132 words; references 5).
+- CJFR manuscript variant created (`dbhdistfit-hps/manuscript-cjfr`) with line numbers and double spacing; build via `make manuscript-cjfr`.

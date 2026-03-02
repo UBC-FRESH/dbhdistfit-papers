@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | Article type & scope | ✅ Ready | Note; body ~1,008 words and 5 references within limits. |
 | Abstract length | ✅ Ready | 132 words (≤ 200). |
-| Formatting | ⬜ TODO | Double-spaced, single column, page numbers visible, continuous line numbers. |
+| Formatting | ✅ Ready | CJFR LaTeX variant uses double spacing, single column, page numbers, and continuous line numbers. |
 | Manuscript order | ⬜ TODO | Title page → Abstract → Keywords → Body → Acknowledgements → References. |
 | References style | ⬜ TODO | Harvard author–year; alphabetical ordering; no numbering; include DOIs where available. |
 | Abbreviations | ⬜ TODO | Defined at first use in Abstract, text, and captions. |
