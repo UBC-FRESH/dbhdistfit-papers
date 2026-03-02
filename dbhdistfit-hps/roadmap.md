@@ -85,3 +85,4 @@
 - Locked CJFR article type: Note (word count ~1008; abstract 132 words; references 5).
 - CJFR manuscript variant created (`dbhdistfit-hps/manuscript-cjfr`) with line numbers and double spacing; build via `make manuscript-cjfr`.
 - Harvard author–year references verified (alphabetical; DOIs/URLs present where available).
+- Updated table caption to define RSS; remaining abbreviation definitions (e.g., species group codes) still needed.
