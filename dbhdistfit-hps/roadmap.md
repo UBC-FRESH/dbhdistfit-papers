@@ -51,13 +51,13 @@
     - [x] Subtask 4.2.1 — Name files per CJFR convention (suppla/supplb)
     - [x] Subtask 4.2.2 — Cite supplementary material via manuscript footnote
 
-- [ ] Phase 5 — Figures, tables, and permissions
-  - [ ] Task 5.1 — Figure/table compliance
-    - [ ] Subtask 5.1.1 — Verify captions use required format and define symbols
-    - [ ] Subtask 5.1.2 — Confirm figures/tables cited in order
-  - [ ] Task 5.2 — Permissions
-    - [ ] Subtask 5.2.1 — Confirm all figures/tables are original
-    - [ ] Subtask 5.2.2 — Add permission statements if any adapted material exists
+- [x] Phase 5 — Figures, tables, and permissions
+  - [x] Task 5.1 — Figure/table compliance
+    - [x] Subtask 5.1.1 — Verify captions use required format and define symbols
+    - [x] Subtask 5.1.2 — Confirm figures/tables cited in order
+  - [x] Task 5.2 — Permissions
+    - [x] Subtask 5.2.1 — Confirm all figures/tables are original
+    - [x] Subtask 5.2.2 — Add permission statements if any adapted material exists
 
 - [ ] Phase 6 — Build, packaging, and QA
   - [ ] Task 6.1 — CJFR build pass
@@ -88,4 +88,5 @@
 - Defined dataset abbreviations in text and captions (SPFL-S/Birch-M/Maple-H; sepm/bop/ers; r/m/f) and stated modeling assumptions.
 - Completed spelling consistency pass (British/Canadian variants kept consistent).
 - Moved Appendix A into a separate CJFR appendix document; no supplementary files.
-- Remaining: figure/table compliance checks.
+- Confirmed figure/table compliance (captions define symbols; citation order checked); all figures/tables are original.
+- Remaining: build/QA checks and submission assets.

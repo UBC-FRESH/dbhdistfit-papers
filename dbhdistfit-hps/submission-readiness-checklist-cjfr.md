@@ -10,7 +10,7 @@
 | Abbreviations | ✅ Ready | Defined at first use in Abstract, text, and captions (SPFL/Birch/Maple and code mappings included). |
 | Spelling consistency | ✅ Ready | British/Canadian spelling consistent across manuscript. |
 | Statistical reporting | ✅ Ready | No significance stars; modeling assumptions stated in Methods. |
-| Figures & tables | ⬜ TODO | Captions formatted; symbols defined; cited in order; originals or permissions noted. |
+| Figures & tables | ✅ Ready | Captions formatted; symbols defined; cited in order; originals confirmed. |
 | Appendix handling | ✅ Ready | Appendix A prepared as a separate CJFR appendix document with A-numbering. |
 | Supplementary material | ✅ Ready | No supplementary files planned for CJFR submission. |
 | Data availability | ✅ Ready | Statement included in Acknowledgements/Notes and submission metadata. |
