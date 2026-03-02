@@ -34,14 +34,14 @@
 
 - [ ] Phase 3 — Content alignment with CJFR requirements
   - [ ] Task 3.1 — Abbreviations and terminology
-    - [ ] Subtask 3.1.1 — Define abbreviations at first use (Abstract + text + captions)
+    - [x] Subtask 3.1.1 — Define abbreviations at first use (Abstract + text + captions)
     - [ ] Subtask 3.1.2 — Verify consistent spelling (Oxford/Merriam-Webster)
-  - [ ] Task 3.2 — Statistical reporting
-    - [ ] Subtask 3.2.1 — Avoid * / ** significance without p-values
-    - [ ] Subtask 3.2.2 — State model assumptions clearly
-  - [ ] Task 3.3 — Statements and declarations
-    - [ ] Subtask 3.3.1 — Convert Statements/Declarations to CJFR Acknowledgements/Notes
-    - [ ] Subtask 3.3.2 — Ensure data availability statement remains
+  - [x] Task 3.2 — Statistical reporting
+    - [x] Subtask 3.2.1 — Avoid * / ** significance without p-values
+    - [x] Subtask 3.2.2 — State model assumptions clearly
+  - [x] Task 3.3 — Statements and declarations
+    - [x] Subtask 3.3.1 — Convert Statements/Declarations to CJFR Acknowledgements/Notes
+    - [x] Subtask 3.3.2 — Ensure data availability statement remains
 
 - [ ] Phase 4 — Appendices and supplementary material
   - [ ] Task 4.1 — Appendix handling
@@ -85,4 +85,5 @@
 - Locked CJFR article type: Note (word count ~1008; abstract 132 words; references 5).
 - CJFR manuscript variant created (`dbhdistfit-hps/manuscript-cjfr`) with line numbers and double spacing; build via `make manuscript-cjfr`.
 - Harvard author–year references verified (alphabetical; DOIs/URLs present where available).
-- Updated table caption to define RSS; remaining abbreviation definitions (e.g., species group codes) still needed.
+- Defined dataset abbreviations in text and captions (SPFL-S/Birch-M/Maple-H; sepm/bop/ers; r/m/f) and stated modeling assumptions.
+- Remaining: spelling consistency check and appendix vs supplement decision.

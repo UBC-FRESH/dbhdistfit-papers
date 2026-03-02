@@ -180,12 +180,15 @@ to unbinned likelihood formulations.
 
 \subsection{Computational experiment}
 
-We evaluate the method using permanent sample plot data from
+We evaluate the method using permanent sample plot (PSP) data from
 Quebec \citep{gouvernement2019}, which provide stem tallies for 30
 species--cover combinations. HPS tallies are emulated by scaling each bin by the reciprocal
-expansion factor, and for three representative meta-plots (SPFL-S, Birch-M,
-Maple-H) we fit Weibull and Gamma distributions with both estimators.
-The reproducible pipeline in the project repository handles preprocessing and fitting.
+expansion factor, and for three representative meta-plots (spruce-pine-fir-larch
+(SPFL) softwood, SPFL-S; birch mixedwood, Birch-M; and maple hardwood, Maple-H)
+we fit Weibull and Gamma distributions with both estimators. Analyses assume
+fixed binning, independent class tallies, and parametric Weibull or Gamma
+families for the experiment. The reproducible pipeline in the project repository
+handles preprocessing and fitting.
 
 \section{Results}
 
@@ -205,7 +208,7 @@ all species and cover type combinations.
   \centering
   \includegraphics[width=\textwidth]{Fig1.pdf}
   \caption{Example comparison of control (size-biased) and test (weighted)
-  estimators for the SPFL-S meta-plot. Solid lines denote weighted fits and
+  estimators for the SPFL-S meta-plot (spruce-pine-fir-larch softwood). Solid lines denote weighted fits and
   dashed lines denote size-biased fits. Points represent empirical data
   (expanded stand tables on the right panels). Remaining combinations are
   available in the project repository}
@@ -235,7 +238,9 @@ the full set of replicates and provides interactive diagnostics.
   }
   \caption{Residual diagnostics for control (size-biased) and test (weighted)
   estimators across species groups, cover types, and assumed distributions.
-  Values shown are residual sum of squares (RSS) in native scale and chi-square statistics}
+  Values shown are residual sum of squares (RSS) in native scale and chi-square statistics.
+  Species-group codes are sepm (SPFL: spruce-pine-fir-larch), bop (birch), and ers (maple);
+  cover-type codes r, m, f denote softwood, mixedwood, and hardwood classes.}
   \label{tab:comparison}
 \end{table}
 

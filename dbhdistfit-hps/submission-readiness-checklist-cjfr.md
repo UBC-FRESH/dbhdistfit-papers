@@ -7,11 +7,11 @@
 | Formatting | ✅ Ready | CJFR LaTeX variant uses double spacing, single column, page numbers, and continuous line numbers. |
 | Manuscript order | ⬜ TODO | Title page → Abstract → Keywords → Body → Acknowledgements → References. |
 | References style | ✅ Ready | Harvard author–year with alphabetical ordering; DOIs/URLs included where available. |
-| Abbreviations | ⬜ TODO | Defined at first use in Abstract, text, and captions. |
-| Statistical reporting | ⬜ TODO | No significance stars without p-values; model assumptions stated. |
+| Abbreviations | ✅ Ready | Defined at first use in Abstract, text, and captions (SPFL/Birch/Maple and code mappings included). |
+| Statistical reporting | ✅ Ready | No significance stars; modeling assumptions stated in Methods. |
 | Figures & tables | ⬜ TODO | Captions formatted; symbols defined; cited in order; originals or permissions noted. |
 | Appendix handling | ⬜ TODO | Separate appendix document or move to supplementary material; A-numbering if kept. |
-| Data availability | ⬜ TODO | Statement included in Acknowledgements/Notes and submission metadata. |
+| Data availability | ✅ Ready | Statement included in Acknowledgements/Notes and submission metadata. |
 | Cover letter | ⬜ TODO | CJFR-specific cover letter drafted and reviewed. |
 | Submission package | ⬜ TODO | PDF + source, figures/tables, appendix/supplement, metadata complete. |
 | Final QA | ⬜ TODO | Full build with line numbers; proofread; compliance check complete. |
