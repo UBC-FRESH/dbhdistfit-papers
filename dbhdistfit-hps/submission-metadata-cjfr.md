@@ -16,6 +16,7 @@
 | Data & code | https://github.com/UBC-FRESH/dbhdistfit-papers |
 | Submission system | CSP Portal |
 | Cover letter | `dbhdistfit-hps/manuscript-cjfr/cover-letter.txt` (TBD) |
+| Appendix | `dbhdistfit-hps/manuscript-cjfr/appendix.pdf` |
 | Data availability statement | Include in Acknowledgements/Notes |
 | Competing interests | None |
 | Author contributions | G.E.P. conceived the study, developed the methodology, performed the analysis, prepared the figures and tables, and wrote the manuscript. |

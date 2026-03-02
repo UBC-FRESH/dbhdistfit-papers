@@ -43,13 +43,13 @@
     - [x] Subtask 3.3.1 — Convert Statements/Declarations to CJFR Acknowledgements/Notes
     - [x] Subtask 3.3.2 — Ensure data availability statement remains
 
-- [ ] Phase 4 — Appendices and supplementary material
-  - [ ] Task 4.1 — Appendix handling
-    - [ ] Subtask 4.1.1 — Decide appendix vs supplementary placement
-    - [ ] Subtask 4.1.2 — If appendix, ensure A-numbering for figures/tables/equations
-  - [ ] Task 4.2 — Supplementary files (if any)
-    - [ ] Subtask 4.2.1 — Name files per CJFR convention (suppla/supplb)
-    - [ ] Subtask 4.2.2 — Cite supplementary material via manuscript footnote
+- [x] Phase 4 — Appendices and supplementary material
+  - [x] Task 4.1 — Appendix handling
+    - [x] Subtask 4.1.1 — Decide appendix vs supplementary placement
+    - [x] Subtask 4.1.2 — If appendix, ensure A-numbering for figures/tables/equations
+  - [x] Task 4.2 — Supplementary files (if any)
+    - [x] Subtask 4.2.1 — Name files per CJFR convention (suppla/supplb)
+    - [x] Subtask 4.2.2 — Cite supplementary material via manuscript footnote
 
 - [ ] Phase 5 — Figures, tables, and permissions
   - [ ] Task 5.1 — Figure/table compliance
@@ -87,4 +87,5 @@
 - Harvard author–year references verified (alphabetical; DOIs/URLs present where available).
 - Defined dataset abbreviations in text and captions (SPFL-S/Birch-M/Maple-H; sepm/bop/ers; r/m/f) and stated modeling assumptions.
 - Completed spelling consistency pass (British/Canadian variants kept consistent).
-- Remaining: appendix vs supplement decision.
+- Moved Appendix A into a separate CJFR appendix document; no supplementary files.
+- Remaining: figure/table compliance checks.

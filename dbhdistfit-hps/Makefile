@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 PYTHON ?= python
 
-.PHONY: help env data figures tables manuscript manuscript-cjfr title-page cover-letter em-submission preprint notebook repro clean
+.PHONY: help env data figures tables manuscript manuscript-cjfr manuscript-cjfr-appendix title-page cover-letter em-submission preprint notebook repro clean
 
 help:
 	@echo "Available targets:"
@@ -10,6 +10,7 @@ help:
 	@echo "  make tables      - generate all manuscript tables into tables/"
 	@echo "  make manuscript  - compile the LaTeX manuscript PDF"
 	@echo "  make manuscript-cjfr - compile the CJFR-formatted manuscript PDF"
+	@echo "  make manuscript-cjfr-appendix - compile the CJFR appendix PDF"
 	@echo "  make title-page  - compile the submission title page PDF"
 	@echo "  make cover-letter - compile the submission cover letter PDF"
 	@echo "  make em-submission- build flat Editorial Manager package (legacy)"
@@ -39,6 +40,9 @@ manuscript:
 
 manuscript-cjfr:
 	$(MAKE) -C manuscript-cjfr all
+
+manuscript-cjfr-appendix:
+	$(MAKE) -C manuscript-cjfr appendix
 
 title-page:
 	$(MAKE) -C manuscript title-page

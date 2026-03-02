@@ -11,7 +11,8 @@
 | Spelling consistency | ✅ Ready | British/Canadian spelling consistent across manuscript. |
 | Statistical reporting | ✅ Ready | No significance stars; modeling assumptions stated in Methods. |
 | Figures & tables | ⬜ TODO | Captions formatted; symbols defined; cited in order; originals or permissions noted. |
-| Appendix handling | ⬜ TODO | Separate appendix document or move to supplementary material; A-numbering if kept. |
+| Appendix handling | ✅ Ready | Appendix A prepared as a separate CJFR appendix document with A-numbering. |
+| Supplementary material | ✅ Ready | No supplementary files planned for CJFR submission. |
 | Data availability | ✅ Ready | Statement included in Acknowledgements/Notes and submission metadata. |
 | Cover letter | ⬜ TODO | CJFR-specific cover letter drafted and reviewed. |
 | Submission package | ⬜ TODO | PDF + source, figures/tables, appendix/supplement, metadata complete. |
