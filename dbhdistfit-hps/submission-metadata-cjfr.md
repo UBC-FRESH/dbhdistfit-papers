@@ -11,8 +11,8 @@
 | Word count (Intro–Discussion) | ~1,037 (CJFR Note limit: 3,500) |
 | Abstract word count | 132 (limit: 200) |
 | References | 5 (limit: 30) |
-| Figures | TBD |
-| Tables | TBD |
+| Figures | 1 |
+| Tables | 1 |
 | Data & code | https://github.com/UBC-FRESH/dbhdistfit-papers |
 | Submission system | CSP Portal |
 | Cover letter | `dbhdistfit-hps/manuscript-cjfr/cover-letter.txt` (TBD) |

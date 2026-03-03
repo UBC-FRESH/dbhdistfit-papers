@@ -71,7 +71,7 @@
 - [ ] Phase 7 — Submission and archiving
   - [ ] Task 7.1 — Submission assets
     - [x] Subtask 7.1.1 — Draft CJFR cover letter
-    - [ ] Subtask 7.1.2 — Prepare submission metadata (authors, ORCID, statements)
+    - [x] Subtask 7.1.2 — Prepare submission metadata (authors, ORCID, statements)
   - [ ] Task 7.2 — Submit
     - [ ] Subtask 7.2.1 — Upload manuscript, figures/tables, appendix/supplement
     - [ ] Subtask 7.2.2 — Enter portal metadata and declarations
@@ -91,4 +91,5 @@
 - Confirmed figure/table compliance (captions define symbols; citation order checked); all figures/tables are original.
 - CJFR build/QA pass complete; counts within Note limits (body ~1,037 words; abstract 132; references 5).
 - Drafted CJFR cover letter (`dbhdistfit-hps/manuscript-cjfr/cover-letter.txt`).
-- Remaining: finalise submission metadata and complete portal submission steps.
+- Finalised CJFR submission metadata (article type Note; figures/tables counts; appendix file noted).
+- Remaining: complete portal submission steps.
