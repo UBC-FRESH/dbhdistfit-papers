@@ -59,14 +59,14 @@
     - [x] Subtask 5.2.1 — Confirm all figures/tables are original
     - [x] Subtask 5.2.2 — Add permission statements if any adapted material exists
 
-- [ ] Phase 6 — Build, packaging, and QA
-  - [ ] Task 6.1 — CJFR build pass
-    - [ ] Subtask 6.1.1 — Build CJFR manuscript PDF with line numbers
-    - [ ] Subtask 6.1.2 — Verify spacing, pagination, and column layout
-  - [ ] Task 6.2 — Limits and checklist verification
-    - [ ] Subtask 6.2.1 — Verify word count within article-type limits
-    - [ ] Subtask 6.2.2 — Verify reference count within limits
-    - [ ] Subtask 6.2.3 — Final proofread for CJFR compliance
+- [x] Phase 6 — Build, packaging, and QA
+  - [x] Task 6.1 — CJFR build pass
+    - [x] Subtask 6.1.1 — Build CJFR manuscript PDF with line numbers
+    - [x] Subtask 6.1.2 — Verify spacing, pagination, and column layout
+  - [x] Task 6.2 — Limits and checklist verification
+    - [x] Subtask 6.2.1 — Verify word count within article-type limits
+    - [x] Subtask 6.2.2 — Verify reference count within limits
+    - [x] Subtask 6.2.3 — Final proofread for CJFR compliance
 
 - [ ] Phase 7 — Submission and archiving
   - [ ] Task 7.1 — Submission assets
@@ -89,4 +89,5 @@
 - Completed spelling consistency pass (British/Canadian variants kept consistent).
 - Moved Appendix A into a separate CJFR appendix document; no supplementary files.
 - Confirmed figure/table compliance (captions define symbols; citation order checked); all figures/tables are original.
-- Remaining: build/QA checks and submission assets.
+- CJFR build/QA pass complete; counts within Note limits (body ~1,037 words; abstract 132; references 5).
+- Remaining: submission assets.

@@ -16,7 +16,7 @@
 | Data availability | ✅ Ready | Statement included in Acknowledgements/Notes and submission metadata. |
 | Cover letter | ⬜ TODO | CJFR-specific cover letter drafted and reviewed. |
 | Submission package | ⬜ TODO | PDF + source, figures/tables, appendix/supplement, metadata complete. |
-| Final QA | ⬜ TODO | Full build with line numbers; proofread; compliance check complete. |
+| Final QA | ✅ Ready | Full build with line numbers and compliance check complete. |
 
 ### Immediate Action Items
 1. Confirm article type (Research Article vs Note) based on word and reference counts.

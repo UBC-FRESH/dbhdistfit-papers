@@ -8,7 +8,7 @@
 | Corresponding author | Gregory E. Paradis (`gregory.paradis@ubc.ca`) |
 | ORCID | 0000-0001-9618-8797 |
 | Affiliation | Department of Forest Resources Management, University of British Columbia, Vancouver, Canada |
-| Word count (Intro–Discussion) | ~1,008 (CJFR Note limit: 3,500) |
+| Word count (Intro–Discussion) | ~1,037 (CJFR Note limit: 3,500) |
 | Abstract word count | 132 (limit: 200) |
 | References | 5 (limit: 30) |
 | Figures | TBD |
