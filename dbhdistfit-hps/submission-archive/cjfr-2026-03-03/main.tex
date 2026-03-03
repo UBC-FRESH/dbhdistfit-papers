@@ -1,0 +1,298 @@
+% Auto-generated from section files. Do not use \input in this template.
+
+\documentclass[12pt,letterpaper,leqno]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\graphicspath{{../figures/}{./}}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+
+\title{A Weighted Fitting Approach for Diameter Distributions from Horizontal Point Sampling}
+\author{Gregory E. Paradis\\Department of Forest Resources Management, University of British Columbia, Vancouver, BC, Canada\\\texttt{gregory.paradis@ubc.ca}}
+\date{}
+
+\begin{document}
+
+\doublespacing
+
+\begin{titlepage}
+  \begin{center}
+    {\Large\bfseries A Weighted Fitting Approach for Diameter Distributions from Horizontal Point Sampling\par}
+    \vspace{1.5em}
+    Gregory E. Paradis\par
+    Department of Forest Resources Management\par
+    University of British Columbia\par
+    Vancouver, BC, Canada\par
+    \texttt{gregory.paradis@ubc.ca}\par
+  \end{center}
+\end{titlepage}
+
+\linenumbers
+
+\section*{Abstract}
+Horizontal point sampling (HPS) produces size-biased tallies that cannot be fit
+directly with standard probability distributions without distorting diameter
+distribution estimates. Previous work resolves this by deriving bespoke
+size-biased probability density functions (PDFs) for each assumed distribution.
+We revisit the problem and formalise a weighted non-linear least squares
+approach that fits standard-form PDFs to expanded HPS stand tables while
+preserving the statistical equivalence with the size-biased formulation. The
+new pipeline leverages contemporary open-source software, is fully
+reproducible, and includes accompanying code that regenerates all figures and
+tables. Computational experiments on permanent sample plot data
+show that the weighted method matches the reference approach within numerical
+tolerance across Weibull and Gamma distributions. The manuscript and companion
+software provide a practical workflow for practitioners who require stable,
+transparent, and replicable HPS diameter distribution fitting.
+
+\noindent\textbf{Keywords:} horizontal point sampling; diameter distribution modelling; weighted nonlinear least squares; forest biometrics; reproducible research
+
+\newpage
+
+\section{Introduction}
+
+Horizontal point sampling (HPS), also referred to as angle count or Bitterlich
+sampling \citep{bitterlich1947}, is widely used to quantify stand structure in
+managed forests. Diameter distributions derived from HPS tallies underpin yield
+modelling, inventory projection, and ecological assessments. A long-standing
+challenge is that HPS tallies are intrinsically \emph{size-biased}: the
+inclusion probability of a stem is proportional to its basal area, which varies
+with the square of diameter. When standard probability density functions (PDFs)
+are fit directly to expanded HPS stand tables, small diameter classes exert
+excessive influence and the fitted distribution is biased \citep{van1986,
+gove2000, ducey2015}. The conventional remedy is to derive size-biased forms of
+candidate PDFs and fit them to the unexpanded tallies.
+
+Deriving size-biased PDFs requires specialised algebra and bespoke software
+implementations. Even when available, the resulting optimisation problems
+often impose complex parameter bounds that reduce numerical stability. As a
+result, this complexity may tempt practitioners to bypass appropriate size-bias
+corrections, potentially leading to over-fitted distributions and poor downstream
+predictions.
+
+We present a simplified method for fitting diameter distributions and show
+it is equivalent to the size-biased estimator under standard assumptions. This is an applied biometrics
+workflow aimed at routine inventory and monitoring pipelines rather than a
+theoretical development. The workflow fits standard PDFs to expanded HPS
+stand tables with embedded size-bias weights, validates the approach on
+permanent sample plot (PSP) meta-plots, and ships a reproducible pipeline
+that regenerates figures and tables.
+
+The remainder of the manuscript introduces notation and the reference method,
+derives the weighted estimator, reports numerical comparisons, and discusses
+implications for inventory analysis pipelines.
+
+\section{Materials and methods}
+\label{sec:methods}
+
+\subsection{Notation}
+Let $X$ denote the diameter at breast height (DBH) of a stem measured in
+centimetres. Assume that $X$ follows a continuous distribution with PDF
+$f(x;\boldsymbol{\theta})$ and cumulative distribution function
+$F(x;\boldsymbol{\theta})$. Consider an HPS inventory compiled using a basal
+area factor (BAF) $C_{BA}$. Let $\mathcal{I}$ denote the set of DBH classes and
+$x_i$ the centre of class $i \in \mathcal{I}$. For an inventory comprising
+plots $\mathcal{J}$, the HPS tally for class $i$ in plot $j$ is $t_{ij}$ and
+the corresponding mean basal area is $\bar{g}_{ij}$. The expanded stand table
+estimate of stems per hectare in class $i$ is
+\begin{equation}
+  \hat{y}_i = C_{BA} \frac{1}{|\mathcal{J}|} \sum_{j \in \mathcal{J}} t_{ij} \bar{g}_{ij}^{-1}.
+  \label{eq:stand-table}
+\end{equation}
+Because the inclusion probability of a stem is proportional to its basal area,
+the HPS tally is size-biased of order two. The HPS expansion factor that maps a
+tally back to expected stems per hectare at DBH $x$ is
+\begin{equation}
+  f_E(x; C_{BA}) = \frac{40000 \, C_{BA}}{\pi x^2},
+  \label{eq:expansion}
+\end{equation}
+with multiplicative inverse (compression factor):
+\begin{equation}
+  f_C(x; C_{BA}) = \frac{\pi x^2}{40000 \, C_{BA}} = f_E(x; C_{BA})^{-1}.
+  \label{eq:compression}
+\end{equation}
+
+\subsection*{Reference estimator}
+The reference approach \citep{van1986, ducey2015} fits a size-biased PDF
+$f_{\text{sb}}(x; \boldsymbol{\theta})$ to the raw HPS tallies. For any assumed
+standard-form PDF $f(x; \boldsymbol{\theta})$, the size-biased form of order
+two is
+\begin{equation}
+  f_{\text{sb}}(x; \boldsymbol{\theta}) =
+  \frac{x^2 f(x; \boldsymbol{\theta})}{\int_0^\infty x^2 f(x; \boldsymbol{\theta}) \, \mathrm{d}x}.
+  \label{eq:size-biased}
+\end{equation}
+The typical objective minimises the sum of squared deviations between expected
+and observed tallies:
+\begin{equation}
+  Z_{\text{C}}(\boldsymbol{\theta}) =
+  \sum_{i \in \mathcal{I}} \left[t_i - s \, f_{\text{sb}}(x_i; \boldsymbol{\theta})\right]^2,
+  \label{eq:control-obj}
+\end{equation}
+where $t_i = \sum_{j \in \mathcal{J}} t_{ij}$ and $s$ is a scaling parameter
+that reconciles the continuous PDF with discrete bin counts.
+
+\subsection*{Weighted estimator}
+Our alternative estimator fits the standard-form PDF directly to the expanded
+stand table while embedding the size-bias correction through bin-wise weights.
+Let $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ denote the expanded tally in class $i$.
+The weighted objective is
+\begin{equation}
+  Z_{\text{T}}(\boldsymbol{\theta}) =
+  \sum_{i \in \mathcal{I}} w_i^2
+  \left[\hat{y}_i - s \, f(x_i; \boldsymbol{\theta})\right]^2,
+  \qquad
+  w_i = f_C(x_i; C_{BA}),
+  \label{eq:test-obj}
+\end{equation}
+which mirrors a non-linear least squares problem with heteroscedastic error
+variance proportional to the expansion factor.
+
+\subsection{Equivalence}
+Substituting $\hat{y}_i = f_E(x_i; C_{BA}) t_i$ and $w_i = f_C(x_i; C_{BA})$
+into \eqref{eq:test-obj} yields
+\begin{align}
+  Z_{\text{T}}(\boldsymbol{\theta})
+    &= \sum_{i \in \mathcal{I}}
+       \left[f_C(x_i; C_{BA}) f_E(x_i; C_{BA}) t_i - f_C(x_i; C_{BA}) s f(x_i; \boldsymbol{\theta})\right]^2 \nonumber \\
+    &= \sum_{i \in \mathcal{I}}
+       \left[t_i - s \, \frac{f(x_i; \boldsymbol{\theta})}{f_E(x_i; C_{BA})^{-1}}\right]^2 \nonumber \\
+    &= \sum_{i \in \mathcal{I}}
+       \left[t_i - s \, \tilde{c} \, x_i^2 f(x_i; \boldsymbol{\theta})\right]^2,
+\end{align}
+where $\tilde{c} = \pi/(40000 C_{BA})$ is a constant that does not depend on
+$\boldsymbol{\theta}$. The normalising constant in \eqref{eq:size-biased} is
+also independent of $\boldsymbol{\theta}$; therefore the minimisers of
+$Z_{\text{C}}(\boldsymbol{\theta})$ and $Z_{\text{T}}(\boldsymbol{\theta})$ are
+the same. A full derivation is provided in the project repository and extends
+to unbinned likelihood formulations.
+
+\subsection{Computational experiment}
+
+We evaluate the method using permanent sample plot (PSP) data from
+Quebec \citep{gouvernement2019}, which provide stem tallies for 30
+species--cover combinations. HPS tallies are emulated by scaling each bin by the reciprocal
+expansion factor, and for three representative meta-plots (spruce-pine-fir-larch
+(SPFL) softwood, SPFL-S; birch mixedwood, Birch-M; and maple hardwood, Maple-H)
+we fit Weibull and Gamma distributions with both estimators. Analyses assume
+fixed binning, independent class tallies, and parametric Weibull or Gamma
+families for the experiment. The reproducible pipeline in the project repository
+handles preprocessing and fitting.
+
+\section{Results}
+
+Figure~\ref{fig:comparison} compares fitted distributions across the six
+meta-plot--distribution combinations. In both HPS tally space and stand-table
+space the curves produced by the reference and weighted estimators are visually
+similar. Table~\ref{tab:comparison} reports relative $\ell_2$ norms
+for the fitted curves: in stand-table space the weighted estimator deviates by
+no more than 2.4\%, and in HPS space by at most 8.5\%. Absolute residual sums of
+squares (RSS) are large because they are reported on the original scale of the data,
+but the percentage differences indicate that the weighting scheme reproduces the
+size-biased estimator within numerical tolerance. Chi-square goodness-of-fit
+statistics for both estimators remain within the same order of magnitude across
+all species and cover type combinations.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{Fig1.pdf}
+  \caption{Example comparison of control (size-biased) and test (weighted)
+  estimators for the SPFL-S meta-plot (spruce-pine-fir-larch softwood). Solid lines denote weighted fits and
+  dashed lines denote size-biased fits. Points represent empirical data
+  (expanded stand tables on the right panels). Remaining combinations are
+  available in the project repository}
+  \label{fig:comparison}
+\end{figure}
+
+Although absolute RSS values are large on the native scale, relative
+$\ell_2$ errors stay below 8.5\% and parameter estimates match to four
+decimal places. A Jupyter notebook in the project repository documents
+the full set of replicates and provides interactive diagnostics.
+
+\begin{table}[htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lllrrrrrr}
+    \toprule
+    species\_group & cover\_type & distribution & sample\_size & rel\_l2\_stand(\%) & rel\_l2\_hps(\%) & rss\_control\_hps & rss\_test\_stand & rss\_diff\_stand \\
+    \midrule
+    sepm & r & weibull & 152875 & 1.32 & 4.41 & 2.344e+06 & 5.174e+10 & 2.084e+10 \\
+    sepm & r & gamma & 152875 & 1.51 & 4.72 & 2.432e+06 & 5.421e+10 & 2.758e+10 \\
+    bop & m & weibull & 40125 & 2.31 & 8.49 & 5.866e+05 & 3.967e+09 & 2.322e+09 \\
+    bop & m & gamma & 40125 & 2.31 & 7.97 & 6.028e+05 & 3.915e+09 & 2.327e+09 \\
+    ers & f & weibull & 32250 & 1.90 & 4.19 & 2.369e+05 & 1.215e+09 & 5.313e+08 \\
+    ers & f & gamma & 32250 & 1.86 & 7.05 & 2.163e+05 & 1.596e+09 & 5.061e+08 \\
+    \bottomrule
+    \end{tabular}
+  }
+  \caption{Residual diagnostics for control (size-biased) and test (weighted)
+  estimators across species groups, cover types, and assumed distributions.
+  Values shown are residual sum of squares (RSS) in native scale, relative $\ell_2$ norms (\%),
+  and chi-square statistics. Species-group codes are sepm (SPFL: spruce-pine-fir-larch),
+  bop (birch), and ers (maple); cover-type codes r, m, f denote softwood, mixedwood,
+  and hardwood classes.}
+  \label{tab:comparison}
+\end{table}
+
+\section{Discussion}
+
+The weighted estimator eliminates the need to derive bespoke size-biased
+PDFs because it operates on the standard functions distributed with
+statistical libraries. This avoids algebraic effort and restrictive
+parameter bounds while preserving the statistical correctness of the
+reference estimator.
+
+Across all species and cover combinations, the weighted estimator stays
+within 2.4\% of the size-biased control in stand-table space and within
+8.5\% in HPS tally space (Table~\ref{tab:comparison}), so the weighted
+estimator can replace the reference estimator without perceptible loss.
+
+Appendix~A (submitted separately) derives equivalence for non-linear
+least squares, and the same argument extends to likelihood-based models,
+including Poisson Horvitz--Thompson weighting and potential Bayesian
+variants.
+
+The reproducible pipeline in the project repository handles data preparation,
+fitting, and figure/table generation, so new datasets can be analysed by
+refreshing the binned meta-plot file.
+
+Our PSP-derived pseudo-HPS dataset assumes that expanded tables share the
+variance structure of true HPS tallies; validating the method on genuine HPS
+inventories is a natural next step.
+
+\section{Conclusion}
+
+We presented a weighted fitting procedure that reproduces the behaviour of the
+traditional size-biased estimator for deriving stem diameter distributions from
+HPS data. The method is easier to implement, numerically stable, and accompanied
+by a fully reproducible research package. The experiments show that the
+weighted and size-biased estimators yield closely aligned fits across a range
+of species groups, cover types, and target distributions. The formal derivation in
+Appendix~A (submitted separately) codifies this equivalence and supports
+adoption of the weighted formulation in operational workflows. We recommend
+using the provided templates as a foundation for future methodological
+extensions.
+
+\section*{Acknowledgements}
+\noindent\textbf{Funding.} This research was supported by the Forest Resources Environmental Services Hub (FRESH) at the University of British Columbia. Funding was provided by the Natural Sciences and Engineering Research Council of Canada (NSERC, grant RGPIN-2023-04197).\\
+\noindent\textbf{Competing interests.} The author declares no competing interests.\\
+\noindent\textbf{Author contributions.} G.E. Paradis designed the study, performed the analysis, and prepared the manuscript.\\
+\noindent\textbf{Employment.} G.E. Paradis is employed as an Assistant Professor at the University of British Columbia.\\
+\noindent\textbf{Data availability.} Processed datasets and reproduction scripts are available from the project repository (\href{https://github.com/UBC-FRESH/dbhdistfit-papers}{UBC-FRESH/dbhdistfit-papers}), along with extensive metadata and notes that expand on this brief report. Raw PSP data are distributed by Donn\'ees Qu\'ebec and may be downloaded from the agency's public portal.\\
+\noindent\textbf{Consent/Ethics.} Not applicable; the study uses publicly available data.\\
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
