@@ -14,7 +14,7 @@
 | Appendix handling | ✅ Ready | Appendix A prepared as a separate CJFR appendix document with A-numbering. |
 | Supplementary material | ✅ Ready | No supplementary files planned for CJFR submission. |
 | Data availability | ✅ Ready | Statement included in Acknowledgements/Notes and submission metadata. |
-| Cover letter | ⬜ TODO | CJFR-specific cover letter drafted and reviewed. |
+| Cover letter | ✅ Ready | CJFR-specific cover letter drafted (`manuscript-cjfr/cover-letter.txt`). |
 | Submission package | ⬜ TODO | PDF + source, figures/tables, appendix/supplement, metadata complete. |
 | Final QA | ✅ Ready | Full build with line numbers and compliance check complete. |
 
