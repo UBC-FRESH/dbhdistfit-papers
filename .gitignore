@@ -36,7 +36,9 @@ dbhdistfit-hps/manuscript-cjfr/*
 !dbhdistfit-hps/manuscript-cjfr/Makefile
 !dbhdistfit-hps/manuscript-cjfr/main.tex
 !dbhdistfit-hps/manuscript-cjfr/references.bib
-!dbhdistfit-hps/manuscript-cjfr/main.pdf
 !dbhdistfit-hps/manuscript-cjfr/appendix.tex
-!dbhdistfit-hps/manuscript-cjfr/appendix.pdf
 !dbhdistfit-hps/manuscript-cjfr/cover-letter.txt
+
+# CJFR archive build outputs (keep archive sources, ignore compiled PDFs)
+dbhdistfit-hps/submission-archive/cjfr-2026-03-03/main.pdf
+dbhdistfit-hps/submission-archive/cjfr-2026-03-03/appendix.pdf
