@@ -1,0 +1,30 @@
+seed: 20260402
+output_dir_tables: tables
+output_dir_figures: figures
+n_replicates: 40
+sample_sizes: [1500, 4000]
+bin_width_cm: 2.0
+dbh_min: 10.0
+dbh_max: 60.0
+fit_distributions: [weibull, gamma, lognormal, exponential]
+scenarios:
+  - name: inverse_j
+    description: Left-heavy inverse-J-like shape
+    generator:
+      distribution: weibull
+      params: {a: 0.9, beta: 22.0}
+  - name: unimodal_mid
+    description: Unimodal center-heavy distribution
+    generator:
+      distribution: gamma
+      params: {beta: 4.5, p: 6.0}
+  - name: near_flat
+    description: Weakly informative near-flat spectrum
+    generator:
+      distribution: uniform
+      params: {low: 10.0, high: 60.0}
+  - name: right_shifted
+    description: Right-shifted tail-heavy benchmark
+    generator:
+      distribution: lognormal
+      params: {mu: 3.45, sigma: 0.22}

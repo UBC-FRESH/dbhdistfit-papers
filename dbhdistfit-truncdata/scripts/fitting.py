@@ -12,8 +12,12 @@ from lmfit import Model
 from .distributions import (
     DBH_MAX,
     DBH_MIN,
+    exponential_pdf,
     gamma_pdf,
+    lognormal_pdf,
+    truncated_exponential_pdf,
     truncated_gamma_pdf,
+    truncated_lognormal_pdf,
     truncated_weibull_pdf,
     weibull_pdf,
 )
@@ -32,19 +36,41 @@ class FitResults:
 
 METHODS = ("1sc", "1st", "2sc")
 DISTRIBUTIONS = ("weibull", "gamma")
+EXPANDED_DISTRIBUTIONS = ("weibull", "gamma", "lognormal", "exponential")
+
+
+def _safe_weighted_mean(x: np.ndarray, y: np.ndarray) -> float:
+    total = float(np.sum(y))
+    if total <= 0:
+        return float(np.mean(x))
+    return float(np.sum(x * y) / total)
+
+
+def _safe_weighted_var(x: np.ndarray, y: np.ndarray, mean: float) -> float:
+    total = float(np.sum(y))
+    if total <= 0:
+        return float(np.var(x))
+    return float(np.sum(y * (x - mean) ** 2) / total)
 
 
 def _initial_params(dist: str, x: np.ndarray, y: np.ndarray) -> Dict[str, float]:
-    mean = np.average(x, weights=y)
-    var = np.average((x - mean) ** 2, weights=y)
+    mean = max(_safe_weighted_mean(x, y), 1e-3)
+    var = max(_safe_weighted_var(x, y, mean), 1e-3)
+
     if dist == "weibull":
-        a0 = 2.0 if var == 0 else max(0.5, min(5.0, (mean ** 2 / var) ** 0.5))
+        a0 = 2.0 if var == 0 else max(0.5, min(5.0, (mean**2 / var) ** 0.5))
         beta0 = max(mean, 1.0)
         return {"a": a0, "beta": beta0}
     if dist == "gamma":
         beta0 = max(var / mean, 0.5) if mean > 0 else 1.0
         p0 = max(mean / beta0, 0.5)
         return {"beta": beta0, "p": p0}
+    if dist == "lognormal":
+        sigma2 = float(np.log(1.0 + var / (mean**2)))
+        mu = float(np.log(mean) - 0.5 * sigma2)
+        return {"mu": mu, "sigma2": max(sigma2, 0.05)}
+    if dist == "exponential":
+        return {"beta": max(mean, 1.0)}
     raise ValueError(f"Unsupported distribution {dist}")
 
 
@@ -62,7 +88,8 @@ def _build_model(dist: str, method: str):
             def func(x, a, beta, s):
                 return weibull_pdf(x, a, beta, s)
             return Model(func)
-    elif dist == "gamma":
+
+    if dist == "gamma":
         if method == "1sc":
             def func(x, beta, p):
                 return gamma_pdf(x, beta, p, 1.0)
@@ -75,6 +102,35 @@ def _build_model(dist: str, method: str):
             def func(x, beta, p, s):
                 return gamma_pdf(x, beta, p, s)
             return Model(func)
+
+    if dist == "lognormal":
+        if method == "1sc":
+            def func(x, mu, sigma2):
+                return lognormal_pdf(x, mu, sigma2, 1.0)
+            return Model(func)
+        if method == "1st":
+            def func(x, mu, sigma2):
+                return truncated_lognormal_pdf(x, mu, sigma2, DBH_MIN, DBH_MAX)
+            return Model(func)
+        if method == "2sc":
+            def func(x, mu, sigma2, s):
+                return lognormal_pdf(x, mu, sigma2, s)
+            return Model(func)
+
+    if dist == "exponential":
+        if method == "1sc":
+            def func(x, beta):
+                return exponential_pdf(x, beta, 1.0)
+            return Model(func)
+        if method == "1st":
+            def func(x, beta):
+                return truncated_exponential_pdf(x, beta, DBH_MIN, DBH_MAX)
+            return Model(func)
+        if method == "2sc":
+            def func(x, beta, s):
+                return exponential_pdf(x, beta, s)
+            return Model(func)
+
     raise ValueError(f"Unsupported combination: {dist} / {method}")
 
 
@@ -82,27 +138,30 @@ def fit_family(x: np.ndarray, y: np.ndarray, dist: str) -> Dict[str, Model]:
     results = {}
     init = _initial_params(dist, x, y)
 
-    # Stage 1 complete-form (s fixed to 1)
     model_1sc = _build_model(dist, "1sc")
     params_1sc = model_1sc.make_params()
     for name, value in init.items():
-        params_1sc[name].set(value=max(value, 0.1), min=0.1)
+        params_1sc[name].set(value=value)
+        if name in {"a", "beta", "p", "sigma2"}:
+            params_1sc[name].min = 1e-6
     res_1sc = model_1sc.fit(y, params_1sc, x=x, nan_policy="omit")
     results["1sc"] = res_1sc
 
-    # Stage 1 truncated baseline
     model_1st = _build_model(dist, "1st")
     params_1st = model_1st.make_params()
     for name, value in init.items():
-        params_1st[name].set(value=max(value, 0.1), min=0.1)
+        params_1st[name].set(value=value)
+        if name in {"a", "beta", "p", "sigma2"}:
+            params_1st[name].min = 1e-6
     res_1st = model_1st.fit(y, params_1st, x=x, nan_policy="omit")
     results["1st"] = res_1st
 
-    # Two-stage complete-form with scaling parameter
     model_2sc = _build_model(dist, "2sc")
     params_2sc = model_2sc.make_params()
     for name, value in init.items():
-        params_2sc[name].set(value=max(value, 0.1), min=0.1)
+        params_2sc[name].set(value=value)
+        if name in {"a", "beta", "p", "sigma2"}:
+            params_2sc[name].min = 1e-6
     params_2sc["s"].set(value=1.0, min=1e-6)
     stage1 = model_2sc.fit(y, params_2sc, x=x, nan_policy="omit")
     params_stage2 = stage1.params.copy()

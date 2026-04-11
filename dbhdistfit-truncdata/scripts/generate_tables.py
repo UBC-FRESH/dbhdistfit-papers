@@ -38,6 +38,24 @@ def format_params(result, exclude_scaling: bool = True) -> str:
     return ", ".join(entries)
 
 
+def break_param_line(param_text: str) -> str:
+    """Split a long parameter string across two lines for table readability."""
+    if ", " not in param_text:
+        return param_text
+    left, right = param_text.split(", ", 1)
+    return rf"\shortstack[l]{{{left},\\ {right}}}"
+
+
+def fmt_aicc(value: float) -> str:
+    if np.isinf(value):
+        return r"$\infty$"
+    return f"{value:.3f}"
+
+
+def fmt_metric(value: float) -> str:
+    return f"{value:.6f}"
+
+
 def fit_distance_metrics(result_a, result_b) -> dict[str, float]:
     delta = result_a.best_fit - result_b.best_fit
     rmse = float((delta ** 2).mean() ** 0.5)
@@ -72,12 +90,18 @@ def main(config_path: Path | str = CONFIG_DEFAULT) -> None:
         aicc_2sc_stage2 = aicc(stage2, delta_k=1)
         distances = fit_distance_metrics(dist_results[dist_name]["1st"], stage2)
 
+        stage1_params = format_params(stage1)
+        stage2_params = format_params(stage2)
+        if sg == "pib" and ct == "m" and dist_name == "gamma":
+            stage1_params = break_param_line(stage1_params)
+            stage2_params = break_param_line(stage2_params)
+
         row = {
             "species_group": sg,
             "cover_type": ct,
             "distribution": dist_name,
-            "stage1_params": format_params(stage1),
-            "stage2_params": format_params(stage2),
+            "stage1_params": stage1_params,
+            "stage2_params": stage2_params,
             "aicc_1sc": aicc_1sc,
             "aicc_1st": aicc_1st,
             "aicc_2sc_stage1": aicc_2sc_stage1,
@@ -105,21 +129,26 @@ def main(config_path: Path | str = CONFIG_DEFAULT) -> None:
     df.to_csv(OUTPUT_CSV, index=False)
     latex_df = df.rename(
         columns={
-            "species_group": "Species Group",
-            "cover_type": "Cover Type",
+            "species_group": r"\shortstack[c]{Species\\Group}",
+            "cover_type": r"\shortstack[c]{Cover\\Type}",
             "distribution": "Distribution",
-            "stage1_params": "Stage 1 Parameters",
-            "stage2_params": "Stage 2 Parameters",
-            "aicc_1sc": "AICc (1sc)",
-            "aicc_1st": "AICc (1st)",
-            "aicc_2sc_stage1": "AICc (2sc S1)",
-            "aicc_2sc_stage2": "AICc (2sc S2)",
-            "rmse_1st_vs_2sc": "RMSE(1st-2sc)",
-            "max_abs_1st_vs_2sc": "Max|1st-2sc|",
+            "stage1_params": r"\shortstack[c]{Stage 1\\Parameters}",
+            "stage2_params": r"\shortstack[c]{Stage 2\\Parameters}",
+            "aicc_1sc": r"\shortstack[c]{AICc\\(1sc)}",
+            "aicc_1st": r"\shortstack[c]{AICc\\(1st)}",
+            "aicc_2sc_stage1": r"\shortstack[c]{AICc\\(2sc S1)}",
+            "aicc_2sc_stage2": r"\shortstack[c]{AICc\\(2sc S2)}",
+            "rmse_1st_vs_2sc": r"\shortstack[c]{RMSE\\(1st--2sc)}",
+            "max_abs_1st_vs_2sc": r"\shortstack[c]{Max $|$1st--2sc$|$}",
         }
     )
     float_fmt = {
-        "AICc (Stage 2)": "{:.1f}".format,
+        r"\shortstack[c]{AICc\\(1sc)}": fmt_aicc,
+        r"\shortstack[c]{AICc\\(1st)}": fmt_aicc,
+        r"\shortstack[c]{AICc\\(2sc S1)}": fmt_aicc,
+        r"\shortstack[c]{AICc\\(2sc S2)}": fmt_aicc,
+        r"\shortstack[c]{RMSE\\(1st--2sc)}": fmt_metric,
+        r"\shortstack[c]{Max $|$1st--2sc$|$}": fmt_metric,
     }
 
     latex_table = latex_df.to_latex(

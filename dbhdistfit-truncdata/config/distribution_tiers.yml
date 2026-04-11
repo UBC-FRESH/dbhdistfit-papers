@@ -1,0 +1,18 @@
+dataset: data/processed/truncation_binned.parquet
+output_dir_tables: tables
+output_dir_figures: figures
+core:
+  - weibull
+  - gamma
+  - lognormal
+  - exponential
+supplemental:
+  - ga
+  - w
+  - exp
+  - gg
+  - birnbaum_saunders
+  - johnsonsb
+  - pareto
+  - fisk
+  - ll

@@ -8,3 +8,5 @@ pyarrow
 lmfit
 requests
 bibtexparser
+# Optional R2 backend (pin for reproducibility when enabling nemora):
+# nemora @ git+https://github.com/UBC-FRESH/nemora.git@cbba47789d7b680dc30a0e04100e26bfa46b6f81
