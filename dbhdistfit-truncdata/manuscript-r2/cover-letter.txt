@@ -1,0 +1,31 @@
+Gregory E. Paradis
+Department of Forest Resources Management
+University of British Columbia
+2424 Main Mall
+Vancouver, BC V6T 1Z4
+Canada
+gregory.paradis@ubc.ca
+
+11 April 2026
+
+Editor-in-Chief
+Forest Science
+
+Dear Editor,
+
+Please find our revised manuscript, "A Two-Stage Fitting Method for Truncated Stem Diameter Distributions" (FRSC-D-25-00220R1), submitted as a Brief Communication.
+
+In response to the post-R1 decision letter, we expanded the technical evidence and tightened the manuscript framing. The revision now includes:
+
+1. Empirical shape-stratified robustness summaries across all 32 species-group/cover-type combinations.
+2. Canonical synthetic robustness scenarios spanning inverse-J, unimodal-mid, near-flat, and right-shifted shapes.
+3. Explicit discrepancy metrics (RMSE and maximum absolute difference) to quantify practical differences between 1st and 2sc.
+4. Clearer bounded-claim language and explicit discussion of scope limitations.
+
+The revised package also includes a point-by-point response and a highlighted-changes artifact.
+
+The work has not been published elsewhere and is not under consideration by another journal. I declare no competing interests.
+
+Sincerely,
+
+Gregory E. Paradis

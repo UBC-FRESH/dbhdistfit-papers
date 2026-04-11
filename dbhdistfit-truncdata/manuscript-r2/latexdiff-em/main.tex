@@ -1,0 +1,544 @@
+\documentclass[12pt]{article}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL em-submission-r1/main.tex   Mon Feb 16 19:21:45 2026
+%DIF ADD em-submission-r2/main.tex   Sat Apr 11 21:32:13 2026
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{titling}
+%DIF 12a12
+\usepackage{placeins} %DIF > 
+%DIF -------
+
+\pretitle{\begin{flushleft}\LARGE\bfseries}
+\posttitle{\par\end{flushleft}\vskip 1em}
+\preauthor{\begin{flushleft}\large}
+\postauthor{\par\end{flushleft}\vskip 0.75em}
+\predate{\begin{flushleft}\large}
+\postdate{\par\end{flushleft}\vskip 1em}
+\captionsetup[figure]{labelfont=bf,labelsep=space,name=Fig.}
+
+\title{A Two-Stage Fitting Method for Truncated Stem Diameter Distributions}
+
+\date{}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\maketitle
+
+
+
+% >>> BEGIN sections/abstract
+% !TEX root = ../main.tex
+\begin{abstract}
+Stem diameter distributions underpin forest planning and inventory practice worldwide, yet permanent sample plot inventories are routinely truncated by merchantability limits and diameter caps. Truncated densities are the standard remedy, but those forms are seldom documented or supported in common software, so practitioners default to biased complete-form fits. We introduce a two-stage weighted least-squares workflow that retains the familiar complete-form implementation while recovering truncated-fit accuracy. Stage one estimates a scaling factor alongside the density parameters; stage two freezes that normaliser to deliver unbiased shape and scale estimates. Applied to fixed-area plots from Qu\'ebec, Canada, the two-stage estimator tracks truncated Weibull and gamma fits across 32 species-group/cover-type combinations (root-mean-square error between one-stage truncated and two-stage complete fits: $2\times10^{-5}$--$3.7\times10^{-2}$) and yields the lowest stage-2 AICc (small-sample Akaike information criterion) in 25 of 32 cases. The companion repository provides the tallies, scripts, and notebooks required to regenerate every figure, table, and \LaTeX{} artefact.
+\end{abstract}
+
+% <<< END sections/abstract
+% >>> BEGIN sections/introduction
+% !TEX root = ../main.tex
+\section{Introduction}
+\label{sec:introduction}
+
+Stem diameters in forest stands are commonly characterised by fitting statistical distributions to plot measurements \citep{bailey1973quantifying, hyink1983generalized, gunn2000modeling, orellana2017fitting, orellana2017parameter}. Because permanent sample plot (PSP) programmes are expensive to maintain, analysts often rely on legacy inventories whose tally rules prioritised field efficiency over statistical convenience.
+
+Merchantability thresholds remove small stems, biological limits cap large diameters, and crews aggregate counts into fixed-width classes, leaving doubly truncated grouped stand tables.
+
+Right truncation is less explicit in many inventories, so the upper bound should be interpreted as an operational or practical limit rather than a biological constant. In the PSP workflow we set $b$ to the observed maximum (and matching management caps where available) to reflect how stand tables are used in practice; when no meaningful upper limit is defensible, analysts can treat the data as left-truncated only or introduce a location parameter in the candidate distribution. The two-stage estimator is agnostic to how $b$ is chosen, but its interpretation depends on that choice.
+
+Complete-form distributions defined on $(0, \infty)$ perform poorly on such data because tail bias persists and residual sums fail to vanish. Analysts therefore evaluate truncated versions of the target distribution \citep{zutter1986characterizing}, yet closed forms are not always published, forcing teams to reproduce earlier derivations \citep{mittal1989estimating, hannon1999estimation, hegde1989estimation, ahmad2001moments, wingo1989left} or numerically integrate $F(x; \boldsymbol{P}) = \int_0^x f(t)\,\mathrm{d}t$.
+
+We propose a two-stage method that retains the \emph{complete} form while achieving truncated-quality fits. The method is benchmarked against one-stage complete (1sc) and one-stage truncated (1st) fits using permanent sample plot data from Qu\'ebec, Canada. Across Weibull and gamma families the two-stage complete (2sc) estimator matches specialised truncated fits while preserving implementation simplicity.
+
+% <<< END sections/introduction
+% >>> BEGIN sections/methods
+% !TEX root = ../main.tex
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Inventory binning}
+\label{sec:methods_binning}
+
+The workflow operates on fixed-area permanent sample plots from the Qu\'ebec provincial inventory. For each species-group / cover-type combination we aggregate tallies into 2~cm classes spanning 10--60~cm DBH (diameter at breast height). Each 0.04~ha plot receives the constant expansion factor $s_{\text{plot}} = 25$, yielding a stand table $\hat{y}_i = s_{\text{plot}} t_i$ for bin $i$, where $t_i$ is the mean tally across plots. We then normalise the stand table so that $\sum_{i \in I} W \hat{y}_i^{(n)} = 1$ for bin width $W = 2$~cm, producing a truncated empirical density on $[a, b] = [10, 60]$~cm.
+The upper bound $b$ reflects the observed maximum in the PSP tallies (and management caps where applicable); if no defensible upper limit exists, the workflow can be applied with a larger $b$ or with left truncation only.
+
+\subsection{Weighted non-linear least squares}
+\label{sec:methods_nlls}
+
+We fit parametric distributions by matching the empirical truncated density with candidate PDFs at the bin midpoints using weighted non-linear least squares. The objective is
+\begin{equation}
+  Z = \min_{\bm{P}} \sum_{i \in I} e_i^2,
+\end{equation}
+with residuals
+\begin{equation}
+  e_i = w_i \left[f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right],
+\end{equation}
+where $x_i$ is the class midpoint, $f$ the density evaluated at $x_i$, and $\bm{P}$ the free parameters. We retain unit bin weights ($w_i = 1$) to streamline the narrative and align the comparison with the published truncated baseline. The companion repository notebook documents the plot-level tallies and demonstrates how to construct inverse-variance weights when analysts wish to down-weight sparse edge bins.
+Optimisation uses the Levenberg--Marquardt algorithm as implemented in \texttt{lmfit} \citep{levenberg1944method, marquardt1963algorithm}.
+
+Truncated datasets exhibit biased residual sums when complete-form densities are fit directly. The recommended approach rescales the target density to produce the truncated form
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c\, f(x; \bm{P}) & a \leq x \leq b, \\
+      0 & \text{otherwise},
+    \end{cases}
+\end{equation}
+with scaling constant $c = [F(b; \bm{P}) - F(a; \bm{P})]^{-1}$ and $F$ the cumulative distribution function. When a closed form for $F$ is not available we evaluate the integral numerically.
+
+\subsection{Two-stage estimator}
+\label{sec:methods_twostage}
+
+The two-stage estimator \DIFdelbegin \DIFdel{adds }\DIFdelend \DIFaddbegin \DIFadd{includes }\DIFaddend a positive scaling parameter $s$ so the complete-form fit honours the truncated support. Stage one solves
+\begin{equation}
+  \min_{\bm{P},\, s>0} \sum_{i \in I} \left[s f(x_i; \bm{P}) - \hat{y}_i^{(n)}\right]^2,
+\end{equation}
+returning provisional parameters $\bm{P}^{(1)}$ and $s^{(1)}$. Stage two holds $s^{(1)}$ fixed, refits $\bm{P}$ with the same objective, and yields the final estimates $\bm{P}^{(2)}$.
+Because $f$ integrates to one, the fitted scaling parameter provides an implied retained mass on $[a,b]$ via $F(b;\bm{P})-F(a;\bm{P}) \approx 1/s$; in the limit of a perfect match to the truncated form, $s$ equals the normalising constant $c$.
+
+\subsection{Comparative fitting workflow}
+\label{sec:methods_benchmark}
+
+We compare three fitting strategies for each meta-plot:
+\begin{enumerate}
+  \item \textbf{1sc} -- a complete-form fit with the scaling fixed to $s = 1$;
+  \item \textbf{1st} -- a truncated likelihood fit using $f^{T}(x; \bm{P})$ on $[a, b]$;
+  \item \textbf{2sc} -- the two-stage complete-form procedure described above.
+\end{enumerate}
+\DIFaddbegin \DIFadd{The 1sc configuration is retained intentionally as an operational baseline: in many applied inventory workflows, analysts still fit complete-form densities directly to truncated grouped data with no explicit truncation correction. Including 1sc therefore quantifies the practical consequence of omitting truncation handling, while 1st serves as the reference truncated fit and 2sc as the proposed complete-form alternative.
+}\DIFaddend We wrap each probability density function into an \texttt{lmfit} \texttt{Model}, initialise parameters from empirical moments, and minimise $Z$ for all three configurations.
+
+\subsection{Candidate distributions and model selection}
+\label{sec:methods_candidates}
+
+We concentrate on the two-parameter Weibull and gamma distributions, both specialisations of the generalised gamma family that cover common stand structures with few parameters. Each species-group / cover-type meta-plot is fit with both distributions under the 1sc, 1st, and 2sc regimes. We compute the small-sample Akaike information criterion,
+\begin{equation}
+  \text{AICc} = \text{AIC} + \frac{2K(K+1)}{n - K - 1},
+\end{equation}
+where $n$ is the number of non-zero bins and $K$ counts the number of free parameters plus the implicit error variance term. We adjust $K$ to account for the additional scaling terms \DIFdelbegin \DIFdel{introduced by }\DIFdelend \DIFaddbegin \DIFadd{associated with }\DIFaddend each configuration: $K_{1sc} = |\bm{P}| + 1$, $K_{1st} = |\bm{P}| + 3$ (two truncation bounds plus variance), and $K_{2sc} = |\bm{P}| + 2$. The best model for each meta-plot is selected by minimising AICc. We report parameter estimates, associated standard errors, and AICc values for both stage-one and stage-two fits to facilitate comparison with the truncated baseline.
+
+\DIFaddbegin \subsection{\DIFadd{Robustness assessment workflow}}
+\label{sec:methods_robustness}
+
+\DIFadd{The robustness assessment has two components. First, all 32 species-group / cover-type combinations are fit and empirical histograms are classified into shape classes using a deterministic peak-location rule after light smoothing: inverse-J-like (peak in the first 20\% of bins), mid-unimodal (20--60\%), and right-peaked/flat ($>$60\%). Method win counts (AICc), 1st--2sc discrepancy metrics, and fit-failure counts are then summarised by shape class.
+}
+
+\DIFadd{Second, a canonical synthetic benchmark is evaluated with four scenario families (inverse-J, mid-unimodal, near-flat, and right-shifted) under fixed random seeds and replicated sample-size regimes. For each synthetic dataset, the same 1sc/1st/2sc workflow is run and win rates and discrepancy metrics are aggregated.
+Compact robustness summaries are provided in Appendix Tables~\ref{tab:app_shape_wins}--\ref{tab:app_sim_summary}.
+}
+
+\DIFaddend % <<< END sections/methods
+% >>> BEGIN sections/results
+% !TEX root = ../main.tex
+\section{Results}
+\label{sec:results}
+
+Figure~\ref{fig:comparison} compares empirical histograms with fitted Weibull and gamma curves for three representative meta-plots (rows: SPFL-S, Birch-M, Maple-H; columns: Weibull, Gamma). Each panel shows the one-stage complete (1sc), one-stage truncated (1st), and two-stage complete (2sc) solutions. The truncated and two-stage curves remain close across the diameter range, while the single-stage complete fits deviate in the lower and central classes.
+
+Table~\ref{tab:comparison} summarises parameter estimates, AICc scores, and diagnostics comparing 1st to 2sc. The 2sc stage~2 AICc is lowest in 25 of 32 combinations, while the remaining seven cases slightly favour 1sc; 1st is never best. The RMSE between 1st and 2sc fits ranges from $2\times10^{-5}$ to $3.7\times10^{-2}$, and the 1st fit fails in two cases (CHCE--R and ERS--R), producing infinite AICc, whereas the 2sc workflow still converges.
+
+\DIFaddbegin \DIFadd{Empirical shape-stratified summaries confirm that inverse-J profiles dominate the current PSP-derived data, but non-inverse-J classes are present and informative. Appendix Tables~\ref{tab:app_shape_wins} and~\ref{tab:app_shape_metrics} report the shape-stratified win counts and discrepancy/failure summaries, showing that method rankings are not perfectly uniform across shape classes and reinforcing the need for bounded interpretation.
+}
+
+\DIFadd{In the canonical simulation suite, 2sc and 1st remain close in most replicates, with disagreement concentrated in low-information scenarios (near-flat and right-shifted) and lower sample-size settings. Appendix Table~\ref{tab:app_sim_summary} reports per-scenario win counts and aggregate discrepancy metrics. Together with the empirical summaries, these synthetic checks preserve direct comparability within the same 1sc/1st/2sc framework.
+}
+
+\DIFaddend \begin{table}[htbp]
+  \centering
+  \caption{Parameter estimates (stage~1/2), AICc scores, and 1st--2sc diagnostics (RMSE, max abs diff) for each species-group / cover-type combination.}
+  \label{tab:comparison}
+  \resizebox{\textwidth}{!}{\input{method_comparison.tex}}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{diameter_comparison.pdf}
+  \caption{Comparison of Weibull (left column) and Gamma (right column) fits across three representative meta-plots: (a--b) SPFL softwood, (c--d) Birch mixedwood, and (e--f) Maple hardwood. Points denote empirical relative frequencies; solid lines show the one-stage complete fits, dashed lines the truncated fits, and dotted lines the two-stage complete fits}
+  \label{fig:comparison}
+\end{figure}
+
+% <<< END sections/results
+% >>> BEGIN sections/discussion
+% !TEX root = ../main.tex
+\section{Discussion}
+
+Across the meta-plots the two-stage estimator reproduced the truncated fits and most often delivered the lowest AICc among the three alternatives. The complete single-stage estimator remained biased near the truncation limits, whereas the truncated single-stage (1st) and two-stage complete (2sc) solutions were visually similar in Figure~\ref{fig:comparison}. These findings show that the two-stage workflow typically matches the reference truncated procedure without bespoke truncated-density implementations, while acknowledging a handful of cases where 1sc is marginally preferred by AICc.
+\DIFaddbegin \DIFadd{We emphasize that 1sc is included as a deliberate operational benchmark rather than a strawman comparator: it reflects the common complete-form fitting pattern applied to truncated grouped stand tables when truncation is not modelled explicitly.
+}\DIFaddend 
+
+Two meta-plots (white pine--mixedwood and red pine--mixedwood) produce unusually large scale parameters in Table~\ref{tab:comparison}. Their truncated histograms are nearly flat, so the optimiser pushes shape parameters below one and inflates the scale to hold the area to unity. Both 1st and 2sc converge on the same regime, indicating a data-driven effect rather than a two-stage weakness.
+
+We limited the candidate set to the two-parameter Weibull and Gamma distributions because they cover common stand structures with few parameters, both arise as special cases of the generalised gamma family, and a compact family keeps attention on the methodological swap between the truncated and two-stage estimators. A three-parameter Weibull (with location) is an alternative way to handle left truncation; we treat it as future work because it changes the parameterisation and \DIFdelbegin \DIFdel{adds flexibility }\DIFdelend \DIFaddbegin \DIFadd{increases flexibility in ways }\DIFaddend that would blur the direct 1st-vs-2sc comparison in a brief format.
+
+A companion repository (URL withheld for double-blind review) documents the tallies, weighting choices, and scripts that regenerate the \DIFdelbegin \DIFdel{figure and table, providing transparency without a separate supplement}\DIFdelend \DIFaddbegin \DIFadd{analysis. Robustness summary tables are provided in the manuscript appendix (Tables~\ref{tab:app_shape_wins}--\ref{tab:app_sim_summary})}\DIFaddend . With that scaffold, 2sc matches or improves on the truncated baseline and outperforms the \DIFdelbegin \DIFdel{naive }\DIFdelend \DIFaddbegin \DIFadd{unadjusted }\DIFaddend 1sc \DIFdelbegin \DIFdel{approach}\DIFdelend \DIFaddbegin \DIFadd{baseline in most tested settings}\DIFaddend . Because the interpretation of $b$ is application-specific, we view the two-stage workflow as an alternative that should be stress-tested under other truncation rules or distributional shapes before being treated as a universal replacement. The current analysis focuses on inverse-J PSP stand tables; other shapes warrant future study.
+
+\DIFaddbegin \DIFadd{The robustness analysis includes empirical shape-stratified summaries across all 32 PSP combinations and a canonical synthetic benchmark spanning inverse-J, unimodal-mid, near-flat, and right-shifted cases. This evidence improves coverage of plausible stand-structure conditions, but it also confirms that method preference is context-dependent in low-information regimes. Accordingly, we frame 2sc as a strong practical option under tested conditions rather than a universal replacement.
+}
+
+\DIFaddend % <<< END sections/discussion
+% >>> BEGIN sections/conclusion
+% !TEX root = ../main.tex
+\section{Conclusion}
+
+\label{sec:conclusion}
+
+Fitting complete-form distributions to truncated inventory data yields biased estimates. The truncated-likelihood baseline is accurate but requires bespoke truncated PDFs for each candidate family. Our two-stage approach preserves complete-form simplicity while matching truncated fits. In the computational experiment it matched or exceeded the truncated baseline and dominated the naive complete-form approach.
+
+The workflow automates data prep, fitting, and manuscript builds; code and anonymised intermediates accompany the manuscript for reuse.
+
+% <<< END sections/conclusion
+
+\section*{Statements and Declarations}
+This section has been removed for double-blind review; full declarations are provided in the separate title page upload.
+
+\appendix
+% >>> BEGIN sections/appendix-method
+% !TEX root = ../main.tex
+\section{Derivations Supporting the Two-Stage Estimator}
+
+We briefly restate the derivations that motivate the two-stage fitting procedure. Let $f(x; \bm{P})$ denote a complete-form probability density defined on $(0, \infty)$ with parameter vector $\bm{P}$. Observations are only available for the truncated interval $[a, b]$, with $a = 10$~cm and $b = 60$~cm in the PSP experiment. The truncated form of $f$ is
+\begin{equation}
+  f^{T}(x; \bm{P}) =
+    \begin{cases}
+      c \, f(x; \bm{P}), & a \leq x \leq b, \\
+      0, & \text{otherwise},
+    \end{cases}
+    \label{eq:truncated-density}
+\end{equation}
+where the normalising constant is
+\begin{equation}
+  c = \left[\int_a^b f(t; \bm{P}) \,\mathrm{d}t\right]^{-1} = \left[F(b; \bm{P}) - F(a; \bm{P})\right]^{-1}.
+\end{equation}
+Here $F$ is the cumulative distribution function associated with $f$. When a closed-form expression for $F$ is unavailable, $c$ must be evaluated numerically, complicating routine model comparison.
+
+To avoid deriving bespoke truncated forms for each target distribution, we augment the complete density with a free scaling parameter $s$ and define
+\begin{equation}
+  f'(x; \bm{P}', s) = s \, f(x; \bm{P}),
+\end{equation}
+where $\bm{P}' = \bm{P} \cup \{s\}$. Because $s$ relaxes the unity constraint on the integral of $f$, the least-squares objective
+\begin{equation}
+  Z(\bm{P}', s) = \sum_{i \in I} \left[f'(x_i; \bm{P}', s) - \hat{y}_i^{(n)}\right]^2
+\end{equation}
+admits solutions with residual behaviour comparable to $f^{T}$ over $[a, b]$. The augmented model reproduces any truncated shape achievable by $f^{T}$ but introduces an additional degree of freedom that inflates parameter variance.
+
+If the truncated solution is matched exactly on $[a,b]$, then $f'(x)=f^{T}(x)$ implies $s=c=[F(b;\bm{P})-F(a;\bm{P})]^{-1}$. Hence $1/s$ is the implied retained mass on $[a,b]$, and departures from that value quantify any residual mass assigned outside the truncation interval.
+
+We therefore fit the model in two stages. Stage~1 solves
+\begin{equation}
+  (\widehat{\bm{P}'}, \hat{s}) = \arg\min_{\bm{P}', s} Z(\bm{P}', s),
+\end{equation}
+yielding a consistent estimate $\hat{s}$ that scales the complete-form density to the truncated support. Stage~2 fixes the scaling parameter and re-optimises the original parameter vector,
+\begin{equation}
+  \widehat{\bm{P}} = \arg\min_{\bm{P}} Z(\bm{P}, \hat{s}),
+\end{equation}
+where $Z(\bm{P}, \hat{s})$ denotes the objective with $s$ held constant. The fitted curves coincide,
+\begin{equation}
+  Z(\widehat{\bm{P}'}, \hat{s}) \simeq Z(\widehat{\bm{P}}, \hat{s}),
+\end{equation}
+but the second-stage covariance matrix excludes the nuisance scaling parameter, yielding tighter standard errors for the distributional parameters of interest.
+
+The approach generalises to any probability density for which numerical quadrature of $f$ over $[a, b]$ is feasible.
+
+% <<< END sections/appendix-method
+%DIF >  >>> BEGIN sections/appendix-robustness
+%DIF >  !TEX root = ../main.tex
+\DIFaddbegin \section{\DIFadd{Robustness Summary Tables for Review}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{\thesection\arabic{table}}
+
+\DIFadd{This appendix provides compact robustness summaries supporting the main-text method comparison. Reproducibility scripts and detailed machine-readable outputs are available in the companion repository (URL withheld for double-blind review).
+}
+
+\begin{table}[htbp]
+  \centering
+  \caption{\DIFaddFL{Shape-stratified method-win counts across the 32 empirical species-group / cover-type combinations.}}
+  \label{tab:app_shape_wins}
+  \begin{tabular}{llr}
+    \toprule
+    \DIFaddFL{Shape class }& \DIFaddFL{Winner method }& \DIFaddFL{Win count }\\
+    \midrule
+    \DIFaddFL{inverse-J-ish }& \DIFaddFL{1sc }& \DIFaddFL{2 }\\
+    \DIFaddFL{inverse-J-ish }& \DIFaddFL{2sc }& \DIFaddFL{25 }\\
+    \DIFaddFL{right-peaked/flat }& \DIFaddFL{2sc }& \DIFaddFL{1 }\\
+    \DIFaddFL{unimodal-mid }& \DIFaddFL{1sc }& \DIFaddFL{3 }\\
+    \DIFaddFL{unimodal-mid }& \DIFaddFL{2sc }& \DIFaddFL{1 }\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{\DIFaddFL{Shape-stratified discrepancy and fit-failure summaries.}}
+  \label{tab:app_shape_metrics}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{
+    l
+    S[table-format=2.0]
+    S[table-format=1.6]
+    S[table-format=1.7]
+    S[table-format=2.0]
+    S[table-format=1.0]
+    S[table-format=1.0]
+  }
+    \toprule
+    Shape class &
+    \multicolumn{1}{c}{\shortstack[c]{N\\groups}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean RMSE\\(1st vs 2sc)}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean max\\abs diff}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\1sc}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\1st}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\2sc}} \\
+    \midrule
+    inverse-J-ish & 27 & 0.004792 & 0.007224 & 0 & 0 & 0 \\
+    right-peaked/flat & 1 & 0.03844 & 0.05581 & 0 & 0 & 0 \\
+    unimodal-mid & 4 & 0.000491 & 0.0006817 & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{\DIFaddFL{Canonical simulation scenario win counts and aggregate discrepancy metrics by sample size.}}
+  \label{tab:app_sim_summary}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{
+    l
+    S[table-format=4.0]
+    S[table-format=2.0]
+    S[table-format=2.0]
+    S[table-format=1.7]
+    S[table-format=1.7]
+  }
+    \toprule
+    Scenario &
+    \multicolumn{1}{c}{\shortstack[c]{Sample\\size}} &
+    \multicolumn{1}{c}{\shortstack[c]{1sc\\wins}} &
+    \multicolumn{1}{c}{\shortstack[c]{2sc\\wins}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean RMSE\\(1st vs 2sc)}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean max\\abs diff}} \\
+    \midrule
+    inverse-J & 1500 & 0 & 40 & 0.0000622 & 0.0000727 \\
+    inverse-J & 4000 & 0 & 40 & 0.0000395 & 0.0000457 \\
+    near-flat & 1500 & 0 & 40 & 0.00000403 & 0.00000937 \\
+    near-flat & 4000 & 0 & 40 & 0.00000452 & 0.0000109 \\
+    right-shifted & 1500 & 39 & 1 & 0.0001708 & 0.0002829 \\
+    right-shifted & 4000 & 40 & 0 & 0.0001507 & 0.0002510 \\
+    unimodal-mid & 1500 & 7 & 33 & 0.0002970 & 0.0003730 \\
+    unimodal-mid & 4000 & 0 & 40 & 0.0002747 & 0.0003405 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+%DIF >  <<< END sections/appendix-robustness
+\FloatBarrier
+\DIFaddend 
+
+\section*{Word Count Summary}
+Total number of words (including references): 2\,\DIFdelbegin \DIFdel{357}\DIFdelend \DIFaddbegin \DIFadd{795}\DIFaddend \\
+Total number of words (excluding references): \DIFdelbegin \DIFdel{1}\DIFdelend \DIFaddbegin \DIFadd{2}\DIFaddend \,\DIFdelbegin \DIFdel{998}\DIFdelend \DIFaddbegin \DIFadd{436}\DIFaddend \\
+Abstract number of words: 150\\
+Number of words in Supplementary Information: 0 \DIFaddbegin \DIFadd{(robustness tables are included in the appendix)
+}\DIFaddend 
+
+\DIFdelbegin %DIFDELCMD < \bibliographystyle{apalike-doi}
+%DIFDELCMD < \bibliography{references}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \begin{thebibliography}{}
+
+\bibitem[Ahmad, 2001]{ahmad2001moments}
+\DIFadd{Ahmad, A. e.-b.~A. (2001).
+}\newblock \DIFadd{Moments of order statistics from doubly truncated continuous
+  distributions and characterizations.
+}\newblock {\em \DIFadd{Statistics: A Journal of Theoretical and Applied Statistics}}\DIFadd{,
+  35(4):479--494.
+}\newblock \url{https://doi.org/10.1080/02331880108802749}\DIFadd{.
+}
+
+\bibitem[Bailey and Dell, 1973]{bailey1973quantifying}
+\DIFadd{Bailey, R.~L. and Dell, T. (1973).
+}\newblock \DIFadd{Quantifying diameter distributions with the weibull function.
+}\newblock {\em \DIFadd{Forest Science}}\DIFadd{, 19(2):97--104.
+}\newblock \url{https://doi.org/10.1093/forestscience/19.2.97}\DIFadd{.
+}
+
+\bibitem[Gunn et~al., 2000]{gunn2000modeling}
+\DIFadd{Gunn, E., Bailey, E., and McGrath, T. (2000).
+}\newblock \DIFadd{Modeling the diameter distribution on the fully stocked hardwood
+  permanent sample plots.
+}\newblock {\em \DIFadd{United States Department of Agriculture Forest Service General
+  Technical Report NC}}\DIFadd{, pages 313--321.
+}
+
+\bibitem[Hannon and Dahiya, 1999]{hannon1999estimation}
+\DIFadd{Hannon, P.~M. and Dahiya, R.~C. (1999).
+}\newblock \DIFadd{Estimation of parameters for the truncated exponential distribution.
+}\newblock {\em \DIFadd{Communications in Statistics-Theory and Methods}}\DIFadd{,
+  28(11):2591--2612.
+}\newblock \url{https://doi.org/10.1080/03610929908832440}\DIFadd{.
+}
+
+\bibitem[Hegde and Dahiya, 1989]{hegde1989estimation}
+\DIFadd{Hegde, L.~M. and Dahiya, R.~C. (1989).
+}\newblock \DIFadd{Estimation of the parameters of a truncated gamma distribution.
+}\newblock {\em \DIFadd{Communications in Statistics-Theory and Methods}}\DIFadd{,
+  18(2):561--577.
+}\newblock \url{https://doi.org/10.1080/03610928908829919}\DIFadd{.
+}
+
+\bibitem[Hyink and Moser, 1983]{hyink1983generalized}
+\DIFadd{Hyink, D.~M. and Moser, J.~W. (1983).
+}\newblock \DIFadd{A generalized framework for projecting forest yield and stand
+  structure using diameter distributions.
+}\newblock {\em \DIFadd{Forest Science}}\DIFadd{, 29(1):85--95.
+}\newblock \url{https://doi.org/10.1093/forestscience/29.1.85}\DIFadd{.
+}
+
+\bibitem[Levenberg, 1944]{levenberg1944method}
+\DIFadd{Levenberg, K. (1944).
+}\newblock \DIFadd{A method for the solution of certain non-linear problems in least
+  squares.
+}\newblock {\em \DIFadd{Quarterly of Applied Mathematics}}\DIFadd{, 2(2):164--168.
+}\newblock \url{https://doi.org/10.1090/qam/10666}\DIFadd{.
+}
+
+\bibitem[Marquardt, 1963]{marquardt1963algorithm}
+\DIFadd{Marquardt, D.~W. (1963).
+}\newblock \DIFadd{An algorithm for least-squares estimation of nonlinear parameters.
+}\newblock {\em \DIFadd{SIAM Journal on Applied Mathematics}}\DIFadd{, 11(2):431--441.
+}\newblock \url{https://doi.org/10.1137/0111030}\DIFadd{.
+}
+
+\bibitem[Mittal and Dahiya, 1989]{mittal1989estimating}
+\DIFadd{Mittal, M.~M. and Dahiya, R.~C. (1989).
+}\newblock \DIFadd{Estimating the parameters of a truncated weibull distribution.
+}\newblock {\em \DIFadd{Communications in Statistics-Theory and Methods}}\DIFadd{,
+  18(6):2027--2042.
+}\newblock \url{https://doi.org/10.1080/03610928908830020}\DIFadd{.
+}
+
+\bibitem[Orellana and Figueiredo~Filho, 2017]{orellana2017parameter}
+\DIFadd{Orellana, E. and Figueiredo~Filho, A. (2017).
+}\newblock \DIFadd{Use of the parameter prediction method to design the diametric
+  distribution in native forests with the weibull function.
+}\newblock {\em \DIFadd{Ci}{\DIFadd{\^e}}\DIFadd{ncia Florestal}}\DIFadd{, 27(3):981--991.
+}\newblock \url{https://doi.org/10.5902/1980509828670}\DIFadd{.
+}
+
+\bibitem[Orellana et~al., 2017]{orellana2017fitting}
+\DIFadd{Orellana, E., Figueiredo~Filho, A., P}{\DIFadd{\'e}}\DIFadd{llico~Netto, S., and Dias, A.~N.
+  (2017).
+}\newblock \DIFadd{Fitting methods and selection procedures of probabilistic functions
+  to model the diameter distribution in a native araucaria forest.
+}\newblock {\em \DIFadd{Ci}{\DIFadd{\^e}}\DIFadd{ncia Florestal}}\DIFadd{, 27(3):969--980.
+}\newblock \url{https://doi.org/10.5902/19805098}\DIFadd{.
+}
+
+\bibitem[Wingo, 1989]{wingo1989left}
+\DIFadd{Wingo, D.~R. (1989).
+}\newblock \DIFadd{The left-truncated weibull distribution: theory and computation.
+}\newblock {\em \DIFadd{Statistical papers}}\DIFadd{, 30(1):39--48.
+}\newblock \url{https://doi.org/10.1007/bf02924307}\DIFadd{.
+}
+
+\bibitem[Zutter et~al., 1986]{zutter1986characterizing}
+\DIFadd{Zutter, B., Oderwald, R., Murphy, P., and Farrar~Jr, R. (1986).
+}\newblock \DIFadd{Characterizing diameter distributions with modified data types and
+  forms of the weibull distribution.
+}\newblock {\em \DIFadd{Forest Science}}\DIFadd{, 32(1):37--48.
+}\newblock \url{https://doi.org/10.1093/forestscience/32.1.37}\DIFadd{.
+}
+
+\end{thebibliography}
+\DIFaddend 
+
+
+\end{document}

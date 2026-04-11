@@ -1,0 +1,86 @@
+% !TEX root = ../main.tex
+\section{Robustness Summary Tables for Review}
+\setcounter{table}{0}
+\renewcommand{\thetable}{\thesection\arabic{table}}
+
+This appendix provides compact robustness summaries supporting the main-text method comparison. Reproducibility scripts and detailed machine-readable outputs are available in the companion repository (URL withheld for double-blind review).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Shape-stratified method-win counts across the 32 empirical species-group / cover-type combinations.}
+  \label{tab:app_shape_wins}
+  \begin{tabular}{llr}
+    \toprule
+    Shape class & Winner method & Win count \\
+    \midrule
+    inverse-J-ish & 1sc & 2 \\
+    inverse-J-ish & 2sc & 25 \\
+    right-peaked/flat & 2sc & 1 \\
+    unimodal-mid & 1sc & 3 \\
+    unimodal-mid & 2sc & 1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Shape-stratified discrepancy and fit-failure summaries.}
+  \label{tab:app_shape_metrics}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{
+    l
+    S[table-format=2.0]
+    S[table-format=1.6]
+    S[table-format=1.7]
+    S[table-format=2.0]
+    S[table-format=1.0]
+    S[table-format=1.0]
+  }
+    \toprule
+    Shape class &
+    \multicolumn{1}{c}{\shortstack[c]{N\\groups}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean RMSE\\(1st vs 2sc)}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean max\\abs diff}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\1sc}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\1st}} &
+    \multicolumn{1}{c}{\shortstack[c]{Failures\\2sc}} \\
+    \midrule
+    inverse-J-ish & 27 & 0.004792 & 0.007224 & 0 & 0 & 0 \\
+    right-peaked/flat & 1 & 0.03844 & 0.05581 & 0 & 0 & 0 \\
+    unimodal-mid & 4 & 0.000491 & 0.0006817 & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Canonical simulation scenario win counts and aggregate discrepancy metrics by sample size.}
+  \label{tab:app_sim_summary}
+  \begin{tabular}{
+    l
+    S[table-format=4.0]
+    S[table-format=2.0]
+    S[table-format=2.0]
+    S[table-format=1.7]
+    S[table-format=1.7]
+  }
+    \toprule
+    Scenario &
+    \multicolumn{1}{c}{\shortstack[c]{Sample\\size}} &
+    \multicolumn{1}{c}{\shortstack[c]{1sc\\wins}} &
+    \multicolumn{1}{c}{\shortstack[c]{2sc\\wins}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean RMSE\\(1st vs 2sc)}} &
+    \multicolumn{1}{c}{\shortstack[c]{Mean max\\abs diff}} \\
+    \midrule
+    inverse-J & 1500 & 0 & 40 & 0.0000622 & 0.0000727 \\
+    inverse-J & 4000 & 0 & 40 & 0.0000395 & 0.0000457 \\
+    near-flat & 1500 & 0 & 40 & 0.00000403 & 0.00000937 \\
+    near-flat & 4000 & 0 & 40 & 0.00000452 & 0.0000109 \\
+    right-shifted & 1500 & 39 & 1 & 0.0001708 & 0.0002829 \\
+    right-shifted & 4000 & 40 & 0 & 0.0001507 & 0.0002510 \\
+    unimodal-mid & 1500 & 7 & 33 & 0.0002970 & 0.0003730 \\
+    unimodal-mid & 4000 & 0 & 40 & 0.0002747 & 0.0003405 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
