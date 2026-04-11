@@ -6,8 +6,15 @@ figures/
 tables/
 manuscript-r0/build/
 manuscript-r1/build/
+manuscript-r2/build/
 notebooks/*.executed.ipynb
 tmp/
+em-submission-r2/
+em-submission-r2.zip
+em-resubmission-r2-required*/
+em-resubmission-r2-required*.zip
+em-submission-r2-inlinebib.zip
+r1-r2-diff.pdf
 
 # LaTeX aux files
 *.aux

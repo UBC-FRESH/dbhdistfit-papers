@@ -6,10 +6,13 @@ from __future__ import annotations
 import re
 import shutil
 import subprocess
+import os
+import zipfile
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-MANUSCRIPT_DIR = PROJECT_ROOT / "manuscript"
+_MANUSCRIPT_DIR_ENV = os.environ.get("MANUSCRIPT_DIR", "manuscript")
+MANUSCRIPT_DIR = (PROJECT_ROOT / _MANUSCRIPT_DIR_ENV).resolve()
 FIGURES_DIR = PROJECT_ROOT / "figures"
 TABLES_DIR = PROJECT_ROOT / "tables"
 
@@ -120,6 +123,29 @@ def cleanup_aux_files() -> None:
             target.unlink()
 
 
+def inline_bibliography() -> None:
+    """Inline BibTeX output so EM compilation does not depend on preserving .bbl files."""
+    main_tex_path = DEST_DIR / "main.tex"
+    bbl_path = DEST_DIR / "main.bbl"
+    if not bbl_path.exists():
+        raise FileNotFoundError(f"Expected BibTeX output missing: {bbl_path}")
+
+    tex = main_tex_path.read_text(encoding="utf-8")
+    bbl = bbl_path.read_text(encoding="utf-8").strip() + "\n"
+
+    style_and_bib = re.compile(
+        r"\\bibliographystyle\{[^}]+\}\s*\\bibliography\{[^}]+\}",
+        flags=re.DOTALL,
+    )
+    if style_and_bib.search(tex):
+        tex = style_and_bib.sub(lambda _m: bbl, tex, count=1)
+    else:
+        tex = re.sub(r"\\bibliography\{[^}]+\}", lambda _m: bbl, tex, count=1)
+
+    main_tex_path.write_text(tex, encoding="utf-8")
+    bbl_path.unlink()
+
+
 def build_blinded_pdf() -> None:
     cmd = ["latexmk", "-pdf", "-interaction=nonstopmode", "-file-line-error", "-f", "main.tex"]
     subprocess.run(cmd, cwd=DEST_DIR, check=True)
@@ -146,25 +172,26 @@ def populate_destination() -> None:
         _copy_file(bst_path)
 
     build_blinded_pdf()
-
-    # Copy additional artefacts required for submission (title page with author info, cover letter text, table CSV, figure PNG)
-    artefacts = [
-        (MANUSCRIPT_DIR / "title-page.pdf", None),
-        (MANUSCRIPT_DIR / "title-page.tex", None),
-        (MANUSCRIPT_DIR / "cover-letter.txt", None),
-        (TABLES_DIR / "method_comparison.csv", None),
-        (FIGURES_DIR / "diameter_comparison.png", "Fig1.png"),
-    ]
-    for src, dest_name in artefacts:
-        if src.exists():
-            _copy_file(src, dest_name)
+    inline_bibliography()
+    build_blinded_pdf()
 
 
 def make_archive() -> None:
     if ARCHIVE_PATH.exists():
         ARCHIVE_PATH.unlink()
     cleanup_aux_files()
-    shutil.make_archive(ARCHIVE_PATH.with_suffix(""), "zip", DEST_DIR)
+    # Keep the upload archive truly minimal: only files required for EM compile.
+    required_members = [
+        "main.tex",
+        "method_comparison.tex",
+        "diameter_comparison.pdf",
+    ]
+    with zipfile.ZipFile(ARCHIVE_PATH, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for name in required_members:
+            src = DEST_DIR / name
+            if not src.exists():
+                raise FileNotFoundError(f"Required archive member missing: {src}")
+            zf.write(src, arcname=name)
 
 
 def main() -> None:
